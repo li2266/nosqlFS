@@ -1,0 +1,170 @@
+10-24-2016 13:53:20 nosqlFS_init()
+10-24-2016 13:53:20 fuse_conn_info:
+10-24-2016 13:53:20 proto_major = "7"
+10-24-2016 13:53:20 proto_minor = "23"
+10-24-2016 13:53:20 async_read = "1"
+10-24-2016 13:53:20 max_write = "131072"
+10-24-2016 13:53:20 max_readahead = "131072"
+10-24-2016 13:53:20 capable = "0003fffb"
+10-24-2016 13:53:20 want = "00006010"
+10-24-2016 13:53:20 max_background = "0"
+10-24-2016 13:53:20 congestion_threshold = "0"
+10-24-2016 13:53:20 fuse_context10-24-2016 13:53:20 fuse = "019dc870"
+10-24-2016 13:53:20 uid = "0"
+10-24-2016 13:53:20 gid = "0"
+10-24-2016 13:53:20 pid = "0"
+10-24-2016 13:53:20 private_data = "019db420"
+10-24-2016 13:53:20 logFile = "019dc550"
+10-24-2016 13:53:20 rootdir = "/home/pengli/mnt/hello"
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /.Trash, struct stat * stbuf = da6ddcd0)
+10-24-2016 13:53:20 lstat returned -1
+10-24-2016 13:53:20 ERROR lstat : No such file or directory
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /.Trash-1000, struct stat * stbuf = d9edccd0)
+10-24-2016 13:53:20 lstat returned -1
+10-24-2016 13:53:20 ERROR lstat : No such file or directory
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /.xdg-volume-info, struct stat * stbuf = da6ddcd0)
+10-24-2016 13:53:20 lstat returned -1
+10-24-2016 13:53:20 ERROR lstat : No such file or directory
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /autorun.inf, struct stat * stbuf = da6ddcd0)
+10-24-2016 13:53:20 lstat returned -1
+10-24-2016 13:53:20 ERROR lstat : No such file or directory
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d9edcca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d9edcca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = da6ddca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d9edcca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d9edcca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d96dbca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d9edcca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = da6ddca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d96dbca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d9edcca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = da6ddca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d96dbca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d9edcca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = da6ddca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d96dbca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d9edcca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = da6ddca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d9edcca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d96dbca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = da6ddca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d9edcca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = d96dbca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /, struct stat * stbuf = da6ddca0)
+10-24-2016 13:53:20 lstat returned 0
+10-24-2016 13:53:20 nosqlFS_getattr(char * path = /autorun.inf, struct stat * stbuf = da6ddcd0)
+10-24-2016 13:53:20 lstat returned -1
+10-24-2016 13:53:20 ERROR lstat : No such file or directory
+10-24-2016 13:54:43 nosqlFS_init()
+10-24-2016 13:54:43 fuse_conn_info:
+10-24-2016 13:54:43 proto_major = 7
+10-24-2016 13:54:43 proto_minor = 23
+10-24-2016 13:54:43 async_read = 1
+10-24-2016 13:54:43 max_write = 131072
+10-24-2016 13:54:43 max_readahead = 131072
+10-24-2016 13:54:43 capable = 0003fffb
+10-24-2016 13:54:43 want = 00006010
+10-24-2016 13:54:43 max_background = 0
+10-24-2016 13:54:43 congestion_threshold = 0
+10-24-2016 13:54:43 fuse_context10-24-2016 13:54:43 fuse = 006f7870
+10-24-2016 13:54:43 uid = 0
+10-24-2016 13:54:43 gid = 0
+10-24-2016 13:54:43 pid = 0
+10-24-2016 13:54:43 private_data = 006f6420
+10-24-2016 13:54:43 logFile = 006f7550
+10-24-2016 13:54:43 rootdir = /home/pengli/mnt/hello
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /.xdg-volume-info, struct stat * stbuf = 16b5bcd0)
+10-24-2016 13:54:43 lstat returned -1
+10-24-2016 13:54:43 ERROR lstat : No such file or directory
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 16b5bca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /autorun.inf, struct stat * stbuf = 16b5bcd0)
+10-24-2016 13:54:43 lstat returned -1
+10-24-2016 13:54:43 ERROR lstat : No such file or directory
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /.Trash, struct stat * stbuf = 16b5bcd0)
+10-24-2016 13:54:43 lstat returned -1
+10-24-2016 13:54:43 ERROR lstat : No such file or directory
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /.Trash-1000, struct stat * stbuf = 1735ccd0)
+10-24-2016 13:54:43 lstat returned -1
+10-24-2016 13:54:43 ERROR lstat : No such file or directory
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 16b5bca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 16b5bca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 16b5bca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 16b5bca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 16b5bca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 16b5bca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 13:54:43 lstat returned 0
+10-24-2016 13:54:43 nosqlFS_getattr(char * path = /autorun.inf, struct stat * stbuf = 16b5bcd0)
+10-24-2016 13:54:43 lstat returned -1
+10-24-2016 13:54:43 ERROR lstat : No such file or directory
+10-24-2016 14:48:04 nosqlFS_getattr(char * path = /, struct stat * stbuf = 16b5bca0)
+10-24-2016 14:48:04 lstat returned 0
+10-24-2016 14:48:06 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 14:48:06 lstat returned 0
+10-24-2016 14:48:08 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 14:48:08 lstat returned 0
+10-24-2016 14:48:11 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 14:48:11 lstat returned 0
+10-24-2016 14:48:16 nosqlFS_getattr(char * path = /, struct stat * stbuf = 1735cca0)
+10-24-2016 14:48:16 lstat returned 0
+10-24-2016 14:48:24 nosqlFS_getattr(char * path = /, struct stat * stbuf = 16b5bca0)
+10-24-2016 14:48:24 lstat returned 0
