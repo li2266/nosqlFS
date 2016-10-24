@@ -4,6 +4,9 @@
 #include <time.h>
 #include <stdarg.h>
 
+/*
+create a new log file or append log at the end of a exist file
+*/
 FILE * log_open(){
   // create  log file pointer
   FILE *logFile;
@@ -22,22 +25,26 @@ FILE * log_open(){
   setvbuf(logFile, NULL, _IOLBF, 0);
   return logFile;
 }
-
+/*
+basic log function. write a line into logfile.
+*/
 void log_msg(const char *format, ...){
   va_list ap;
   va_start(ap, format);
   vfprint(nosqlFS_Data->logFile, format, ap);
 }
-
+/*
+log error and return errno
+*/
 int log_error(char * func){
-  int ret = -errno;
   log_msg("ERROR %s : %s\n", func, strerror(errno));
-  return ret;
+  return -errno;
 }
 
 void log_retstat(char *func, int retstat){
   int errsave = errno;
   log_msg("%s returned %d\n", func, retstat);
+  errno = errsave;
 }
 
 int log_syscall(char * func, int retstat, int min_ret){

@@ -9,3 +9,4 @@ void log_msg(const char * format, ...);
 void log_error(char * func);
 void log_syscall(char * func, int retstat, int min_ret);
 void log_retstat(char * func, int retstat);
+void log_stat(struct stat * si);
