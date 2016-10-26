@@ -23,7 +23,7 @@ FILE * log_open(){
   struct tm *p = gmtime(&now);
   // create log file name
   char log_name[30];
-  sprintf(log_name, "../log/lognosqlFS_%d-%d-%d.log", p->tm_mon + 1, p->tm_mday, p->tm_year + 1900 );
+  sprintf(log_name, "../log/nosqlFS_%d-%d-%d.log", p->tm_mon + 1, p->tm_mday, p->tm_year + 1900 );
   // open the file and check if successful
   logFile = fopen(log_name, "a");
   if(logFile == NULL){
