@@ -49,7 +49,7 @@ log error and return errno
 */
 int log_error(char * func){
   log_msg("ERROR %s : %s\n", func, strerror(errno));
-  return -errno;
+  return errno;
 }
 
 void log_retstat(char *func, int retstat){
@@ -62,7 +62,7 @@ int log_syscall(char * func, int retstat, int min_ret){
   log_retstat(func, retstat);
   if(retstat < min_ret){
     log_error(func);
-    retstat = -errno;
+    retstat = errno;
   }
   return retstat;
 }

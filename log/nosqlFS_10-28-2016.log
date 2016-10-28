@@ -1,0 +1,2585 @@
+10-27-2016 22:35:01 nosqlFS_init()
+10-27-2016 22:35:01 fuse_conn_info:
+10-27-2016 22:35:01 proto_major = 7
+10-27-2016 22:35:01 proto_minor = 23
+10-27-2016 22:35:01 async_read = 1
+10-27-2016 22:35:01 max_write = 131072
+10-27-2016 22:35:01 max_readahead = 131072
+10-27-2016 22:35:01 capable = 0003fffb
+10-27-2016 22:35:01 want = 00006010
+10-27-2016 22:35:01 max_background = 0
+10-27-2016 22:35:01 congestion_threshold = 0
+10-27-2016 22:35:01 fuse_context10-27-2016 22:35:01 fuse = 00af8880
+10-27-2016 22:35:01 uid = 0
+10-27-2016 22:35:01 gid = 0
+10-27-2016 22:35:01 pid = 0
+10-27-2016 22:35:01 private_data = 00af7420
+10-27-2016 22:35:01 logFile = 00af8550
+10-27-2016 22:35:01 rootdir = /home/pengli/mnt/nosqlFSTest
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /.xdg-volume-info, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned -1
+10-27-2016 22:35:01 ERROR lstat : No such file or directory
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /autorun.inf, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned -1
+10-27-2016 22:35:01 ERROR lstat : No such file or directory
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /.Trash, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned -1
+10-27-2016 22:35:01 ERROR lstat : No such file or directory
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /.Trash-1000, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned -1
+10-27-2016 22:35:01 ERROR lstat : No such file or directory
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /mnt, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /cdrom, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /var, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /tmp, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /lib, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /usr, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /snap, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /media, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /lost+found, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /etc, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /sys, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /boot, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /boot/initrd.img-4.4.0-42-generic, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /srv, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /root, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /boot/vmlinuz-4.4.0-45-generic, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /proc, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /bin, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /home, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /dev, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /boot/vmlinuz-4.4.0-42-generic, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /lib64, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /run, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /boot/initrd.img-4.4.0-45-generic, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /sbin, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /opt, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6d607cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6d607cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361366273104, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6d607cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361366273104, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6d607cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361366273104, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361366273104, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6d607cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6d607cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361366273104, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6d607cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6d607cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361366273104, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6ce06cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361366273104, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6ce06cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6d607cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6ce06cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6d607cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6ce06cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361357880400, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1826643328)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6d607cd0)
+10-27-2016 22:35:01 nosqlFS_opendir(path = "/", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361366273104, fi = 0x00000001)
+10-27-2016 22:35:01 calling filler with name mnt
+10-27-2016 22:35:01 calling filler with name cdrom
+10-27-2016 22:35:01 calling filler with name var
+10-27-2016 22:35:01 calling filler with name tmp
+10-27-2016 22:35:01 calling filler with name lib
+10-27-2016 22:35:01 calling filler with name usr
+10-27-2016 22:35:01 calling filler with name snap
+10-27-2016 22:35:01 calling filler with name media
+10-27-2016 22:35:01 calling filler with name lost+found
+10-27-2016 22:35:01 calling filler with name etc
+10-27-2016 22:35:01 calling filler with name sys
+10-27-2016 22:35:01 calling filler with name ..
+10-27-2016 22:35:01 calling filler with name boot
+10-27-2016 22:35:01 calling filler with name initrd.img.old
+10-27-2016 22:35:01 calling filler with name srv
+10-27-2016 22:35:01 calling filler with name root
+10-27-2016 22:35:01 calling filler with name vmlinuz
+10-27-2016 22:35:01 calling filler with name proc
+10-27-2016 22:35:01 calling filler with name bin
+10-27-2016 22:35:01 calling filler with name home
+10-27-2016 22:35:01 calling filler with name dev
+10-27-2016 22:35:01 calling filler with name vmlinuz.old
+10-27-2016 22:35:01 calling filler with name lib64
+10-27-2016 22:35:01 calling filler with name run
+10-27-2016 22:35:01 calling filler with name .
+10-27-2016 22:35:01 calling filler with name initrd.img
+10-27-2016 22:35:01 calling filler with name sbin
+10-27-2016 22:35:01 calling filler with name opt
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 29
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:35:01 lstat returned 0
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1843428736)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:35:01 readlink returned 32
+10-27-2016 22:35:01 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:35:01 nosqlFS_getattr(char * path = /autorun.inf, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:35:01 lstat returned -1
+10-27-2016 22:35:01 ERROR lstat : No such file or directory
+10-27-2016 22:36:03 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:36:03 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_opendir(path = "/", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:36:04 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:36:04 calling filler with name mnt
+10-27-2016 22:36:04 calling filler with name cdrom
+10-27-2016 22:36:04 calling filler with name var
+10-27-2016 22:36:04 calling filler with name tmp
+10-27-2016 22:36:04 calling filler with name lib
+10-27-2016 22:36:04 calling filler with name usr
+10-27-2016 22:36:04 calling filler with name snap
+10-27-2016 22:36:04 calling filler with name media
+10-27-2016 22:36:04 calling filler with name lost+found
+10-27-2016 22:36:04 calling filler with name etc
+10-27-2016 22:36:04 calling filler with name sys
+10-27-2016 22:36:04 calling filler with name ..
+10-27-2016 22:36:04 calling filler with name boot
+10-27-2016 22:36:04 calling filler with name initrd.img.old
+10-27-2016 22:36:04 calling filler with name srv
+10-27-2016 22:36:04 calling filler with name root
+10-27-2016 22:36:04 calling filler with name vmlinuz
+10-27-2016 22:36:04 calling filler with name proc
+10-27-2016 22:36:04 calling filler with name bin
+10-27-2016 22:36:04 calling filler with name home
+10-27-2016 22:36:04 calling filler with name dev
+10-27-2016 22:36:04 calling filler with name vmlinuz.old
+10-27-2016 22:36:04 calling filler with name lib64
+10-27-2016 22:36:04 calling filler with name run
+10-27-2016 22:36:04 calling filler with name .
+10-27-2016 22:36:04 calling filler with name initrd.img
+10-27-2016 22:36:04 calling filler with name sbin
+10-27-2016 22:36:04 calling filler with name opt
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /mnt, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /cdrom, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /var, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /tmp, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /lib, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /usr, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /snap, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /media, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /lost+found, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /etc, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /sys, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /boot, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /initrd.img.old, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_readlink(path = "/initrd.img.old", link = "S", size = 1843428736)
+10-27-2016 22:36:04 readlink returned 32
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /boot/initrd.img-4.4.0-42-generic, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /srv, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /root, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /vmlinuz, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_readlink(path = "/vmlinuz", link = "S", size = 1826643328)
+10-27-2016 22:36:04 readlink returned 29
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /boot/vmlinuz-4.4.0-45-generic, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /proc, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /bin, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /home, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /dev, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /vmlinuz.old, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_readlink(path = "/vmlinuz.old", link = "S", size = 1843428736)
+10-27-2016 22:36:04 readlink returned 29
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /boot/vmlinuz-4.4.0-42-generic, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /lib64, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /run, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /initrd.img, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_readlink(path = "/initrd.img", link = "S", size = 1835036032)
+10-27-2016 22:36:04 readlink returned 32
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /boot/initrd.img-4.4.0-45-generic, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /sbin, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_getattr(char * path = /opt, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:04 lstat returned 0
+10-27-2016 22:36:04 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:36:32 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:36:32 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:36:32 lstat returned 0
+10-27-2016 22:36:32 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:36:32 calling filler with name mnt
+10-27-2016 22:36:32 calling filler with name cdrom
+10-27-2016 22:36:32 calling filler with name var
+10-27-2016 22:36:32 calling filler with name tmp
+10-27-2016 22:36:32 calling filler with name lib
+10-27-2016 22:36:32 calling filler with name usr
+10-27-2016 22:36:32 calling filler with name snap
+10-27-2016 22:36:32 calling filler with name media
+10-27-2016 22:36:32 calling filler with name lost+found
+10-27-2016 22:36:32 calling filler with name etc
+10-27-2016 22:36:32 calling filler with name sys
+10-27-2016 22:36:32 calling filler with name ..
+10-27-2016 22:36:32 calling filler with name boot
+10-27-2016 22:36:32 calling filler with name initrd.img.old
+10-27-2016 22:36:32 calling filler with name srv
+10-27-2016 22:36:32 calling filler with name root
+10-27-2016 22:36:32 calling filler with name vmlinuz
+10-27-2016 22:36:32 calling filler with name proc
+10-27-2016 22:36:32 calling filler with name bin
+10-27-2016 22:36:32 calling filler with name home
+10-27-2016 22:36:32 calling filler with name dev
+10-27-2016 22:36:32 calling filler with name vmlinuz.old
+10-27-2016 22:36:32 calling filler with name lib64
+10-27-2016 22:36:32 calling filler with name run
+10-27-2016 22:36:32 calling filler with name .
+10-27-2016 22:36:32 calling filler with name initrd.img
+10-27-2016 22:36:32 calling filler with name sbin
+10-27-2016 22:36:32 calling filler with name opt
+10-27-2016 22:36:32 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:36:32 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:36:32 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:36:32 lstat returned 0
+10-27-2016 22:36:32 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:36:32 calling filler with name mnt
+10-27-2016 22:36:32 calling filler with name cdrom
+10-27-2016 22:36:32 calling filler with name var
+10-27-2016 22:36:32 calling filler with name tmp
+10-27-2016 22:36:32 calling filler with name lib
+10-27-2016 22:36:32 calling filler with name usr
+10-27-2016 22:36:32 calling filler with name snap
+10-27-2016 22:36:32 calling filler with name media
+10-27-2016 22:36:32 calling filler with name lost+found
+10-27-2016 22:36:32 calling filler with name etc
+10-27-2016 22:36:32 calling filler with name sys
+10-27-2016 22:36:32 calling filler with name ..
+10-27-2016 22:36:32 calling filler with name boot
+10-27-2016 22:36:32 calling filler with name initrd.img.old
+10-27-2016 22:36:32 calling filler with name srv
+10-27-2016 22:36:32 calling filler with name root
+10-27-2016 22:36:32 calling filler with name vmlinuz
+10-27-2016 22:36:32 calling filler with name proc
+10-27-2016 22:36:32 calling filler with name bin
+10-27-2016 22:36:32 calling filler with name home
+10-27-2016 22:36:32 calling filler with name dev
+10-27-2016 22:36:32 calling filler with name vmlinuz.old
+10-27-2016 22:36:32 calling filler with name lib64
+10-27-2016 22:36:32 calling filler with name run
+10-27-2016 22:36:32 calling filler with name .
+10-27-2016 22:36:32 calling filler with name initrd.img
+10-27-2016 22:36:32 calling filler with name sbin
+10-27-2016 22:36:32 calling filler with name opt
+10-27-2016 22:36:32 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:36:32 nosqlFS_opendir(path = "/", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:36:32 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:36:32 lstat returned 0
+10-27-2016 22:36:32 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:36:32 calling filler with name mnt
+10-27-2016 22:36:32 calling filler with name cdrom
+10-27-2016 22:36:32 calling filler with name var
+10-27-2016 22:36:32 calling filler with name tmp
+10-27-2016 22:36:32 calling filler with name lib
+10-27-2016 22:36:32 calling filler with name usr
+10-27-2016 22:36:32 calling filler with name snap
+10-27-2016 22:36:32 calling filler with name media
+10-27-2016 22:36:32 calling filler with name lost+found
+10-27-2016 22:36:32 calling filler with name etc
+10-27-2016 22:36:32 calling filler with name sys
+10-27-2016 22:36:32 calling filler with name ..
+10-27-2016 22:36:32 calling filler with name boot
+10-27-2016 22:36:32 calling filler with name initrd.img.old
+10-27-2016 22:36:32 calling filler with name srv
+10-27-2016 22:36:32 calling filler with name root
+10-27-2016 22:36:32 calling filler with name vmlinuz
+10-27-2016 22:36:32 calling filler with name proc
+10-27-2016 22:36:32 calling filler with name bin
+10-27-2016 22:36:32 calling filler with name home
+10-27-2016 22:36:32 calling filler with name dev
+10-27-2016 22:36:32 calling filler with name vmlinuz.old
+10-27-2016 22:36:32 calling filler with name lib64
+10-27-2016 22:36:32 calling filler with name run
+10-27-2016 22:36:32 calling filler with name .
+10-27-2016 22:36:32 calling filler with name initrd.img
+10-27-2016 22:36:32 calling filler with name sbin
+10-27-2016 22:36:32 calling filler with name opt
+10-27-2016 22:36:32 nosqlFS_releasedir(path = "/", fi = 0x6de08cd0)
+10-27-2016 22:36:32 nosqlFS_getattr(char * path = /home, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:32 lstat returned 0
+10-27-2016 22:36:32 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:36:32 lstat returned 0
+10-27-2016 22:36:33 nosqlFS_opendir(path = "/home", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:36:33 nosqlFS_getattr(char * path = /home, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:36:33 lstat returned 0
+10-27-2016 22:36:33 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:36:33 calling filler with name pengli
+10-27-2016 22:36:33 calling filler with name ..
+10-27-2016 22:36:33 calling filler with name .
+10-27-2016 22:36:33 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:33 lstat returned 0
+10-27-2016 22:36:33 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:36:33 lstat returned 0
+10-27-2016 22:36:33 nosqlFS_getattr(char * path = /home, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:36:33 lstat returned 0
+10-27-2016 22:36:33 nosqlFS_releasedir(path = "/home", fi = 0x6ce06cd0)
+10-27-2016 22:36:36 nosqlFS_opendir(path = "/home", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:36:36 nosqlFS_getattr(char * path = /home, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:36:36 lstat returned 0
+10-27-2016 22:36:36 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361357880400, fi = 0x00000001)
+10-27-2016 22:36:36 calling filler with name pengli
+10-27-2016 22:36:36 calling filler with name ..
+10-27-2016 22:36:36 calling filler with name .
+10-27-2016 22:36:36 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:36 lstat returned 0
+10-27-2016 22:36:36 nosqlFS_releasedir(path = "/home", fi = 0x6ce06cd0)
+10-27-2016 22:36:39 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:36:39 lstat returned 0
+10-27-2016 22:36:39 nosqlFS_getattr(char * path = /home, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:39 lstat returned 0
+10-27-2016 22:36:39 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:39 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:36:40 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361357880400, fi = 0x00000001)
+10-27-2016 22:36:40 calling filler with name mnt
+10-27-2016 22:36:40 calling filler with name .Xauthority
+10-27-2016 22:36:40 calling filler with name .cache
+10-27-2016 22:36:40 calling filler with name .gitconfig
+10-27-2016 22:36:40 calling filler with name Pictures
+10-27-2016 22:36:40 calling filler with name .dbus
+10-27-2016 22:36:40 calling filler with name Downloads
+10-27-2016 22:36:40 calling filler with name .presage
+10-27-2016 22:36:40 calling filler with name .gconf
+10-27-2016 22:36:40 calling filler with name .bash_logout
+10-27-2016 22:36:40 calling filler with name .bashrc
+10-27-2016 22:36:40 calling filler with name Desktop
+10-27-2016 22:36:40 calling filler with name .viminfo
+10-27-2016 22:36:40 calling filler with name .python_history
+10-27-2016 22:36:40 calling filler with name .pki
+10-27-2016 22:36:40 calling filler with name .bash_history
+10-27-2016 22:36:40 calling filler with name .apport-ignore.xml
+10-27-2016 22:36:40 calling filler with name test_fuse
+10-27-2016 22:36:40 calling filler with name .ICEauthority
+10-27-2016 22:36:40 calling filler with name .xsession-errors
+10-27-2016 22:36:40 calling filler with name .dbshell
+10-27-2016 22:36:40 calling filler with name ..
+10-27-2016 22:36:40 calling filler with name examples.desktop
+10-27-2016 22:36:40 calling filler with name .atom
+10-27-2016 22:36:40 calling filler with name Documents
+10-27-2016 22:36:40 calling filler with name .mongorc.js
+10-27-2016 22:36:40 calling filler with name .local
+10-27-2016 22:36:40 calling filler with name Public
+10-27-2016 22:36:40 calling filler with name Templates
+10-27-2016 22:36:40 calling filler with name .sudo_as_admin_successful
+10-27-2016 22:36:40 calling filler with name Videos
+10-27-2016 22:36:40 calling filler with name .mozilla
+10-27-2016 22:36:40 calling filler with name .xsession-errors.old
+10-27-2016 22:36:40 calling filler with name .gnupg
+10-27-2016 22:36:40 calling filler with name Music
+10-27-2016 22:36:40 calling filler with name .thunderbird
+10-27-2016 22:36:40 calling filler with name .nano
+10-27-2016 22:36:40 calling filler with name .profile
+10-27-2016 22:36:40 calling filler with name .ssh
+10-27-2016 22:36:40 calling filler with name .xinputrc
+10-27-2016 22:36:40 calling filler with name .
+10-27-2016 22:36:40 calling filler with name .dmrc
+10-27-2016 22:36:40 calling filler with name .config
+10-27-2016 22:36:40 calling filler with name .sogouinput
+10-27-2016 22:36:40 calling filler with name .bashrc_backup
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/mnt, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.Xauthority, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.cache, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.gitconfig, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/Pictures, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.dbus, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/Downloads, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.presage, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.gconf, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.bash_logout, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.bashrc, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/Desktop, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.viminfo, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.python_history, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.pki, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.bash_history, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.apport-ignore.xml, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/test_fuse, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.ICEauthority, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.xsession-errors, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.dbshell, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/examples.desktop, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.atom, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/Documents, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.mongorc.js, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.local, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/Public, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/Templates, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.sudo_as_admin_successful, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/Videos, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.mozilla, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.xsession-errors.old, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.gnupg, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/Music, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.thunderbird, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.nano, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.profile, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.ssh, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.xinputrc, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.dmrc, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.config, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.sogouinput, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_getattr(char * path = /home/pengli/.bashrc_backup, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:40 lstat returned 0
+10-27-2016 22:36:40 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6d607cd0)
+10-27-2016 22:36:41 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361366273104, fi = 0x00000001)
+10-27-2016 22:36:41 calling filler with name mnt
+10-27-2016 22:36:41 calling filler with name .Xauthority
+10-27-2016 22:36:41 calling filler with name .cache
+10-27-2016 22:36:41 calling filler with name .gitconfig
+10-27-2016 22:36:41 calling filler with name Pictures
+10-27-2016 22:36:41 calling filler with name .dbus
+10-27-2016 22:36:41 calling filler with name Downloads
+10-27-2016 22:36:41 calling filler with name .presage
+10-27-2016 22:36:41 calling filler with name .gconf
+10-27-2016 22:36:41 calling filler with name .bash_logout
+10-27-2016 22:36:41 calling filler with name .bashrc
+10-27-2016 22:36:41 calling filler with name Desktop
+10-27-2016 22:36:41 calling filler with name .viminfo
+10-27-2016 22:36:41 calling filler with name .python_history
+10-27-2016 22:36:41 calling filler with name .pki
+10-27-2016 22:36:41 calling filler with name .bash_history
+10-27-2016 22:36:41 calling filler with name .apport-ignore.xml
+10-27-2016 22:36:41 calling filler with name test_fuse
+10-27-2016 22:36:41 calling filler with name .ICEauthority
+10-27-2016 22:36:41 calling filler with name .xsession-errors
+10-27-2016 22:36:41 calling filler with name .dbshell
+10-27-2016 22:36:41 calling filler with name ..
+10-27-2016 22:36:41 calling filler with name examples.desktop
+10-27-2016 22:36:41 calling filler with name .atom
+10-27-2016 22:36:41 calling filler with name Documents
+10-27-2016 22:36:41 calling filler with name .mongorc.js
+10-27-2016 22:36:41 calling filler with name .local
+10-27-2016 22:36:41 calling filler with name Public
+10-27-2016 22:36:41 calling filler with name Templates
+10-27-2016 22:36:41 calling filler with name .sudo_as_admin_successful
+10-27-2016 22:36:41 calling filler with name Videos
+10-27-2016 22:36:41 calling filler with name .mozilla
+10-27-2016 22:36:41 calling filler with name .xsession-errors.old
+10-27-2016 22:36:41 calling filler with name .gnupg
+10-27-2016 22:36:41 calling filler with name Music
+10-27-2016 22:36:41 calling filler with name .thunderbird
+10-27-2016 22:36:41 calling filler with name .nano
+10-27-2016 22:36:41 calling filler with name .profile
+10-27-2016 22:36:41 calling filler with name .ssh
+10-27-2016 22:36:41 calling filler with name .xinputrc
+10-27-2016 22:36:41 calling filler with name .
+10-27-2016 22:36:41 calling filler with name .dmrc
+10-27-2016 22:36:41 calling filler with name .config
+10-27-2016 22:36:41 calling filler with name .sogouinput
+10-27-2016 22:36:41 calling filler with name .bashrc_backup
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/mnt, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.Xauthority, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.cache, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.gitconfig, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/Pictures, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.dbus, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/Downloads, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.presage, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.gconf, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.bash_logout, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.bashrc, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/Desktop, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.viminfo, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.python_history, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.pki, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.bash_history, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.apport-ignore.xml, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/test_fuse, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.ICEauthority, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.xsession-errors, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.dbshell, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/examples.desktop, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.atom, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/Documents, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.mongorc.js, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.local, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/Public, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/Templates, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.sudo_as_admin_successful, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/Videos, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.mozilla, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.xsession-errors.old, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.gnupg, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/Music, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.thunderbird, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.nano, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.profile, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.ssh, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.xinputrc, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.dmrc, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.config, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.sogouinput, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_getattr(char * path = /home/pengli/.bashrc_backup, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:41 lstat returned 0
+10-27-2016 22:36:41 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6d607cd0)
+10-27-2016 22:36:43 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361366273104, fi = 0x00000001)
+10-27-2016 22:36:43 calling filler with name mnt
+10-27-2016 22:36:43 calling filler with name .Xauthority
+10-27-2016 22:36:43 calling filler with name .cache
+10-27-2016 22:36:43 calling filler with name .gitconfig
+10-27-2016 22:36:43 calling filler with name Pictures
+10-27-2016 22:36:43 calling filler with name .dbus
+10-27-2016 22:36:43 calling filler with name Downloads
+10-27-2016 22:36:43 calling filler with name .presage
+10-27-2016 22:36:43 calling filler with name .gconf
+10-27-2016 22:36:43 calling filler with name .bash_logout
+10-27-2016 22:36:43 calling filler with name .bashrc
+10-27-2016 22:36:43 calling filler with name Desktop
+10-27-2016 22:36:43 calling filler with name .viminfo
+10-27-2016 22:36:43 calling filler with name .python_history
+10-27-2016 22:36:43 calling filler with name .pki
+10-27-2016 22:36:43 calling filler with name .bash_history
+10-27-2016 22:36:43 calling filler with name .apport-ignore.xml
+10-27-2016 22:36:43 calling filler with name test_fuse
+10-27-2016 22:36:43 calling filler with name .ICEauthority
+10-27-2016 22:36:43 calling filler with name .xsession-errors
+10-27-2016 22:36:43 calling filler with name .dbshell
+10-27-2016 22:36:43 calling filler with name ..
+10-27-2016 22:36:43 calling filler with name examples.desktop
+10-27-2016 22:36:43 calling filler with name .atom
+10-27-2016 22:36:43 calling filler with name Documents
+10-27-2016 22:36:43 calling filler with name .mongorc.js
+10-27-2016 22:36:43 calling filler with name .local
+10-27-2016 22:36:43 calling filler with name Public
+10-27-2016 22:36:43 calling filler with name Templates
+10-27-2016 22:36:43 calling filler with name .sudo_as_admin_successful
+10-27-2016 22:36:43 calling filler with name Videos
+10-27-2016 22:36:43 calling filler with name .mozilla
+10-27-2016 22:36:43 calling filler with name .xsession-errors.old
+10-27-2016 22:36:43 calling filler with name .gnupg
+10-27-2016 22:36:43 calling filler with name Music
+10-27-2016 22:36:43 calling filler with name .thunderbird
+10-27-2016 22:36:43 calling filler with name .nano
+10-27-2016 22:36:43 calling filler with name .profile
+10-27-2016 22:36:43 calling filler with name .ssh
+10-27-2016 22:36:43 calling filler with name .xinputrc
+10-27-2016 22:36:43 calling filler with name .
+10-27-2016 22:36:43 calling filler with name .dmrc
+10-27-2016 22:36:43 calling filler with name .config
+10-27-2016 22:36:43 calling filler with name .sogouinput
+10-27-2016 22:36:43 calling filler with name .bashrc_backup
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli/mnt, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli/Pictures, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli/Downloads, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli/Desktop, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli/test_fuse, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli/examples.desktop, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli/Documents, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli/Public, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli/Templates, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli/Videos, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_getattr(char * path = /home/pengli/Music, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:36:43 lstat returned 0
+10-27-2016 22:36:43 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6de08cd0)
+10-27-2016 22:36:49 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:36:49 lstat returned 0
+10-27-2016 22:36:49 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:36:49 lstat returned -1
+10-27-2016 22:36:49 ERROR lstat : No such file or directory
+10-27-2016 22:38:13 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361357880400, fi = 0x00000001)
+10-27-2016 22:38:13 calling filler with name mnt
+10-27-2016 22:38:13 calling filler with name .Xauthority
+10-27-2016 22:38:13 calling filler with name .cache
+10-27-2016 22:38:13 calling filler with name .gitconfig
+10-27-2016 22:38:13 calling filler with name Pictures
+10-27-2016 22:38:13 calling filler with name .dbus
+10-27-2016 22:38:13 calling filler with name Downloads
+10-27-2016 22:38:13 calling filler with name .presage
+10-27-2016 22:38:13 calling filler with name .gconf
+10-27-2016 22:38:13 calling filler with name .bash_logout
+10-27-2016 22:38:13 calling filler with name .bashrc
+10-27-2016 22:38:13 calling filler with name Desktop
+10-27-2016 22:38:13 calling filler with name .viminfo
+10-27-2016 22:38:13 calling filler with name .python_history
+10-27-2016 22:38:13 calling filler with name .pki
+10-27-2016 22:38:13 calling filler with name .bash_history
+10-27-2016 22:38:13 calling filler with name .apport-ignore.xml
+10-27-2016 22:38:13 calling filler with name test_fuse
+10-27-2016 22:38:13 calling filler with name .ICEauthority
+10-27-2016 22:38:13 calling filler with name .xsession-errors
+10-27-2016 22:38:13 calling filler with name .dbshell
+10-27-2016 22:38:13 calling filler with name ..
+10-27-2016 22:38:13 calling filler with name examples.desktop
+10-27-2016 22:38:13 calling filler with name .atom
+10-27-2016 22:38:13 calling filler with name Documents
+10-27-2016 22:38:13 calling filler with name .mongorc.js
+10-27-2016 22:38:13 calling filler with name .local
+10-27-2016 22:38:13 calling filler with name Public
+10-27-2016 22:38:13 calling filler with name Templates
+10-27-2016 22:38:13 calling filler with name .sudo_as_admin_successful
+10-27-2016 22:38:13 calling filler with name Videos
+10-27-2016 22:38:13 calling filler with name .mozilla
+10-27-2016 22:38:13 calling filler with name .xsession-errors.old
+10-27-2016 22:38:13 calling filler with name .gnupg
+10-27-2016 22:38:13 calling filler with name Music
+10-27-2016 22:38:13 calling filler with name .thunderbird
+10-27-2016 22:38:13 calling filler with name .nano
+10-27-2016 22:38:13 calling filler with name .profile
+10-27-2016 22:38:13 calling filler with name .ssh
+10-27-2016 22:38:13 calling filler with name .xinputrc
+10-27-2016 22:38:13 calling filler with name .
+10-27-2016 22:38:13 calling filler with name .dmrc
+10-27-2016 22:38:13 calling filler with name .config
+10-27-2016 22:38:13 calling filler with name .sogouinput
+10-27-2016 22:38:13 calling filler with name .bashrc_backup
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli/mnt, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli/Pictures, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli/Downloads, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli/Desktop, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli/test_fuse, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli/examples.desktop, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli/Documents, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli/Public, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli/Templates, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli/Videos, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_getattr(char * path = /home/pengli/Music, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:13 lstat returned 0
+10-27-2016 22:38:13 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6d607cd0)
+10-27-2016 22:38:17 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:38:17 lstat returned 0
+10-27-2016 22:38:17 nosqlFS_getattr(char * path = /home, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:17 lstat returned 0
+10-27-2016 22:38:17 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:17 lstat returned 0
+10-27-2016 22:38:17 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:17 lstat returned -1
+10-27-2016 22:38:17 ERROR lstat : No such file or directory
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6ce06cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6de08cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6d607cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6ce06cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6de08cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6d607cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6ce06cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6ce06cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6d607cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6de08cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6ce06cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6d607cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6de08cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6ce06cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6d607cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6de08cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6de08cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6d607cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6d607cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6de08cd0)
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6ce06cd0)
+10-27-2016 22:38:17 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:17 lstat returned -1
+10-27-2016 22:38:17 ERROR lstat : No such file or directory
+10-27-2016 22:38:17 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:17 lstat returned -1
+10-27-2016 22:38:17 ERROR lstat : No such file or directory
+10-27-2016 22:38:17 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:17 lstat returned -1
+10-27-2016 22:38:17 ERROR lstat : No such file or directory
+10-27-2016 22:38:17 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:17 lstat returned -1
+10-27-2016 22:38:17 ERROR lstat : No such file or directory
+10-27-2016 22:38:17 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:17 lstat returned -1
+10-27-2016 22:38:17 ERROR lstat : No such file or directory
+10-27-2016 22:38:17 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:17 lstat returned -1
+10-27-2016 22:38:17 ERROR lstat : No such file or directory
+10-27-2016 22:38:17 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:17 lstat returned -1
+10-27-2016 22:38:17 ERROR lstat : No such file or directory
+10-27-2016 22:38:17 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:38:17 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6de08cd0)
+10-27-2016 22:38:22 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:22 lstat returned -1
+10-27-2016 22:38:22 ERROR lstat : No such file or directory
+10-27-2016 22:38:22 nosqlFS_getattr(char * path = /home/pengli/.test.swp, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:22 lstat returned -1
+10-27-2016 22:38:22 ERROR lstat : No such file or directory
+10-27-2016 22:38:22 nosqlFS_getattr(char * path = /home/pengli/.test.swp, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:22 lstat returned -1
+10-27-2016 22:38:22 ERROR lstat : No such file or directory
+10-27-2016 22:38:22 nosqlFS_getattr(char * path = /home/pengli/.test.swp, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:22 lstat returned -1
+10-27-2016 22:38:22 ERROR lstat : No such file or directory
+10-27-2016 22:38:22 nosqlFS_getattr(char * path = /home/pengli/.test.swp, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:22 lstat returned -1
+10-27-2016 22:38:22 ERROR lstat : No such file or directory
+10-27-2016 22:38:22 nosqlFS_getattr(char * path = /home/pengli/.test.swp, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:22 lstat returned -1
+10-27-2016 22:38:22 ERROR lstat : No such file or directory
+10-27-2016 22:38:22 nosqlFS_getattr(char * path = /home/pengli/.test.swp, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:22 lstat returned -1
+10-27-2016 22:38:22 ERROR lstat : No such file or directory
+10-27-2016 22:38:22 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:22 lstat returned -1
+10-27-2016 22:38:22 ERROR lstat : No such file or directory
+10-27-2016 22:38:22 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:22 lstat returned -1
+10-27-2016 22:38:22 ERROR lstat : No such file or directory
+10-27-2016 22:38:40 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:40 lstat returned -1
+10-27-2016 22:38:40 ERROR lstat : No such file or directory
+10-27-2016 22:38:40 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:40 lstat returned -1
+10-27-2016 22:38:40 ERROR lstat : No such file or directory
+10-27-2016 22:38:40 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:40 lstat returned -1
+10-27-2016 22:38:40 ERROR lstat : No such file or directory
+10-27-2016 22:38:52 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:52 lstat returned -1
+10-27-2016 22:38:52 ERROR lstat : No such file or directory
+10-27-2016 22:38:52 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:52 lstat returned -1
+10-27-2016 22:38:52 ERROR lstat : No such file or directory
+10-27-2016 22:38:52 nosqlFS_getattr(char * path = /home/pengli/test, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:52 lstat returned -1
+10-27-2016 22:38:52 ERROR lstat : No such file or directory
+10-27-2016 22:38:58 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:38:58 calling filler with name mnt
+10-27-2016 22:38:58 calling filler with name .Xauthority
+10-27-2016 22:38:58 calling filler with name .cache
+10-27-2016 22:38:58 calling filler with name .gitconfig
+10-27-2016 22:38:58 calling filler with name Pictures
+10-27-2016 22:38:58 calling filler with name .dbus
+10-27-2016 22:38:58 calling filler with name Downloads
+10-27-2016 22:38:58 calling filler with name .presage
+10-27-2016 22:38:58 calling filler with name .gconf
+10-27-2016 22:38:58 calling filler with name .bash_logout
+10-27-2016 22:38:58 calling filler with name .bashrc
+10-27-2016 22:38:58 calling filler with name Desktop
+10-27-2016 22:38:58 calling filler with name .viminfo
+10-27-2016 22:38:58 calling filler with name .python_history
+10-27-2016 22:38:58 calling filler with name .pki
+10-27-2016 22:38:58 calling filler with name .bash_history
+10-27-2016 22:38:58 calling filler with name .apport-ignore.xml
+10-27-2016 22:38:58 calling filler with name test_fuse
+10-27-2016 22:38:58 calling filler with name .ICEauthority
+10-27-2016 22:38:58 calling filler with name .xsession-errors
+10-27-2016 22:38:58 calling filler with name .dbshell
+10-27-2016 22:38:58 calling filler with name ..
+10-27-2016 22:38:58 calling filler with name examples.desktop
+10-27-2016 22:38:58 calling filler with name .atom
+10-27-2016 22:38:58 calling filler with name Documents
+10-27-2016 22:38:58 calling filler with name .mongorc.js
+10-27-2016 22:38:58 calling filler with name .local
+10-27-2016 22:38:58 calling filler with name Public
+10-27-2016 22:38:58 calling filler with name Templates
+10-27-2016 22:38:58 calling filler with name .sudo_as_admin_successful
+10-27-2016 22:38:58 calling filler with name Videos
+10-27-2016 22:38:58 calling filler with name .mozilla
+10-27-2016 22:38:58 calling filler with name .xsession-errors.old
+10-27-2016 22:38:58 calling filler with name .gnupg
+10-27-2016 22:38:58 calling filler with name Music
+10-27-2016 22:38:58 calling filler with name .thunderbird
+10-27-2016 22:38:58 calling filler with name .nano
+10-27-2016 22:38:58 calling filler with name .profile
+10-27-2016 22:38:58 calling filler with name .ssh
+10-27-2016 22:38:58 calling filler with name .xinputrc
+10-27-2016 22:38:58 calling filler with name .
+10-27-2016 22:38:58 calling filler with name .dmrc
+10-27-2016 22:38:58 calling filler with name .config
+10-27-2016 22:38:58 calling filler with name .sogouinput
+10-27-2016 22:38:58 calling filler with name .bashrc_backup
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli/mnt, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli/Pictures, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli/Downloads, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli/Desktop, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli/test_fuse, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli/examples.desktop, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli/Documents, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli/Public, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli/Templates, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli/Videos, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_getattr(char * path = /home/pengli/Music, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:38:58 lstat returned 0
+10-27-2016 22:38:58 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6d607cd0)
+10-27-2016 22:40:27 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:40:27 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:40:50 calling filler with name mnt
+10-27-2016 22:40:50 calling filler with name .Xauthority
+10-27-2016 22:40:50 calling filler with name .cache
+10-27-2016 22:40:50 calling filler with name .gitconfig
+10-27-2016 22:40:50 calling filler with name Pictures
+10-27-2016 22:40:50 calling filler with name .dbus
+10-27-2016 22:40:50 calling filler with name Downloads
+10-27-2016 22:40:50 calling filler with name .presage
+10-27-2016 22:40:50 calling filler with name .gconf
+10-27-2016 22:40:50 calling filler with name .bash_logout
+10-27-2016 22:40:50 calling filler with name .bashrc
+10-27-2016 22:40:50 calling filler with name Desktop
+10-27-2016 22:40:50 calling filler with name .viminfo
+10-27-2016 22:40:50 calling filler with name .python_history
+10-27-2016 22:40:50 calling filler with name .pki
+10-27-2016 22:40:50 calling filler with name .bash_history
+10-27-2016 22:40:50 calling filler with name .apport-ignore.xml
+10-27-2016 22:40:50 calling filler with name test_fuse
+10-27-2016 22:40:50 calling filler with name .ICEauthority
+10-27-2016 22:40:50 calling filler with name .xsession-errors
+10-27-2016 22:40:50 calling filler with name .dbshell
+10-27-2016 22:40:50 calling filler with name ..
+10-27-2016 22:40:50 calling filler with name examples.desktop
+10-27-2016 22:40:50 calling filler with name .atom
+10-27-2016 22:40:50 calling filler with name Documents
+10-27-2016 22:40:50 calling filler with name .mongorc.js
+10-27-2016 22:40:50 calling filler with name .local
+10-27-2016 22:40:50 calling filler with name Public
+10-27-2016 22:40:50 calling filler with name Templates
+10-27-2016 22:40:50 calling filler with name .sudo_as_admin_successful
+10-27-2016 22:40:50 calling filler with name Videos
+10-27-2016 22:40:50 calling filler with name .mozilla
+10-27-2016 22:40:50 calling filler with name .xsession-errors.old
+10-27-2016 22:40:50 calling filler with name .gnupg
+10-27-2016 22:40:50 calling filler with name Music
+10-27-2016 22:40:50 calling filler with name .thunderbird
+10-27-2016 22:40:50 calling filler with name .nano
+10-27-2016 22:40:50 calling filler with name .profile
+10-27-2016 22:40:50 calling filler with name .ssh
+10-27-2016 22:40:50 calling filler with name .xinputrc
+10-27-2016 22:40:50 calling filler with name .
+10-27-2016 22:40:50 calling filler with name .dmrc
+10-27-2016 22:40:50 calling filler with name .config
+10-27-2016 22:40:50 calling filler with name .sogouinput
+10-27-2016 22:40:50 calling filler with name .bashrc_backup
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/mnt, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.Xauthority, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.cache, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.gitconfig, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/Pictures, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.dbus, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/Downloads, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.presage, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.gconf, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.bash_logout, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.bashrc, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/Desktop, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.viminfo, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.python_history, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.pki, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.bash_history, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.apport-ignore.xml, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/test_fuse, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.ICEauthority, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.xsession-errors, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.dbshell, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/examples.desktop, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.atom, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/Documents, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.mongorc.js, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.local, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/Public, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/Templates, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.sudo_as_admin_successful, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/Videos, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.mozilla, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.xsession-errors.old, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.gnupg, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/Music, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.thunderbird, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.nano, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.profile, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.ssh, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.xinputrc, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.dmrc, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.config, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.sogouinput, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_getattr(char * path = /home/pengli/.bashrc_backup, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:50 lstat returned 0
+10-27-2016 22:40:50 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6de08cd0)
+10-27-2016 22:40:55 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6ce06cc0)
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6d607ca0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361374665808, fi = 0x00000001)
+10-27-2016 22:40:55 calling filler with name mnt
+10-27-2016 22:40:55 calling filler with name .Xauthority
+10-27-2016 22:40:55 calling filler with name .cache
+10-27-2016 22:40:55 calling filler with name .gitconfig
+10-27-2016 22:40:55 calling filler with name Pictures
+10-27-2016 22:40:55 calling filler with name .dbus
+10-27-2016 22:40:55 calling filler with name Downloads
+10-27-2016 22:40:55 calling filler with name .presage
+10-27-2016 22:40:55 calling filler with name .gconf
+10-27-2016 22:40:55 calling filler with name .bash_logout
+10-27-2016 22:40:55 calling filler with name .bashrc
+10-27-2016 22:40:55 calling filler with name Desktop
+10-27-2016 22:40:55 calling filler with name .viminfo
+10-27-2016 22:40:55 calling filler with name .python_history
+10-27-2016 22:40:55 calling filler with name .pki
+10-27-2016 22:40:55 calling filler with name .bash_history
+10-27-2016 22:40:55 calling filler with name .apport-ignore.xml
+10-27-2016 22:40:55 calling filler with name test_fuse
+10-27-2016 22:40:55 calling filler with name .ICEauthority
+10-27-2016 22:40:55 calling filler with name .xsession-errors
+10-27-2016 22:40:55 calling filler with name .dbshell
+10-27-2016 22:40:55 calling filler with name ..
+10-27-2016 22:40:55 calling filler with name examples.desktop
+10-27-2016 22:40:55 calling filler with name .atom
+10-27-2016 22:40:55 calling filler with name Documents
+10-27-2016 22:40:55 calling filler with name .mongorc.js
+10-27-2016 22:40:55 calling filler with name .local
+10-27-2016 22:40:55 calling filler with name Public
+10-27-2016 22:40:55 calling filler with name Templates
+10-27-2016 22:40:55 calling filler with name .sudo_as_admin_successful
+10-27-2016 22:40:55 calling filler with name Videos
+10-27-2016 22:40:55 calling filler with name .mozilla
+10-27-2016 22:40:55 calling filler with name .xsession-errors.old
+10-27-2016 22:40:55 calling filler with name .gnupg
+10-27-2016 22:40:55 calling filler with name Music
+10-27-2016 22:40:55 calling filler with name .thunderbird
+10-27-2016 22:40:55 calling filler with name .nano
+10-27-2016 22:40:55 calling filler with name .profile
+10-27-2016 22:40:55 calling filler with name .ssh
+10-27-2016 22:40:55 calling filler with name .xinputrc
+10-27-2016 22:40:55 calling filler with name .
+10-27-2016 22:40:55 calling filler with name .dmrc
+10-27-2016 22:40:55 calling filler with name .config
+10-27-2016 22:40:55 calling filler with name .sogouinput
+10-27-2016 22:40:55 calling filler with name .bashrc_backup
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli/mnt, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli/Pictures, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli/Downloads, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli/Desktop, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli/test_fuse, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli/examples.desktop, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli/Documents, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli/Public, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli/Templates, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli/Videos, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_getattr(char * path = /home/pengli/Music, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:40:55 lstat returned 0
+10-27-2016 22:40:55 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6d607cd0)
+10-27-2016 22:44:28 nosqlFS_opendir(path = "/home/pengli", fuse_file_info = 0x6de08cc0)
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli, struct stat * stbuf = 6ce06ca0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_readdir(path = "", buf = 0x6e5fdd50, fuse_fill_dir_t = 0x00000000, offset = 140361366273104, fi = 0x00000001)
+10-27-2016 22:44:28 calling filler with name mnt
+10-27-2016 22:44:28 calling filler with name .Xauthority
+10-27-2016 22:44:28 calling filler with name .cache
+10-27-2016 22:44:28 calling filler with name .gitconfig
+10-27-2016 22:44:28 calling filler with name Pictures
+10-27-2016 22:44:28 calling filler with name .dbus
+10-27-2016 22:44:28 calling filler with name Downloads
+10-27-2016 22:44:28 calling filler with name .presage
+10-27-2016 22:44:28 calling filler with name .gconf
+10-27-2016 22:44:28 calling filler with name .bash_logout
+10-27-2016 22:44:28 calling filler with name .bashrc
+10-27-2016 22:44:28 calling filler with name Desktop
+10-27-2016 22:44:28 calling filler with name .viminfo
+10-27-2016 22:44:28 calling filler with name .python_history
+10-27-2016 22:44:28 calling filler with name .pki
+10-27-2016 22:44:28 calling filler with name .bash_history
+10-27-2016 22:44:28 calling filler with name .apport-ignore.xml
+10-27-2016 22:44:28 calling filler with name test_fuse
+10-27-2016 22:44:28 calling filler with name .ICEauthority
+10-27-2016 22:44:28 calling filler with name .xsession-errors
+10-27-2016 22:44:28 calling filler with name .dbshell
+10-27-2016 22:44:28 calling filler with name ..
+10-27-2016 22:44:28 calling filler with name examples.desktop
+10-27-2016 22:44:28 calling filler with name .atom
+10-27-2016 22:44:28 calling filler with name Documents
+10-27-2016 22:44:28 calling filler with name .mongorc.js
+10-27-2016 22:44:28 calling filler with name .local
+10-27-2016 22:44:28 calling filler with name Public
+10-27-2016 22:44:28 calling filler with name Templates
+10-27-2016 22:44:28 calling filler with name .sudo_as_admin_successful
+10-27-2016 22:44:28 calling filler with name Videos
+10-27-2016 22:44:28 calling filler with name .mozilla
+10-27-2016 22:44:28 calling filler with name .xsession-errors.old
+10-27-2016 22:44:28 calling filler with name .gnupg
+10-27-2016 22:44:28 calling filler with name Music
+10-27-2016 22:44:28 calling filler with name .thunderbird
+10-27-2016 22:44:28 calling filler with name .nano
+10-27-2016 22:44:28 calling filler with name .profile
+10-27-2016 22:44:28 calling filler with name .ssh
+10-27-2016 22:44:28 calling filler with name .xinputrc
+10-27-2016 22:44:28 calling filler with name .
+10-27-2016 22:44:28 calling filler with name .dmrc
+10-27-2016 22:44:28 calling filler with name .config
+10-27-2016 22:44:28 calling filler with name .sogouinput
+10-27-2016 22:44:28 calling filler with name .bashrc_backup
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli/mnt, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli/Pictures, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli/Downloads, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli/Desktop, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli/test_fuse, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli/examples.desktop, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli/Documents, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli/Public, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli/Templates, struct stat * stbuf = 6de08cd0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli/Videos, struct stat * stbuf = 6ce06cd0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_getattr(char * path = /home/pengli/Music, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:44:28 lstat returned 0
+10-27-2016 22:44:28 nosqlFS_releasedir(path = "/home/pengli", fi = 0x6ce06cd0)
+10-27-2016 22:45:28 nosqlFS_getattr(char * path = /home/pengli/tt, struct stat * stbuf = 6d607cd0)
+10-27-2016 22:45:28 lstat returned -1
+10-27-2016 22:45:28 ERROR lstat : No such file or directory
+10-27-2016 22:47:12 nosqlFS_getattr(char * path = /, struct stat * stbuf = 6de08ca0)
+10-27-2016 22:47:12 lstat returned 0
