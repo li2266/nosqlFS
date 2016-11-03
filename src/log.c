@@ -45,11 +45,11 @@ void log_msg(const char *format, ...){
   vfprintf(nosqlFS_Data->logFile, format, ap);
 }
 /*
-log error and return errno
+log error and return -errno
 */
 int log_error(char * func){
   log_msg("ERROR %s : %s\n", func, strerror(errno));
-  return errno;
+  return -errno;
 }
 
 void log_retstat(char *func, int retstat){
@@ -62,7 +62,7 @@ int log_syscall(char * func, int retstat, int min_ret){
   log_retstat(func, retstat);
   if(retstat < min_ret){
     log_error(func);
-    retstat = errno;
+    retstat = -errno;
   }
   return retstat;
 }
@@ -89,4 +89,43 @@ void log_fuse_context(struct fuse_context * context){
   log_struct(context, private_data, %08x, );
   log_struct(nosqlFS_Data, logFile, %08x, );
   log_struct(nosqlFS_Data, rootdir, %s, );
+}
+
+// struct fuse_file_info keeps information about files (surprise!).
+// This dumps all the information in a struct fuse_file_info.  The struct
+// definition, and comments, come from /usr/include/fuse/fuse_common.h
+// Duplicated here for convenience.
+void log_fi (struct fuse_file_info *fi){
+  log_msg("fi:\n");
+
+  /** Open flags.  Available in open() and release() */
+  //	int flags;
+	log_struct(fi, flags, 0x%08x, );
+
+  /** In case of a write operation indicates if this was caused by a
+        writepage */
+  //	int writepage;
+	log_struct(fi, writepage, %d, );
+
+  /** Can be filled in by open, to use direct I/O on this file.
+        Introduced in version 2.4 */
+  //	unsigned int keep_cache : 1;
+	log_struct(fi, direct_io, %d, );
+
+  /** Can be filled in by open, to indicate, that cached file data
+        need not be invalidated.  Introduced in version 2.4 */
+  //	unsigned int flush : 1;
+	log_struct(fi, keep_cache, %d, );
+
+  /** Padding.  Do not use*/
+  //	unsigned int padding : 29;
+
+  /** File handle.  May be filled in by filesystem in open().
+        Available in all other file operations */
+  //	uint64_t fh;
+	log_struct(fi, fh, 0x%016llx,  );
+
+  /** Lock owner id.  Available in locking operations and flush */
+  //  uint64_t lock_owner;
+	log_struct(fi, lock_owner, 0x%016llx, );
 }

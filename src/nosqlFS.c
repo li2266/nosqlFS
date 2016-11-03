@@ -23,24 +23,24 @@ static int nosqlFS_getattr(const char * path, struct stat * stbuf){
 
 static int nosqlFS_access(const char * path, int mask){
   if(access(path, mask) < 0){
-    return errno;
+    return -errno;
   }
   return 0;
 }
 
-static int nosqlFS_opendir(const char * path, struct fuse_file_info *fi){
-  DIR * dp;
-  int retstat = 0;
-
-  log_msg("nosqlFS_opendir(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
-
-  dp = opendir(path);
-  if(dp == NULL){
-    retstat = log_error("nosqlFS_opendir");
-  }
-  fi->fh = (intptr_t)dp;
-  return retstat;
-}
+// static int nosqlFS_opendir(const char * path, struct fuse_file_info *fi){
+//   DIR * dp;
+//   int retstat = 0;
+//
+//   log_msg("nosqlFS_opendir(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
+//   // we need the return value of opendir, so we couldn't use syscall
+//   dp = opendir(path);
+//   if(dp == NULL){
+//     retstat = log_error("nosqlFS_opendir");
+//   }
+//   fi->fh = (intptr_t)dp;
+//   return retstat;
+// }
 
 static int nosqlFS_readdir(const char * path, void * buf, fuse_fill_dir_t filler,
   off_t offset, struct fuse_file_info * fi, enum fuse_readdir_flags flags){
@@ -49,9 +49,21 @@ static int nosqlFS_readdir(const char * path, void * buf, fuse_fill_dir_t filler
   struct dirent *de;
   int retstat = 0;
 
-  log_msg("nosqlFS_readdir(path = \"%s\", buf = 0x%08x, fuse_fill_dir_t = 0x%08x, offset = %lld, fi = 0x%08x)\n");
+  (void)offset;
+  (void)fi;
+  (void)flags;
 
-  dp = (DIR *)(uintptr_t)fi->fh;
+  log_msg("nosqlFS_opendir(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
+  dp = opendir(path);
+  if(dp == NULL){
+    retstat = log_error("nosqlFS_opendir");
+    return retstat;
+  }
+
+  log_msg("nosqlFS_readdir(path = \"%s\", buf = 0x%08x, fuse_fill_dir_t = 0x%08x, offset = %lld, fi = 0x%08x)\n",
+    path, buf, filler, offset, fi);
+
+  //dp = (DIR *)(uintptr_t)fi->fh;
   while((de = readdir(dp)) != NULL){
     struct stat st;
     memset(&st, 0, sizeof(st));
@@ -60,18 +72,18 @@ static int nosqlFS_readdir(const char * path, void * buf, fuse_fill_dir_t filler
 
     log_msg("calling filler with name %s\n", de->d_name);
 
-    if((retstat = filler(buf, de->d_name, &st, 0, 0)) != 0){
-      log_error("filler");
-      return retstat;
+    if(filler(buf, de->d_name, &st, 0, 0)){
+      break;
     }
   }
+  closedir(dp);
   return retstat;
 }
 
 static int nosqlFS_releasedir(const char * path, struct fuse_file_info * fi){
   log_msg("nosqlFS_releasedir(path = \"%s\", fi = 0x%08x)\n", path, fi);
 
-  closedir((DIR *)(uintptr_t)fi->fh);
+  //closedir((DIR *)(uintptr_t)fi->fh);
   return 0;
 }
 
@@ -79,13 +91,12 @@ static int nosqlFS_readlink(const char * path, char * link, size_t size){
   int retstat;
 
   log_msg("nosqlFS_readlink(path = \"%s\", link = \"S\", size = %d)\n", path, link, path);
-
   retstat = log_syscall("readlink", readlink(path, link, size - 1), 0);
-  if(retstat < 0){
-    return -errno;
+  if(retstat > 0){
+    link[retstat] = '\0';
+    return 0;
   }
-  link[retstat] = '\0';
-  return 0;
+  return retstat;
 }
 
 static int nosqlFS_mknod(const char * path, mode_t mode, dev_t rdev){
@@ -95,7 +106,7 @@ static int nosqlFS_mknod(const char * path, mode_t mode, dev_t rdev){
 
   if(S_ISREG(mode)){
     retstat = log_syscall("open", open(path, O_CREAT | O_EXCL | O_WRONLY, mode), 0);
-    if(retstat < 0){
+    if(retstat >= 0){
       retstat = log_syscall("close", close(retstat), 0);
     }
   }else if(S_ISFIFO(mode)){
@@ -103,7 +114,11 @@ static int nosqlFS_mknod(const char * path, mode_t mode, dev_t rdev){
   }else{
     retstat = log_syscall("mknod", mknod(path, mode, rdev), 0);
   }
-  return retstat;
+  // open will return file descriptor, so if restat != -1, return 0;
+  if(retstat == -1){
+    return -errno;
+  }
+  return 0;
 }
 
 static int nosqlFS_mkdir(const char * path, mode_t mode){
@@ -169,27 +184,55 @@ static int nosqlFS_utimens(const char * path, const struct timespec ts[2]){
 #endif
 
 static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
-  int fd;
+  int retstat;
 
   log_msg("nosqlFS_open(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
 
-  fd = log_syscall("open", open(path, fi->flags), 0);
-  fi->fh = fd;
-  return fd;
+  retstat = log_syscall("open", open(path, fi->flags), 0);
+  //fi->fh = fd;
+  // if there is an error, error will be logged by log_error in log_syscall,
+  // however, the error value will still be store in fi_fh used as file handler
+  //TODO: record information of fi.
+  log_fi(fi);
+  if(retstat == -1){
+    return -errno;
+  }
+  close(retstat);
+  return 0;
 }
 
 static int nosqlFS_read(const char * path, char * buf, size_t size, off_t offset,
   struct fuse_file_info * fi){
+  int fd;
+  int retstat;
+
+  (void)fi;
+  fd = log_syscall("open", open(path, O_RDONLY), 0);
+  if(fd == -1){
+    return -errno;
+  }
   log_msg("nosqlFS_read(path = \"%s\", buf = 0x%08x, size = %d, offset = %lld, fuse_file_info = 0x%08x)\n", path, buf, size, offset, fi);
 
-  return log_syscall("pread", pread(fi->fh, buf, size, offset), 0);
+  retstat = log_syscall("pread", pread(fd, buf, size, offset), 0);
+  close(fd);
+  return retstat;
 }
 
 static int nosqlFS_write(const char * path, const char * buf, size_t size, off_t offset,
   struct fuse_file_info * fi){
-  log_msg("nosqlFS_write(path = \"%s\", buf = 0x%08x, size = %d, offset = %lld, fuse_file_info = 0x%08x)\n", path, buf, size, offset, fi);
+  int fd;
+  int retstat;
 
-  return log_syscall("pwrite", pwrite(fi->fh, buf, size, offset), 0);
+  (void)fi;
+  log_msg("nosqlFS_write(path = \"%s\", buf = 0x%08x, size = %d, offset = %lld, fuse_file_info = 0x%08x)\n", path, buf, size, offset, fi);
+  fd = log_syscall("open", open(path, O_WRONLY), 0);
+  if(fd == -1){
+    return -errno;
+  }
+
+  retstat = log_syscall("pwrite", pwrite(fd, buf, size, offset), 0);
+  close(fd);
+  return retstat;
 }
 
 static int nosqlFS_statfs(const char * path, struct statvfs * stbuf){
@@ -205,8 +248,9 @@ static int nosqlFS_flush(const char * path, struct fuse_file_info * fi){
 
 static int nosqlFS_release(const char * path, struct fuse_file_info * fi){
   log_msg("nosqlFS_release(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
-
-  return log_syscall("close", close(fi->fh), 0);
+  (void)path;
+  (void)fi;
+  return 0;
 }
 
 static void *nosqlFS_init(struct fuse_conn_info *conn){
@@ -227,9 +271,9 @@ static struct fuse_operations nosqlFS_oper = {
   .getattr = nosqlFS_getattr,
   .access = nosqlFS_access,
   .readlink = nosqlFS_readlink,
-  .opendir = nosqlFS_opendir,
+//  .opendir = nosqlFS_opendir,
   .readdir = nosqlFS_readdir,
-  .releasedir = nosqlFS_releasedir,
+//  .releasedir = nosqlFS_releasedir,
   .mknod = nosqlFS_mknod,
   .mkdir = nosqlFS_mkdir,
   .symlink = nosqlFS_symlink,
@@ -241,14 +285,15 @@ static struct fuse_operations nosqlFS_oper = {
   .chown = nosqlFS_chown,
   .truncate = nosqlFS_truncate,
 #ifdef HAVE_UTIMENSAT
-  .timens = nosqlFS_utimens,
+  .utimens = nosqlFS_utimens,
 #endif
   .open = nosqlFS_open,
   .read = nosqlFS_read,
   .write = nosqlFS_write,
   .statfs = nosqlFS_statfs,
-  .flush = nosqlFS_flush,
+//  .flush = nosqlFS_flush,
   .release = nosqlFS_release,
+//  .fsync = nosqlFS_fsync,
   .init = nosqlFS_init
 };
 
