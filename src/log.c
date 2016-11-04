@@ -129,3 +129,50 @@ void log_fi (struct fuse_file_info *fi){
   //  uint64_t lock_owner;
 	log_struct(fi, lock_owner, 0x%016llx, );
 }
+
+// This dumps the info from a struct stat.  The struct is defined in
+// <bits/stat.h>; this is indirectly included from <fcntl.h>
+void log_stat(struct stat *si)
+{
+  log_msg("si:\n");
+
+  //  dev_t     st_dev;     /* ID of device containing file */
+	log_struct(si, st_dev, %lld, );
+
+  //  ino_t     st_ino;     /* inode number */
+	log_struct(si, st_ino, %lld, );
+
+  //  mode_t    st_mode;    /* protection */
+	log_struct(si, st_mode, 0%o, );
+
+  //  nlink_t   st_nlink;   /* number of hard links */
+	log_struct(si, st_nlink, %d, );
+
+  //  uid_t     st_uid;     /* user ID of owner */
+	log_struct(si, st_uid, %d, );
+
+  //  gid_t     st_gid;     /* group ID of owner */
+	log_struct(si, st_gid, %d, );
+
+  //  dev_t     st_rdev;    /* device ID (if special file) */
+	log_struct(si, st_rdev, %lld,  );
+
+  //  off_t     st_size;    /* total size, in bytes */
+	log_struct(si, st_size, %lld,  );
+
+  //  blksize_t st_blksize; /* blocksize for filesystem I/O */
+	log_struct(si, st_blksize, %ld,  );
+
+  //  blkcnt_t  st_blocks;  /* number of blocks allocated */
+	log_struct(si, st_blocks, %lld,  );
+
+  //  time_t    st_atime;   /* time of last access */
+	log_struct(si, st_atime, 0x%08lx, );
+
+  //  time_t    st_mtime;   /* time of last modification */
+	log_struct(si, st_mtime, 0x%08lx, );
+
+  //  time_t    st_ctime;   /* time of last status change */
+	log_struct(si, st_ctime, 0x%08lx, );
+
+}

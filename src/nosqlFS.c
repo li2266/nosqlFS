@@ -18,7 +18,9 @@
 static int nosqlFS_getattr(const char * path, struct stat * stbuf){
   log_msg("nosqlFS_getattr(char * path = %s, struct stat * stbuf = %08x)\n", path, stbuf);
 
-  return log_syscall("lstat", lstat(path, stbuf), 0);
+  int retstat =  log_syscall("lstat", lstat(path, stbuf), 0);
+  log_stat(stbuf);
+  return retstat;
 }
 
 static int nosqlFS_access(const char * path, int mask){
@@ -243,7 +245,7 @@ static void *nosqlFS_init(struct fuse_conn_info *conn){
   log_msg("nosqlFS_init()\n");
   log_conn(conn);
   log_fuse_context(fuse_get_context());
-
+  
   // nosqlFS_Data is a marco for (nosqlFS_state *)private_data
   return nosqlFS_Data;
 }
@@ -285,8 +287,10 @@ static struct fuse_operations nosqlFS_oper = {
 
 int main(int argc, char * argv[]){
   int fuse_stat;
+  // init the nosqlFS_Data which store the log file pointer
   struct nosqlFS_state * nosqlFS_init_data;
   printf("%s\n", "Creating nosqlFS_init_data");
+  // init the nosqlFS_Data struct
   nosqlFS_init_data = malloc(sizeof(struct nosqlFS_state));
   if(nosqlFS_init_data == NULL){
     perror("main calloc");
@@ -297,6 +301,8 @@ int main(int argc, char * argv[]){
     perror("wrong parameters");
     nosqlFS_usage();
   }
+  // deal with parameters
+  //TODO: rootDir is useless now, between it's not important
   printf("%s%s\n", "p1", argv[1]);
   printf("%s%s\n", "p2", argv[2]);
   nosqlFS_init_data->rootdir = realpath(argv[argc - 1], NULL);
@@ -306,6 +312,7 @@ int main(int argc, char * argv[]){
   argv[argc - 1] = NULL;
   --argc;
 
+  // start the main function of fuse
   fprintf(stderr, "start fuse_main\n");
   fuse_stat = fuse_main(argc, argv, &nosqlFS_oper, nosqlFS_init_data);
   fprintf(stderr, "fuse_main returned %d\n", fuse_stat);
