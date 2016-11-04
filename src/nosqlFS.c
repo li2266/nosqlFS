@@ -28,20 +28,6 @@ static int nosqlFS_access(const char * path, int mask){
   return 0;
 }
 
-// static int nosqlFS_opendir(const char * path, struct fuse_file_info *fi){
-//   DIR * dp;
-//   int retstat = 0;
-//
-//   log_msg("nosqlFS_opendir(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
-//   // we need the return value of opendir, so we couldn't use syscall
-//   dp = opendir(path);
-//   if(dp == NULL){
-//     retstat = log_error("nosqlFS_opendir");
-//   }
-//   fi->fh = (intptr_t)dp;
-//   return retstat;
-// }
-
 static int nosqlFS_readdir(const char * path, void * buf, fuse_fill_dir_t filler,
   off_t offset, struct fuse_file_info * fi, enum fuse_readdir_flags flags){
 
