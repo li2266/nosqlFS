@@ -1,0 +1,527 @@
+11-20-2016 11:36:30 nosqlFS_init()
+11-20-2016 11:36:30 fuse_conn_info:
+11-20-2016 11:36:30 proto_major = 7
+11-20-2016 11:36:30 proto_minor = 23
+11-20-2016 11:36:30 async_read = 1
+11-20-2016 11:36:30 max_write = 131072
+11-20-2016 11:36:30 max_readahead = 131072
+11-20-2016 11:36:30 capable = 0003fffb
+11-20-2016 11:36:30 want = 00006010
+11-20-2016 11:36:30 max_background = 0
+11-20-2016 11:36:30 congestion_threshold = 0
+11-20-2016 11:36:30 fuse_context11-20-2016 11:36:30 fuse = 0126f860
+11-20-2016 11:36:30 uid = 0
+11-20-2016 11:36:30 gid = 0
+11-20-2016 11:36:30 pid = 0
+11-20-2016 11:36:30 private_data = 0126e420
+11-20-2016 11:36:30 logFile = 0126f550
+11-20-2016 11:36:30 rootdir = /home/li2266/mnt
+11-20-2016 11:36:30 mongodb init and returned 0
+11-20-2016 11:36:30 nosqlFS_getattr(char * path = /, struct stat * stbuf = 5e5b8ca0)
+11-20-2016 11:36:30 lstat returned 0
+11-20-2016 11:36:30 si:
+11-20-2016 11:36:30 st_dev = 2049
+11-20-2016 11:36:30 st_ino = 2
+11-20-2016 11:36:30 st_mode = 040755
+11-20-2016 11:36:30 st_nlink = 24
+11-20-2016 11:36:30 st_uid = 0
+11-20-2016 11:36:30 st_gid = 0
+11-20-2016 11:36:30 st_rdev = 0
+11-20-2016 11:36:30 st_size = 4096
+11-20-2016 11:36:30 st_blksize = 4096
+11-20-2016 11:36:30 st_blocks = 8
+11-20-2016 11:36:30 st_atime = 0x5830ab72
+11-20-2016 11:36:30 st_mtime = 0x5824150b
+11-20-2016 11:36:30 st_ctime = 0x5824150b
+11-20-2016 11:36:30 DB_manager function: Insert11-20-2016 11:36:30 nosqlFS_getattr(char * path = /.xdg-volume-info, struct stat * stbuf = 5ddb7cd0)
+11-20-2016 11:36:30 lstat returned -1
+11-20-2016 11:36:30 ERROR lstat : No such file or directory
+11-20-2016 11:36:30 si:
+11-20-2016 11:36:30 st_dev = 0
+11-20-2016 11:36:30 st_ino = 0
+11-20-2016 11:36:30 st_mode = 00
+11-20-2016 11:36:30 st_nlink = 0
+11-20-2016 11:36:30 st_uid = 0
+11-20-2016 11:36:30 st_gid = 0
+11-20-2016 11:36:30 st_rdev = 0
+11-20-2016 11:36:30 st_size = 0
+11-20-2016 11:36:30 st_blksize = 0
+11-20-2016 11:36:30 st_blocks = 0
+11-20-2016 11:36:30 st_atime = 0x00000000
+11-20-2016 11:36:30 st_mtime = 0x00000000
+11-20-2016 11:36:30 st_ctime = 0x00000000
+11-20-2016 11:36:30 DB_manager function: Insert11-20-2016 11:40:30 nosqlFS_init()
+11-20-2016 11:40:30 fuse_conn_info:
+11-20-2016 11:40:30 proto_major = 7
+11-20-2016 11:40:30 proto_minor = 23
+11-20-2016 11:40:30 async_read = 1
+11-20-2016 11:40:30 max_write = 131072
+11-20-2016 11:40:30 max_readahead = 131072
+11-20-2016 11:40:30 capable = 0003fffb
+11-20-2016 11:40:30 want = 00006010
+11-20-2016 11:40:30 max_background = 0
+11-20-2016 11:40:30 congestion_threshold = 0
+11-20-2016 11:40:30 fuse_context11-20-2016 11:40:30 fuse = 0181d860
+11-20-2016 11:40:30 uid = 0
+11-20-2016 11:40:30 gid = 0
+11-20-2016 11:40:30 pid = 0
+11-20-2016 11:40:30 private_data = 0181c420
+11-20-2016 11:40:30 logFile = 0181d550
+11-20-2016 11:40:30 rootdir = /home/li2266/mnt
+11-20-2016 11:40:30 mongodb init and returned 0
+11-20-2016 11:40:30 nosqlFS_getattr(char * path = /.xdg-volume-info, struct stat * stbuf = 04c25cd0)
+11-20-2016 11:40:30 lstat returned -1
+11-20-2016 11:40:30 ERROR lstat : No such file or directory
+11-20-2016 11:40:30 si:
+11-20-2016 11:40:30 st_dev = 0
+11-20-2016 11:40:30 st_ino = 0
+11-20-2016 11:40:30 st_mode = 00
+11-20-2016 11:40:30 st_nlink = 0
+11-20-2016 11:40:30 st_uid = 0
+11-20-2016 11:40:30 st_gid = 0
+11-20-2016 11:40:30 st_rdev = 0
+11-20-2016 11:40:30 st_size = 0
+11-20-2016 11:40:30 st_blksize = 0
+11-20-2016 11:40:30 st_blocks = 0
+11-20-2016 11:40:30 st_atime = 0x00000000
+11-20-2016 11:40:30 st_mtime = 0x00000000
+11-20-2016 11:40:30 st_ctime = 0x00000000
+11-20-2016 11:40:30 DB_manager function: Insert
+11-20-2016 11:40:30 nosqlFS_getattr(char * path = /, struct stat * stbuf = 05426ca0)
+11-20-2016 11:40:30 lstat returned 0
+11-20-2016 11:40:30 si:
+11-20-2016 11:40:30 st_dev = 2049
+11-20-2016 11:40:30 st_ino = 2
+11-20-2016 11:40:30 st_mode = 040755
+11-20-2016 11:40:30 st_nlink = 24
+11-20-2016 11:40:30 st_uid = 0
+11-20-2016 11:40:30 st_gid = 0
+11-20-2016 11:40:30 st_rdev = 0
+11-20-2016 11:40:30 st_size = 4096
+11-20-2016 11:40:30 st_blksize = 4096
+11-20-2016 11:40:30 st_blocks = 8
+11-20-2016 11:40:30 st_atime = 0x5830ab72
+11-20-2016 11:40:30 st_mtime = 0x5824150b
+11-20-2016 11:40:30 st_ctime = 0x5824150b
+11-20-2016 11:40:30 DB_manager function: Insert
+11-20-2016 12:41:08 nosqlFS_init()
+11-20-2016 12:41:08 fuse_conn_info:
+11-20-2016 12:41:08 proto_major = 7
+11-20-2016 12:41:08 proto_minor = 23
+11-20-2016 12:41:08 async_read = 1
+11-20-2016 12:41:08 max_write = 131072
+11-20-2016 12:41:08 max_readahead = 131072
+11-20-2016 12:41:08 capable = 0003fffb
+11-20-2016 12:41:08 want = 00006010
+11-20-2016 12:41:08 max_background = 0
+11-20-2016 12:41:08 congestion_threshold = 0
+11-20-2016 12:41:08 fuse_context11-20-2016 12:41:08 fuse = 01e95860
+11-20-2016 12:41:08 uid = 0
+11-20-2016 12:41:08 gid = 0
+11-20-2016 12:41:08 pid = 0
+11-20-2016 12:41:08 private_data = 01e94420
+11-20-2016 12:41:08 logFile = 01e95550
+11-20-2016 12:41:08 rootdir = /home/li2266/mnt
+11-20-2016 12:41:08 mongodb init and returned 0
+11-20-2016 12:41:08 nosqlFS_getattr(char * path = /.xdg-volume-info, struct stat * stbuf = e284bcd0)
+11-20-2016 12:41:08 lstat returned -1
+11-20-2016 12:41:08 ERROR lstat : No such file or directory
+11-20-2016 12:41:08 si:
+11-20-2016 12:41:08 st_dev = 0
+11-20-2016 12:41:08 st_ino = 0
+11-20-2016 12:41:08 st_mode = 00
+11-20-2016 12:41:08 st_nlink = 0
+11-20-2016 12:41:08 st_uid = 0
+11-20-2016 12:41:08 st_gid = 0
+11-20-2016 12:41:08 st_rdev = 0
+11-20-2016 12:41:08 st_size = 0
+11-20-2016 12:41:08 st_blksize = 0
+11-20-2016 12:41:08 st_blocks = 0
+11-20-2016 12:41:08 st_atime = 0x00000000
+11-20-2016 12:41:08 st_mtime = 0x00000000
+11-20-2016 12:41:08 st_ctime = 0x00000000
+11-20-2016 12:41:08 DB_manager function: Insert
+11-20-2016 12:41:08 DB_manager function: find_by_path11-20-2016 12:41:08 DB_manager function: find_by_path->list_init()11-20-2016 12:41:08 nosqlFS_getattr(char * path = /, struct stat * stbuf = e304cca0)
+11-20-2016 12:41:08 lstat returned 0
+11-20-2016 12:41:08 si:
+11-20-2016 12:41:08 st_dev = 2049
+11-20-2016 12:41:08 st_ino = 2
+11-20-2016 12:41:08 st_mode = 040755
+11-20-2016 12:41:08 st_nlink = 24
+11-20-2016 12:41:08 st_uid = 0
+11-20-2016 12:41:08 st_gid = 0
+11-20-2016 12:41:08 st_rdev = 0
+11-20-2016 12:41:08 st_size = 4096
+11-20-2016 12:41:08 st_blksize = 4096
+11-20-2016 12:41:08 st_blocks = 8
+11-20-2016 12:41:08 st_atime = 0x5830ab72
+11-20-2016 12:41:08 st_mtime = 0x5824150b
+11-20-2016 12:41:08 st_ctime = 0x5824150b
+11-20-2016 12:41:08 DB_manager function: Insert
+11-20-2016 12:41:08 DB_manager function: find_by_path11-20-2016 12:41:08 DB_manager function: find_by_path->list_init()11-20-2016 12:43:54 nosqlFS_init()
+11-20-2016 12:43:54 fuse_conn_info:
+11-20-2016 12:43:54 proto_major = 7
+11-20-2016 12:43:54 proto_minor = 23
+11-20-2016 12:43:54 async_read = 1
+11-20-2016 12:43:54 max_write = 131072
+11-20-2016 12:43:54 max_readahead = 131072
+11-20-2016 12:43:54 capable = 0003fffb
+11-20-2016 12:43:54 want = 00006010
+11-20-2016 12:43:54 max_background = 0
+11-20-2016 12:43:54 congestion_threshold = 0
+11-20-2016 12:43:54 fuse_context11-20-2016 12:43:54 fuse = 01115860
+11-20-2016 12:43:54 uid = 0
+11-20-2016 12:43:54 gid = 0
+11-20-2016 12:43:54 pid = 0
+11-20-2016 12:43:54 private_data = 01114420
+11-20-2016 12:43:54 logFile = 01115550
+11-20-2016 12:43:54 rootdir = /home/li2266/mnt
+11-20-2016 12:43:54 mongodb init and returned 0
+11-20-2016 12:43:54 nosqlFS_getattr(char * path = /.xdg-volume-info, struct stat * stbuf = dcfa2cd0)
+11-20-2016 12:43:54 lstat returned -1
+11-20-2016 12:43:54 ERROR lstat : No such file or directory
+11-20-2016 12:43:54 si:
+11-20-2016 12:43:54 st_dev = 0
+11-20-2016 12:43:54 st_ino = 0
+11-20-2016 12:43:54 st_mode = 00
+11-20-2016 12:43:54 nosqlFS_getattr(char * path = /, struct stat * stbuf = d7ffeca0)
+11-20-2016 12:43:54 lstat returned 0
+11-20-2016 12:43:54 si:
+11-20-2016 12:43:54 st_dev = 2049
+11-20-2016 12:43:54 st_ino = 2
+11-20-2016 12:43:54 st_mode = 040755
+11-20-2016 12:43:54 st_nlink = 24
+11-20-2016 12:43:54 st_uid = 0
+11-20-2016 12:43:54 st_gid = 0
+11-20-2016 12:43:54 st_rdev = 0
+11-20-2016 12:43:54 st_size = 4096
+11-20-2016 12:43:54 st_blksize = 4096
+11-20-2016 12:43:54 st_blocks = 8
+11-20-2016 12:43:54 st_atime = 0x5830ab72
+11-20-2016 12:43:54 st_mtime = 0x5824150b
+11-20-2016 12:43:54 st_ctime = 0x5824150b
+11-20-2016 12:43:54 st_nlink = 0
+11-20-2016 12:43:54 DB_manager function: Insert
+11-20-2016 12:43:54 DB_manager function: find_by_path
+11-20-2016 12:43:54 DB_manager function: find_by_path->list_init()
+11-20-2016 12:43:54 st_uid = 0
+11-20-2016 12:43:54 st_gid = 0
+11-20-2016 12:43:54 st_rdev = 0
+11-20-2016 12:43:54 st_size = 0
+11-20-2016 12:43:54 st_blksize = 0
+11-20-2016 12:43:54 st_blocks = 0
+11-20-2016 12:43:54 st_atime = 0x00000000
+11-20-2016 12:43:54 st_mtime = 0x00000000
+11-20-2016 12:43:54 st_ctime = 0x00000000
+11-20-2016 12:43:54 DB_manager function: Insert
+11-20-2016 12:43:54 DB_manager function: find_by_path
+11-20-2016 12:43:54 DB_manager function: find_by_path->list_init()
+11-20-2016 12:54:10 nosqlFS_init()
+11-20-2016 12:54:10 fuse_conn_info:
+11-20-2016 12:54:10 proto_major = 7
+11-20-2016 12:54:10 proto_minor = 23
+11-20-2016 12:54:10 async_read = 1
+11-20-2016 12:54:10 max_write = 131072
+11-20-2016 12:54:10 max_readahead = 131072
+11-20-2016 12:54:10 capable = 0003fffb
+11-20-2016 12:54:10 want = 00006010
+11-20-2016 12:54:10 max_background = 0
+11-20-2016 12:54:10 congestion_threshold = 0
+11-20-2016 12:54:10 fuse_context
+11-20-2016 12:54:10 fuse = 01db5860
+11-20-2016 12:54:10 uid = 0
+11-20-2016 12:54:10 gid = 0
+11-20-2016 12:54:10 pid = 0
+11-20-2016 12:54:10 private_data = 01db4420
+11-20-2016 12:54:10 logFile = 01db5550
+11-20-2016 12:54:10 rootdir = /home/li2266/mnt
+11-20-2016 12:54:10 mongodb init and returned 0
+11-20-2016 12:54:10 nosqlFS_getattr(char * path = /.xdg-volume-info, struct stat * stbuf = b23c2cd0)
+11-20-2016 12:54:10 path: /.xdg-volume-info11-20-2016 12:54:10 lstat returned -1
+11-20-2016 12:54:10 ERROR lstat : No such file or directory
+11-20-2016 12:54:10 stat:
+11-20-2016 12:54:10 st_dev = 0
+11-20-2016 12:54:10 st_ino = 0
+11-20-2016 12:54:10 st_mode = 00
+11-20-2016 12:54:10 st_nlink = 0
+11-20-2016 12:54:10 st_uid = 0
+11-20-2016 12:54:10 st_gid = 0
+11-20-2016 12:54:10 st_rdev = 0
+11-20-2016 12:54:10 st_size = 0
+11-20-2016 12:54:10 st_blksize = 0
+11-20-2016 12:54:10 st_blocks = 0
+11-20-2016 12:54:10 nosqlFS_getattr(char * path = /, struct stat * stbuf = b2bc3ca0)
+11-20-2016 12:54:10 11-20-2016 12:54:10 path: /st_atime = 0x00000000
+11-20-2016 12:54:10 st_mtime = 0x00000000
+11-20-2016 12:54:10 st_ctime = 0x00000000
+11-20-2016 12:54:10 lstat returned 0
+11-20-2016 12:54:10 stat:
+11-20-2016 12:54:10 st_dev = 2049
+11-20-2016 12:54:10 st_ino = 2
+11-20-2016 12:54:10 st_mode = 040755
+11-20-2016 12:54:10 st_nlink = 24
+11-20-2016 12:54:10 st_uid = 0
+11-20-2016 12:54:10 st_gid = 0
+11-20-2016 12:54:10 st_rdev = 0
+11-20-2016 12:54:10 st_size = 4096
+11-20-2016 12:54:10 st_blksize = 4096
+11-20-2016 12:54:10 st_blocks = 8
+11-20-2016 12:54:10 st_atime = 0x5830ab72
+11-20-2016 12:54:10 st_mtime = 0x5824150b
+11-20-2016 12:54:10 st_ctime = 0x5824150b
+11-20-2016 12:54:10 nosqlFS_getattr(char * path = /autorun.inf, struct stat * stbuf = b13c0cd0)
+11-20-2016 12:54:10 DB_manager function: Insert
+11-20-2016 12:54:10 DB_manager function: find_by_path
+11-20-2016 12:54:10 DB_manager function: find_by_path->list_init()
+11-20-2016 12:54:10 path: /autorun.inf11-20-2016 12:54:10 lstat returned -1
+11-20-2016 12:54:10 ERROR lstat : No such file or directory
+11-20-2016 12:54:10 stat:
+11-20-2016 12:54:10 st_dev = 0
+11-20-2016 12:54:10 st_ino = 0
+11-20-2016 12:54:10 st_mode = 00
+11-20-2016 12:54:10 st_nlink = 0
+11-20-2016 12:54:10 st_uid = 0
+11-20-2016 12:54:10 st_gid = 0
+11-20-2016 12:54:10 st_rdev = 0
+11-20-2016 12:54:10 st_size = 0
+11-20-2016 12:54:10 st_blksize = 0
+11-20-2016 12:54:10 st_blocks = 0
+11-20-2016 12:54:10 st_atime = 0x00000000
+11-20-2016 12:54:10 st_mtime = 0x00000000
+11-20-2016 12:54:10 st_ctime = 0x00000000
+11-20-2016 12:54:10 nosqlFS_getattr(char * path = /.Trash, struct stat * stbuf = b1bc1cd0)
+11-20-2016 12:54:10 path: /.Trash11-20-2016 12:54:10 lstat returned -1
+11-20-2016 12:54:10 ERROR lstat : No such file or directory
+11-20-2016 12:54:10 stat:
+11-20-2016 12:54:10 st_dev = 0
+11-20-2016 12:54:10 st_ino = 0
+11-20-2016 12:54:10 st_mode = 00
+11-20-2016 12:54:10 st_nlink = 0
+11-20-2016 12:54:10 st_uid = 0
+11-20-2016 12:54:10 st_gid = 0
+11-20-2016 12:54:10 st_rdev = 0
+11-20-2016 12:54:10 st_size = 0
+11-20-2016 12:54:10 st_blksize = 0
+11-20-2016 12:54:10 st_blocks = 0
+11-20-2016 12:54:10 st_atime = 0x00000000
+11-20-2016 12:54:10 st_mtime = 0x00000000
+11-20-2016 12:54:10 st_ctime = 0x00000000
+11-20-2016 12:54:10 nosqlFS_getattr(char * path = /.Trash-1000, struct stat * stbuf = b23c2cd0)
+11-20-2016 12:54:10 path: /.Trash-100011-20-2016 12:54:10 lstat returned -1
+11-20-2016 12:54:10 ERROR lstat : No such file or directory
+11-20-2016 12:54:10 stat:
+11-20-2016 12:54:10 st_dev = 0
+11-20-2016 12:54:10 st_ino = 0
+11-20-2016 12:54:10 st_mode = 00
+11-20-2016 12:54:10 st_nlink = 0
+11-20-2016 12:54:10 st_uid = 0
+11-20-2016 12:54:10 st_gid = 0
+11-20-2016 12:54:10 st_rdev = 0
+11-20-2016 12:54:10 st_size = 0
+11-20-2016 12:54:10 st_blksize = 0
+11-20-2016 12:54:10 st_blocks = 0
+11-20-2016 12:54:10 st_atime = 0x00000000
+11-20-2016 12:54:10 st_mtime = 0x00000000
+11-20-2016 12:54:10 st_ctime = 0x00000000
+11-20-2016 12:55:56 nosqlFS_init()
+11-20-2016 12:55:56 fuse_conn_info:
+11-20-2016 12:55:56 proto_major = 7
+11-20-2016 12:55:56 proto_minor = 23
+11-20-2016 12:55:56 async_read = 1
+11-20-2016 12:55:56 max_write = 131072
+11-20-2016 12:55:56 max_readahead = 131072
+11-20-2016 12:55:56 capable = 0003fffb
+11-20-2016 12:55:56 want = 00006010
+11-20-2016 12:55:56 max_background = 0
+11-20-2016 12:55:56 congestion_threshold = 0
+11-20-2016 12:55:56 fuse_context
+11-20-2016 12:55:56 fuse = 00da1860
+11-20-2016 12:55:56 uid = 0
+11-20-2016 12:55:56 gid = 0
+11-20-2016 12:55:56 pid = 0
+11-20-2016 12:55:56 private_data = 00da0420
+11-20-2016 12:55:56 logFile = 00da1550
+11-20-2016 12:55:56 rootdir = /home/li2266/mnt
+11-20-2016 12:55:56 mongodb init and returned 0
+11-20-2016 12:55:56 nosqlFS_getattr(char * path = /, struct stat * stbuf = e6301ca0)
+11-20-2016 12:55:56 path: /11-20-2016 12:55:56 lstat returned 0
+11-20-2016 12:55:56 stat:
+11-20-2016 12:55:56 st_dev = 2049
+11-20-2016 12:55:56 st_ino = 2
+11-20-2016 12:55:56 st_mode = 040755
+11-20-2016 12:55:56 st_nlink = 24
+11-20-2016 12:55:56 st_uid = 0
+11-20-2016 12:55:56 st_gid = 0
+11-20-2016 12:55:56 st_rdev = 0
+11-20-2016 12:55:56 st_size = 4096
+11-20-2016 12:55:56 st_blksize = 4096
+11-20-2016 12:55:56 st_blocks = 8
+11-20-2016 12:55:56 st_atime = 0x5830ab72
+11-20-2016 12:55:56 st_mtime = 0x5824150b
+11-20-2016 12:55:56 st_ctime = 0x5824150b
+11-20-2016 12:55:56 DB_manager function: Insert
+11-20-2016 12:55:56 DB_manager function: find_by_path
+11-20-2016 12:55:56 DB_manager function: find_by_path->list_init()
+11-20-2016 12:55:56 nosqlFS_getattr(char * path = /.Trash, struct stat * stbuf = e5b00cd0)
+11-20-2016 12:55:56 path: /.Trash11-20-2016 12:55:56 lstat returned -1
+11-20-2016 12:55:56 ERROR lstat : No such file or directory
+11-20-2016 12:55:56 stat:
+11-20-2016 12:55:56 st_dev = 0
+11-20-2016 12:55:56 st_ino = 0
+11-20-2016 12:55:56 st_mode = 00
+11-20-2016 12:55:56 st_nlink = 0
+11-20-2016 12:55:56 st_uid = 0
+11-20-2016 12:55:56 st_gid = 0
+11-20-2016 12:55:56 st_rdev = 0
+11-20-2016 12:55:56 st_size = 0
+11-20-2016 12:55:56 st_blksize = 0
+11-20-2016 12:55:56 st_blocks = 0
+11-20-2016 12:55:56 st_atime = 0x00000000
+11-20-2016 12:55:56 st_mtime = 0x00000000
+11-20-2016 12:55:56 st_ctime = 0x00000000
+11-20-2016 12:55:56 nosqlFS_getattr(char * path = /.Trash-1000, struct stat * stbuf = e5b00cd0)
+11-20-2016 12:55:56 path: /.Trash-100011-20-2016 12:55:56 lstat returned -1
+11-20-2016 12:55:56 ERROR lstat : No such file or directory
+11-20-2016 12:55:56 stat:
+11-20-2016 12:55:56 st_dev = 0
+11-20-2016 12:55:56 st_ino = 0
+11-20-2016 12:55:56 st_mode = 00
+11-20-2016 12:55:56 st_nlink = 0
+11-20-2016 12:55:56 st_uid = 0
+11-20-2016 12:55:56 st_gid = 0
+11-20-2016 12:55:56 st_rdev = 0
+11-20-2016 12:55:56 st_size = 0
+11-20-2016 12:55:56 st_blksize = 0
+11-20-2016 12:55:56 st_blocks = 0
+11-20-2016 12:55:56 st_atime = 0x00000000
+11-20-2016 12:55:56 st_mtime = 0x00000000
+11-20-2016 12:55:56 st_ctime = 0x00000000
+11-20-2016 12:55:56 nosqlFS_getattr(char * path = /.xdg-volume-info, struct stat * stbuf = e50edcd0)
+11-20-2016 12:55:56 path: /.xdg-volume-info11-20-2016 12:55:56 lstat returned -1
+11-20-2016 12:55:56 ERROR lstat : No such file or directory
+11-20-2016 12:55:56 stat:
+11-20-2016 12:55:56 st_dev = 0
+11-20-2016 12:55:56 st_ino = 0
+11-20-2016 12:55:56 st_mode = 00
+11-20-2016 12:55:56 st_nlink = 0
+11-20-2016 12:55:56 st_uid = 0
+11-20-2016 12:55:56 st_gid = 0
+11-20-2016 12:55:56 st_rdev = 0
+11-20-2016 12:55:56 st_size = 0
+11-20-2016 12:55:56 st_blksize = 0
+11-20-2016 12:55:56 st_blocks = 0
+11-20-2016 12:55:56 st_atime = 0x00000000
+11-20-2016 12:55:56 st_mtime = 0x00000000
+11-20-2016 12:55:56 st_ctime = 0x00000000
+11-20-2016 12:55:56 nosqlFS_getattr(char * path = /autorun.inf, struct stat * stbuf = e5b00cd0)
+11-20-2016 12:55:56 path: /autorun.inf11-20-2016 12:55:56 lstat returned -1
+11-20-2016 12:55:56 ERROR lstat : No such file or directory
+11-20-2016 12:55:56 stat:
+11-20-2016 12:55:56 st_dev = 0
+11-20-2016 12:55:56 st_ino = 0
+11-20-2016 12:55:56 st_mode = 00
+11-20-2016 12:55:56 st_nlink = 0
+11-20-2016 12:55:56 st_uid = 0
+11-20-2016 12:55:56 st_gid = 0
+11-20-2016 12:55:56 st_rdev = 0
+11-20-2016 12:55:56 st_size = 0
+11-20-2016 12:55:56 st_blksize = 0
+11-20-2016 12:55:56 st_blocks = 0
+11-20-2016 12:55:56 st_atime = 0x00000000
+11-20-2016 12:55:56 st_mtime = 0x00000000
+11-20-2016 12:55:56 st_ctime = 0x00000000
+11-20-2016 12:56:16 nosqlFS_init()
+11-20-2016 12:56:16 fuse_conn_info:
+11-20-2016 12:56:16 proto_major = 7
+11-20-2016 12:56:16 proto_minor = 23
+11-20-2016 12:56:16 async_read = 1
+11-20-2016 12:56:16 max_write = 131072
+11-20-2016 12:56:16 max_readahead = 131072
+11-20-2016 12:56:16 capable = 0003fffb
+11-20-2016 12:56:16 want = 00006010
+11-20-2016 12:56:16 max_background = 0
+11-20-2016 12:56:16 congestion_threshold = 0
+11-20-2016 12:56:16 fuse_context
+11-20-2016 12:56:16 fuse = 01679860
+11-20-2016 12:56:16 uid = 0
+11-20-2016 12:56:16 gid = 0
+11-20-2016 12:56:16 pid = 0
+11-20-2016 12:56:16 private_data = 01678420
+11-20-2016 12:56:16 logFile = 01679550
+11-20-2016 12:56:16 rootdir = /home/li2266/mnt
+11-20-2016 12:56:16 mongodb init and returned 0
+11-20-2016 12:56:16 nosqlFS_getattr(char * path = /, struct stat * stbuf = 3a808ca0)
+11-20-2016 12:56:16 path: /
+11-20-2016 12:56:16 lstat returned 0
+11-20-2016 12:56:16 stat:
+11-20-2016 12:56:16 st_dev = 2049
+11-20-2016 12:56:16 st_ino = 2
+11-20-2016 12:56:16 st_mode = 040755
+11-20-2016 12:56:16 st_nlink = 24
+11-20-2016 12:56:16 st_uid = 0
+11-20-2016 12:56:16 st_gid = 0
+11-20-2016 12:56:16 st_rdev = 0
+11-20-2016 12:56:16 st_size = 4096
+11-20-2016 12:56:16 st_blksize = 4096
+11-20-2016 12:56:16 st_blocks = 8
+11-20-2016 12:56:16 st_atime = 0x5830ab72
+11-20-2016 12:56:16 st_mtime = 0x5824150b
+11-20-2016 12:56:16 st_ctime = 0x5824150b
+11-20-2016 12:56:16 DB_manager function: Insert
+11-20-2016 12:56:16 DB_manager function: find_by_path
+11-20-2016 12:56:16 DB_manager function: find_by_path->list_init()
+11-20-2016 12:56:16 nosqlFS_getattr(char * path = /.xdg-volume-info, struct stat * stbuf = 3a007cd0)
+11-20-2016 12:56:16 path: /.xdg-volume-info
+11-20-2016 12:56:16 lstat returned -1
+11-20-2016 12:56:16 ERROR lstat : No such file or directory
+11-20-2016 12:56:16 stat:
+11-20-2016 12:56:16 st_dev = 0
+11-20-2016 12:56:16 st_ino = 0
+11-20-2016 12:56:16 st_mode = 00
+11-20-2016 12:56:16 st_nlink = 0
+11-20-2016 12:56:16 st_uid = 0
+11-20-2016 12:56:16 st_gid = 0
+11-20-2016 12:56:16 st_rdev = 0
+11-20-2016 12:56:16 st_size = 0
+11-20-2016 12:56:16 st_blksize = 0
+11-20-2016 12:56:16 st_blocks = 0
+11-20-2016 12:56:16 st_atime = 0x00000000
+11-20-2016 12:56:16 st_mtime = 0x00000000
+11-20-2016 12:56:16 st_ctime = 0x00000000
+11-20-2016 12:56:16 nosqlFS_getattr(char * path = /autorun.inf, struct stat * stbuf = 395f4cd0)
+11-20-2016 12:56:16 path: /autorun.inf
+11-20-2016 12:56:16 lstat returned -1
+11-20-2016 12:56:16 ERROR lstat : No such file or directory
+11-20-2016 12:56:16 stat:
+11-20-2016 12:56:16 st_dev = 0
+11-20-2016 12:56:16 st_ino = 0
+11-20-2016 12:56:16 st_mode = 00
+11-20-2016 12:56:16 st_nlink = 0
+11-20-2016 12:56:16 st_uid = 0
+11-20-2016 12:56:16 st_gid = 0
+11-20-2016 12:56:16 st_rdev = 0
+11-20-2016 12:56:16 st_size = 0
+11-20-2016 12:56:16 st_blksize = 0
+11-20-2016 12:56:16 st_blocks = 0
+11-20-2016 12:56:16 st_atime = 0x00000000
+11-20-2016 12:56:16 st_mtime = 0x00000000
+11-20-2016 12:56:16 st_ctime = 0x00000000
+11-20-2016 12:56:16 nosqlFS_getattr(char * path = /.Trash, struct stat * stbuf = 3a007cd0)
+11-20-2016 12:56:16 path: /.Trash
+11-20-2016 12:56:16 lstat returned -1
+11-20-2016 12:56:16 ERROR lstat : No such file or directory
+11-20-2016 12:56:16 stat:
+11-20-2016 12:56:16 st_dev = 0
+11-20-2016 12:56:16 st_ino = 0
+11-20-2016 12:56:16 st_mode = 00
+11-20-2016 12:56:16 st_nlink = 0
+11-20-2016 12:56:16 st_uid = 0
+11-20-2016 12:56:16 st_gid = 0
+11-20-2016 12:56:16 st_rdev = 0
+11-20-2016 12:56:16 st_size = 0
+11-20-2016 12:56:16 st_blksize = 0
+11-20-2016 12:56:16 st_blocks = 0
+11-20-2016 12:56:16 st_atime = 0x00000000
+11-20-2016 12:56:16 st_mtime = 0x00000000
+11-20-2016 12:56:16 st_ctime = 0x00000000
+11-20-2016 12:56:16 nosqlFS_getattr(char * path = /.Trash-1000, struct stat * stbuf = 395f4cd0)

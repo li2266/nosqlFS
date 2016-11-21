@@ -8,8 +8,8 @@
 #include <stdio.h>
 
 struct nosqlFS_state {
-  FILE *logFile;
-  char *rootdir;
+        FILE *logFile;
+        char *rootdir;
 };
 
 #define nosqlFS_Data ((struct nosqlFS_state *) fuse_get_context()->private_data)

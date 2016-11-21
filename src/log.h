@@ -17,4 +17,5 @@ void log_conn(struct fuse_conn_info * conn);
 void log_fuse_context(struct fuse_context * context);
 void log_fi(struct fuse_file_info *fi);
 void log_stat(struct stat *si);
+
 #endif
