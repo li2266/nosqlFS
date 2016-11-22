@@ -16,8 +16,12 @@ void list_append(struct head_node * head, void * data){
         p = (struct node *)malloc(sizeof(struct node));
         p->value = data;
         p->next = NULL;
-        head->tail->next = p;
-        head->tail = p;
+        if(head->tail == NULL) {
+                head->tail = p;
+        }else{
+                head->tail->next = p;
+                head->tail = p;
+        }
         ++head->count;
 }
 
