@@ -1,2 +1,3 @@
 # although log files will be huge, it's useful to keep them
 # *.log
+nosqlFS

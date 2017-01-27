@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 #include <dirent.h>
 #include <string.h>
+#include <sys/xattr.h>
 
 #include "log.h"
 #include "db_manager.h"
@@ -248,6 +249,41 @@ static int nosqlFS_release(const char * path, struct fuse_file_info * fi){
         return 0;
 }
 
+static int nosqlFS_setxattr(const char *path, const char *name, const char *value,
+			size_t size, int flags)
+{
+	int res = lsetxattr(path, name, value, size, flags);
+	if (res == -1)
+		return -errno;
+	return 0;
+}
+
+static int nosqlFS_getxattr(const char *path, const char *name, char *value,
+			size_t size)
+{
+	log_msg("nosqlFS_getxattr(path = \"%s\", name = \"%s\", value = \"%s\", size = %d)\n", path, name, value, size);
+	int retstat = log_syscall("lgetxattr", lgetxattr(path, name, value, size), 0);
+	if (retstat == -1)
+		return -errno;
+	return retstat;
+}
+
+static int nosqlFS_listxattr(const char *path, char *list, size_t size)
+{
+	int res = llistxattr(path, list, size);
+	if (res == -1)
+		return -errno;
+	return res;
+}
+
+static int nosqlFS_removexattr(const char *path, const char *name)
+{
+	int res = lremovexattr(path, name);
+	if (res == -1)
+		return -errno;
+	return 0;
+}
+
 static void *nosqlFS_init(struct fuse_conn_info *conn){
         log_msg("nosqlFS_init()\n");
         log_conn(conn);
@@ -293,7 +329,11 @@ static struct fuse_operations nosqlFS_oper = {
 //  .flush = nosqlFS_flush,
         .release = nosqlFS_release,
 //  .fsync = nosqlFS_fsync,
-        .init = nosqlFS_init
+        .init = nosqlFS_init,
+        .setxattr	= nosqlFS_setxattr,
+		.getxattr	= nosqlFS_getxattr,
+		.listxattr	= nosqlFS_listxattr,
+		.removexattr	= nosqlFS_removexattr
 };
 
 int main(int argc, char * argv[]){
