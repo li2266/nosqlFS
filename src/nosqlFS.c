@@ -25,7 +25,6 @@ static int nosqlFS_getattr(const char * path, struct stat * stbuf){
         // store file info into database only when we get the info successfully
         if(retstat == 0) {
                 bson_t * document = create_document(stbuf, path);
-                //TODO: mount will fail if use insert below
                 insert(document, path);
         }
         return retstat;
@@ -263,6 +262,7 @@ static int nosqlFS_getxattr(const char *path, const char *name, char *value,
 {
 	log_msg("nosqlFS_getxattr(path = \"%s\", name = \"%s\", value = \"%s\", size = %d)\n", path, name, value, size);
 	int retstat = log_syscall("lgetxattr", lgetxattr(path, name, value, size), 0);
+  log_msg("parameters_value_after_call(path = \"%s\", name = \"%s\", value = \"%s\", size = %d)\n", path, name, value, size);
 	if (retstat == -1)
 		return -errno;
 	return retstat;
