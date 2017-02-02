@@ -189,6 +189,9 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
         // however, the error value will still be store in fi_fh used as file handler
         //TODO: record information of fi.
         log_fi(fi);
+        char * xattr_value = (char*)malloc(256);
+        getxattr(path, "user.action", xattr_value, 256);
+        log_msg("value of xattr: \"%s\" \n", xattr_value);
         if(retstat == -1) {
                 return -errno;
         }
@@ -251,7 +254,9 @@ static int nosqlFS_release(const char * path, struct fuse_file_info * fi){
 static int nosqlFS_setxattr(const char *path, const char *name, const char *value,
 			size_t size, int flags)
 {
-	int res = lsetxattr(path, name, value, size, flags);
+	log_msg("nosqlFS_setxattr(path = \"%s\", name = \"%s\", value = \"%s\", size = %d, flags = %d)\n", path, name, value, size, flags);
+	int res = log_syscall("lsetxattr", lsetxattr(path, name, value, size, flags), 0);
+	log_msg("parameters_value_after_call(path = \"%s\", name = \"%s\", value = \"%s\", size = %d, flags = %d)\n", path, name, value, size, flags);
 	if (res == -1)
 		return -errno;
 	return 0;
@@ -262,7 +267,7 @@ static int nosqlFS_getxattr(const char *path, const char *name, char *value,
 {
 	log_msg("nosqlFS_getxattr(path = \"%s\", name = \"%s\", value = \"%s\", size = %d)\n", path, name, value, size);
 	int retstat = log_syscall("lgetxattr", lgetxattr(path, name, value, size), 0);
-  log_msg("parameters_value_after_call(path = \"%s\", name = \"%s\", value = \"%s\", size = %d)\n", path, name, value, size);
+  	log_msg("parameters_value_after_call(path = \"%s\", name = \"%s\", value = \"%s\", size = %d)\n", path, name, value, size);
 	if (retstat == -1)
 		return -errno;
 	return retstat;
@@ -270,7 +275,9 @@ static int nosqlFS_getxattr(const char *path, const char *name, char *value,
 
 static int nosqlFS_listxattr(const char *path, char *list, size_t size)
 {
-	int res = llistxattr(path, list, size);
+	log_msg("nosqlFS_listxattr(path = \"%s\", list = \"%s\", size = %d)\n", path, list, size);
+	int res = log_syscall("llistxattr", llistxattr(path, list, size), 0);
+	log_msg("parameters_value_after_call(path = \"%s\", list = \"%s\", size = %d)\n", path, list, size);
 	if (res == -1)
 		return -errno;
 	return res;
@@ -278,7 +285,8 @@ static int nosqlFS_listxattr(const char *path, char *list, size_t size)
 
 static int nosqlFS_removexattr(const char *path, const char *name)
 {
-	int res = lremovexattr(path, name);
+	log_msg("nosqlFS_removexattr(path = \"%s\", name = \"%s\")\n", path, name);
+	int res = log_syscall("lremovexattr", lremovexattr(path, name), 0);
 	if (res == -1)
 		return -errno;
 	return 0;
