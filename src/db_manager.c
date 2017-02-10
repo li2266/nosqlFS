@@ -85,7 +85,7 @@ int disconnect(){
         return 0;
 }
 
-bson_t * create_document(struct stat *si, const char * path){
+bson_t * create_document_file(struct stat *si, const char * path){
         // the data stored in mongodb should be string
         char str_st_dev[256];
         char str_st_ino[256];
@@ -151,16 +151,16 @@ void delete(char * path){
         }
 }
 
-void modify(bson_t * document, const char * path){
-        log_msg("DB_manager function: Modify path = %s\n", path);
+void modify_file(bson_t * document, const char * path){
+        log_msg("DB_manager function: Modify file path = %s\n", path);
         bson_error_t error;
         bson_t * query = BCON_NEW("path", BCON_UTF8(path));
-        log_msg("DB_manager function: Modify start\n");
+        log_msg("DB_manager function: Modify file start\n");
         if(!mongoc_collection_update(_get_collection("nosqlFS", "file"), MONGOC_UPDATE_NONE, query, document, NULL, &error)) {
-                //fprintf(stderr, "Modify failed: %s\n", error.message);
-                log_msg("Modify failed: %s\n", error.message);
+                log_msg("Modify file failed: %s\n", error.message);
         }
-        log_msg("DB_manager function: Modify finished\n");
+        log_msg("DB_manager function: Modify file finished\n");
+        //TODO: maybe cause issue
         bson_destroy(document);
         bson_destroy(query);
 }
@@ -170,64 +170,128 @@ void modify(bson_t * document, const char * path){
  */
 // there are three find functions. this is because it's diffcult to implement a override in C
 
-struct head_node * find_by_path(const char * path){
-        log_msg("DB_manager function: find_by_path : %s\n", path);
+struct head_node * find_file_by_path(const char * path){
+        log_msg("DB_manager function: find_file_by_path : %s\n", path);
         bson_t * document = BCON_NEW("path", BCON_UTF8(path));
         const bson_t * result;
         mongoc_cursor_t * cursor = mongoc_collection_find(_get_collection("nosqlFS", "file"), MONGOC_QUERY_NONE, 0, 0, 0, document, NULL, NULL);
         struct head_node * head = list_init();
-        log_msg("DB_manager function: find_by_path->list_init()\n");
+        log_msg("DB_manager function: find_file_by_path->list_init()\n");
         while(mongoc_cursor_next(cursor, &result)) {
                 list_append(head, (void *)result);
                 log_msg("DB_manager function: append\n");
         }
+        mongoc_cursor_destroy(cursor);
+        bson_destroy(document);
         return head;
 }
 
-struct head_node * find_by_document(bson_t * document){
-        log_msg("DB_manager function: find_by_document\n");
+struct head_node * find_file_by_document(bson_t * document){
+        log_msg("DB_manager function: find_file_by_document\n");
         const bson_t * result;
         mongoc_cursor_t * cursor = mongoc_collection_find(_get_collection("nosqlFS", "file"), MONGOC_QUERY_NONE, 0, 0, 0, document, NULL, NULL);
         struct head_node * head = list_init();
         while(mongoc_cursor_next(cursor, &result)) {
                 list_append(head, (void *)result);
         }
+        mongoc_cursor_destroy(cursor);
+        bson_destroy(document);
         return head;
 }
 
-struct head_node * find_by_key(int argc, char ** field, char ** value){
-        log_msg("DB_manager function: find_by_key\n");
+struct head_node * find_file_by_key(int argc, char ** field, char ** value){
+        log_msg("DB_manager function: find_file_by_key\n");
         bson_t * document = bson_new();
         const bson_t * result;
         for(int i = 0; i < argc; ++i) {
                 BSON_APPEND_UTF8(document, field[i], value[i]);
-                //bson_append_utf8(document, BCON_UTF8(field[i]), strlen(field[i]), BCON_UTF8(value[i]), strlen(value[i]));
         }
         mongoc_cursor_t * cursor = mongoc_collection_find(_get_collection("nosqlFS", "file"), MONGOC_QUERY_NONE, 0, 0, 0, document, NULL, NULL);
         struct head_node * head = list_init();
         while(mongoc_cursor_next(cursor, &result)) {
                 list_append(head, (void *)result);
         }
+        mongoc_cursor_destroy(cursor);
+        bson_destroy(document);
         return head;
 }
 
-int insert(bson_t * document, const char * path){
-        log_msg("DB_manager function: Insert\n");
+int insert_file(bson_t * document, const char * path){
+        log_msg("DB_manager function: Insert file\n");
         bson_error_t error;
-        struct head_node * head = find_by_path(path);
+        struct head_node * head = find_file_by_path(path);
         if(head->count != 0) {
-                modify(document, path);
+                modify_file(document, path);
         }else{
                 int result = mongoc_collection_insert(_get_collection("nosqlFS", "file"), MONGOC_INSERT_NONE, document, NULL, &error);
                 if(!result) {
-                        //fprintf(stderr, "Insert failed: %s\n", error.message);
-                        log_msg("Insert failed: %s\n", error.message);
+                        log_msg("Insert file failed: %s\n", error.message);
                 }
-                log_msg("DB_manager function: Insert returned: %d, path = %s\n", result, path);
+                log_msg("DB_manager function: Insert file returned: %d, path = %s\n", result, path);
                 // if this document is modified in this if/else struct, the document will be deleted in modify function
                 // so we need to delete it in there, instead of delete it outside. It's not prefect but no more idea now
                 bson_destroy(document);
         }
         list_destory(head);
+        return 0;
+}
+
+bson_t * create_document_file_state(const char * path, char * state){
+    bson_t * document = BCON_NEW(
+        "path", BCON_UTF8(path),
+        "state",BCON_UTF8(state)
+        );
+    return document;
+}
+
+// not important now
+// very easy version
+bson_t * modify_document(char ** key, char ** value){
+    return NULL:
+}
+
+struct head_node * find_by_path(const char * path, char * collection_name){
+        log_msg("DB_manager function: find_by_path : path = %s, collection = %s\n", path, collection_name);
+        bson_t * document = BCON_NEW("path", BCON_UTF8(path));
+        const bson_t * result;
+        mongoc_cursor_t * cursor = mongoc_collection_find(_get_collection("nosqlFS", collection_name), MONGOC_QUERY_NONE, 0, 0, 0, document, NULL, NULL);
+        // list will be released when finished using such as after insertion 
+        struct head_node * head = list_init();
+        log_msg("DB_manager function: find_by_path->list_init()\n");
+        while(mongoc_cursor_next(cursor, &result)) {
+                // It's better to use the original type because maybe I will use it again
+                list_append(head, (void *)result);
+                log_msg("DB_manager function: append\n");
+        }
+        mongoc_cursor_destroy(cursor);
+        bson_destroy(document);
+        return head;
+}
+//TODO:need modify
+void update(bson_t * document, const char * path, char ** key, char ** value){
+        log_msg("DB_manager function: update path = %s\n", path);
+        bson_error_t error;
+        bson_t * query = BCON_NEW("path", BCON_UTF8(path));
+        log_msg("DB_manager function: Modify file start\n");
+        if(!mongoc_collection_update(_get_collection("nosqlFS", "file"), MONGOC_UPDATE_NONE, query, document, NULL, &error)) {
+                log_msg("Modify file failed: %s\n", error.message);
+        }
+        log_msg("DB_manager function: Modify finished\n");
+        //TODO: maybe cause issue
+        bson_destroy(document);
+        bson_destroy(query);
+}
+//TODO: need modify
+int insert(bson_t * document, const char * path, char * collection_name){
+        log_msg("DB_manager function: Insert\n");
+        bson_error_t error;
+        int result = mongoc_collection_insert(_get_collection("nosqlFS", collection_name), MONGOC_INSERT_NONE, document, NULL, &error);
+        if(!result) {
+            log_msg("Insert file failed: %s\n", error.message);
+        }
+        log_msg("DB_manager function: Insert file returned: %d, path = %s\n", result, path);
+        // if this document is modified in this if/else struct, the document will be deleted in modify function
+        // so we need to delete it in there, instead of delete it outside. It's not prefect but no more idea now
+        bson_destroy(document);
         return 0;
 }

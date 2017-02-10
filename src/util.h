@@ -22,5 +22,7 @@ void list_insert(struct head_node * head, void * data);
 
 void list_destory(struct head_node * head);
 
+char * get_file_state(bson_t * document);
+
 
 #endif

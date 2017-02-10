@@ -24,8 +24,8 @@ static int nosqlFS_getattr(const char * path, struct stat * stbuf){
         log_stat(stbuf);
         // store file info into database only when we get the info successfully
         if(retstat == 0) {
-                bson_t * document = create_document(stbuf, path);
-                insert(document, path);
+                bson_t * document = create_document_file(stbuf, path);
+                insert_file(document, path);
         }
         return retstat;
 }
@@ -184,10 +184,6 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
         log_msg("nosqlFS_open(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
 
         retstat = log_syscall("open", open(path, fi->flags), 0);
-        //fi->fh = fd;
-        // if there is an error, error will be logged by log_error in log_syscall,
-        // however, the error value will still be store in fi_fh used as file handler
-        //TODO: record information of fi.
         log_fi(fi);
         char * xattr_value = (char*)malloc(256);
         getxattr(path, "user.action", xattr_value, 256);
@@ -309,6 +305,14 @@ static void nosqlFS_usage(){
         fprintf(stderr, "usage: nosqlFS [options] rootDir mountPoint\n");
         abort();
 }
+
+/* Some function for helping */
+
+int check_xttr(const char * path){
+
+}
+
+/* helper function end */
 
 static struct fuse_operations nosqlFS_oper = {
         .getattr = nosqlFS_getattr,
