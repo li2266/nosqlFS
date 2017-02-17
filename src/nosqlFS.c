@@ -1,5 +1,7 @@
 #include "nosqlFS.h"
 
+#include <bson.h>
+#include <bcon.h>
 #include <fuse.h>
 #include <stdio.h>
 #include <errno.h>
@@ -12,6 +14,7 @@
 #include <sys/xattr.h>
 
 #include "log.h"
+#include "util.h"
 #include "db_manager.h"
 
 /*
@@ -185,9 +188,57 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
 
         retstat = log_syscall("open", open(path, fi->flags), 0);
         log_fi(fi);
-        char * xattr_value = (char*)malloc(256);
-        getxattr(path, "user.action", xattr_value, 256);
+/*
+        
+        
         log_msg("value of xattr: \"%s\" \n", xattr_value);
+*/
+
+        // start fork
+        if(fork() == 0){
+        	// I am child
+        	log_msg("child start\n");
+        	struct head_node * head = find("xattr", "user.backup", "xattr_list");
+        	log_msg("get xattr list\n");
+        	struct node * p = head->tail;
+        	while(p != NULL){
+        		char * xattr_name = get_value(p->value, "xattr");
+        		log_msg("xattr_name = %s\n", xattr_name);
+        		char * xattr_value_db = get_value(p->value, "value");
+        		log_msg("xattr_value_db = %s\n", xattr_value_db);
+
+        		char * xattr_value_file = (char*)malloc(256);
+        		int xattr_value_length = getxattr(path, xattr_name, xattr_value_file, 256);
+        		if(xattr_value_length > 0){
+        			xattr_value_file[xattr_value_length] = '\0';
+        			if(strcmp(xattr_value_file, xattr_value_db) == 0){
+        				// match!
+        				log_msg("xattr match!\n");
+        				if(fork() == 0){
+        					// I am child
+        					char * commond_location = get_command_location(p->value);
+        					char ** commond_parameter = get_command_parameter(p->value);
+        					char * filename = strrchr(path, '/') + 1;
+        					commond_parameter = command_process(commond_parameter, filename);
+        					log_msg("execl start!!\n");
+        					int res = execv(commond_location, commond_parameter);
+        					if(res < 0){
+        						log_msg("error\n");
+        					}
+        				}else{
+        					// I am parent
+        				}
+        			}
+        		} 
+        		p = p->next;
+        	}
+        	exit(0);
+        }else{
+        	// I am father
+        	// just keep going!
+        	log_msg("parent start\n");
+        }
+
         if(retstat == -1) {
                 return -errno;
         }

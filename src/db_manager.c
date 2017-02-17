@@ -179,7 +179,7 @@ struct head_node * find_file_by_path(const char * path){
         log_msg("DB_manager function: find_file_by_path->list_init()\n");
         while(mongoc_cursor_next(cursor, &result)) {
                 list_append(head, (void *)result);
-                log_msg("DB_manager function: append\n");
+                log_msg("DB_manager function: append in find_file_by_path\n");
         }
         mongoc_cursor_destroy(cursor);
         bson_destroy(document);
@@ -236,6 +236,7 @@ int insert_file(bson_t * document, const char * path){
         return 0;
 }
 
+// not useful now
 bson_t * create_document_file_state(const char * path, char * state){
     bson_t * document = BCON_NEW(
         "path", BCON_UTF8(path),
@@ -244,12 +245,34 @@ bson_t * create_document_file_state(const char * path, char * state){
     return document;
 }
 
-// not important now
+// not useful now
 // very easy version
 bson_t * modify_document(char ** key, char ** value){
-    return NULL:
+    return NULL;
 }
 
+// find for all document
+struct head_node * find(char * name, const char * value, char * collection_name){
+        log_msg("DB_manager function: find : name = %s, value = %s, collection = %s\n", name, value, collection_name);
+        bson_t * document = bson_new();
+        BSON_APPEND_UTF8(document, "xattr", "user.backup");
+        const bson_t * result;
+        mongoc_cursor_t * cursor = mongoc_collection_find(_get_collection("nosqlFS", collection_name), MONGOC_QUERY_NONE, 0, 0, 0, document, NULL, NULL);
+        // list will be released when finished using such as after insertion 
+        struct head_node * head = list_init();
+        log_msg("DB_manager function: find->list_init() %s\n", collection_name);
+        while(mongoc_cursor_next(cursor, &result)) {
+                // It's better to use the original type because maybe I will use it again
+                list_append(head, (void *)result);
+                log_msg("DB_manager function: append in find %s\n", collection_name);
+        }
+        log_msg("DB_manager function: append in find finished %s\n", collection_name);
+        mongoc_cursor_destroy(cursor);
+        bson_destroy(document);
+        return head;
+}
+
+// not useful now
 struct head_node * find_by_path(const char * path, char * collection_name){
         log_msg("DB_manager function: find_by_path : path = %s, collection = %s\n", path, collection_name);
         bson_t * document = BCON_NEW("path", BCON_UTF8(path));
@@ -267,6 +290,7 @@ struct head_node * find_by_path(const char * path, char * collection_name){
         bson_destroy(document);
         return head;
 }
+
 //TODO:need modify
 void update(bson_t * document, const char * path, char ** key, char ** value){
         log_msg("DB_manager function: update path = %s\n", path);
@@ -281,6 +305,7 @@ void update(bson_t * document, const char * path, char ** key, char ** value){
         bson_destroy(document);
         bson_destroy(query);
 }
+
 //TODO: need modify
 int insert(bson_t * document, const char * path, char * collection_name){
         log_msg("DB_manager function: Insert\n");
@@ -295,3 +320,4 @@ int insert(bson_t * document, const char * path, char * collection_name){
         bson_destroy(document);
         return 0;
 }
+

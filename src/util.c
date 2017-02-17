@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
 #include <bson.h>
-#include <cJSON.h>
 
 #include "util.h"
+#include "cJSON.h"
+
 /*
  * this section is about the list 
  */
@@ -55,22 +55,64 @@ void list_destory(struct head_node * head){
 }
 
 /*
- * this section is about json parsing
+ * this section is about json parsing for command in mongodb
+ * add more function for getting parameter later
  */
-char * get_file_state(bson_t * document){
+char * get_command_location(bson_t * document){
         char * json_str;
         size_t len;
         json_str = bson_as_json(document, &len);
         // start parsing
         cJSON * root_json = cJSON_Parse(json_str);
-        char * state = cJSON_Print(cJSON_GetObjectItem(root_json, "state"));
-        bson_free(json_str);
-        return state;
+        cJSON * command_location = cJSON_GetObjectItem(root_json, "command");
+        char * res = cJSON_Print(cJSON_GetArrayItem(command_location, 0));
+        return res;
+}
+
+char ** get_command_parameter(bson_t * document){
+        char * json_str;
+        size_t len;
+        json_str = bson_as_json(document, &len);
+        // start parsing
+        cJSON * root_json = cJSON_Parse(json_str);
+        cJSON * command_parameter = cJSON_GetObjectItem(root_json, "command");
+        int command_length = cJSON_GetArraySize(command_parameter) - 1;
+        char ** res = (char**)malloc(sizeof(char *) * command_length);
+        cJSON * item;
+        for(int i = 0; i < command_length; ++i){
+                item = cJSON_GetArrayItem(command_parameter, i + 1);
+                res[i] = item->valuestring;
+        }
+        return res;
+}
+
+char * get_value(bson_t * document, char * name){
+        char * json_str;
+        size_t len;
+        json_str = bson_as_json(document, &len);
+        // start parsing
+        cJSON * root_json = cJSON_Parse(json_str);
+        char * res = cJSON_Print(cJSON_GetObjectItem(root_json, name));
+        return res;
 }
 
 /*
+ * this section process command
+ */
 
-
-
-
-*/
+char ** command_process(char ** command, char * filename){
+        int length = sizeof(command)/sizeof(char *);
+        for(int i = 0; i < length; ++i){
+                if(strcmp(command[i], "FILENAME") == 0){
+                        command[i] = filename;
+                }else if(strcmp(command[i],"FILENAME_BACKUP") == 0){
+                        char res[256];
+                        strcat(res, filename);
+                        strcat(res, "_backup");
+                        command[i] = res;
+                }else{
+                        ;
+                }
+        }
+        return command;
+}

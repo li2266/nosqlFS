@@ -22,7 +22,13 @@ void list_insert(struct head_node * head, void * data);
 
 void list_destory(struct head_node * head);
 
-char * get_file_state(bson_t * document);
+char * get_command_location(bson_t * document);
+
+char ** get_command_parameter(bson_t * document);
+
+char * get_value(bson_t * document, char * name);
+
+char ** command_process(char ** command, char * filename);
 
 
 #endif
