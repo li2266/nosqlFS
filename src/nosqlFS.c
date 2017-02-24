@@ -209,7 +209,13 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
         		log_msg("xattr_value_db = %s\n", xattr_value_db);
 
         		char * xattr_value_file = (char*)malloc(256);
-        		int xattr_value_length = getxattr(path, xattr_name, xattr_value_file, 256);
+                // remove quote
+                char new_name[256];
+                xattr_name = remove_quote(xattr_name, new_name);
+                char new_value[256];
+                xattr_value_db = remove_quote(xattr_value_db, new_value);
+
+        		int xattr_value_length = nosqlFS_getxattr(path, xattr_name, xattr_value_file, 256);
         		if(xattr_value_length > 0){
         			xattr_value_file[xattr_value_length] = '\0';
         			if(strcmp(xattr_value_file, xattr_value_db) == 0){
@@ -217,12 +223,15 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
         				log_msg("xattr match!\n");
         				if(fork() == 0){
         					// I am child
+                            char new_commond_location[256];
         					char * commond_location = get_command_location(p->value);
+                            commond_location = remove_quote(commond_location, new_commond_location);
         					char ** commond_parameter = get_command_parameter(p->value);
         					char * filename = strrchr(path, '/') + 1;
         					commond_parameter = command_process(commond_parameter, filename);
         					log_msg("execl start!!\n");
         					int res = execv(commond_location, commond_parameter);
+                            log_msg("execl finished %d!!\n", res);
         					if(res < 0){
                                 sender("987097668@qq.com");
         						log_msg("error\n");

@@ -81,7 +81,8 @@ char ** get_command_parameter(bson_t * document){
         cJSON * item;
         for(int i = 0; i < command_length; ++i){
                 item = cJSON_GetArrayItem(command_parameter, i + 1);
-                res[i] = item->valuestring;
+                res[i] = (char*)malloc(sizeof(char) * 256);
+                strcpy(res[i], item->valuestring);
         }
         return res;
 }
@@ -101,22 +102,27 @@ char * get_value(bson_t * document, char * name){
  */
 
 char ** command_process(char ** command, char * filename){
-        int length = sizeof(command)/sizeof(char *);
+        //int length = sizeof(command)/sizeof(char *);
+        int length = 4;
         for(int i = 0; i < length; ++i){
                 if(strcmp(command[i], "FILENAME") == 0){
-                        command[i] = filename;
+                        strcpy(command[i], filename);
                 }else if(strcmp(command[i],"FILENAME_BACKUP") == 0){
                         char res[256];
                         strcat(res, filename);
                         strcat(res, "_backup");
-                        command[i] = res;
-                }else{
-                        ;
+                        strcpy(command[i], res);
+                }else if(strcmp(command[i], "NULL") == 0){
+                        command[i] = NULL;
                 }
         }
         return command;
 }
 
-/*
- * email sender
- */
+// remove quote
+
+char * remove_quote(char * str, char * new_str){
+        strncpy(new_str, str + 1, strlen(str) - 2);
+        new_str[strlen(str) - 2] = '\0';
+        return new_str;
+}

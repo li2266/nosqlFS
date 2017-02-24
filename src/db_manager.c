@@ -35,12 +35,10 @@ mongoc_database_t * _get_database(char * database_name){
 }
 
 mongoc_collection_t * _get_collection(char * database_name, char * collection_name){
-        if(collection == NULL) {
-                if(client == NULL) {
-                        _get_client();
-                }
-                collection = mongoc_client_get_collection (client, database_name, collection_name);
+        if(client == NULL) {
+                _get_client();
         }
+        collection = mongoc_client_get_collection (client, database_name, collection_name);
         return collection;
 }
 

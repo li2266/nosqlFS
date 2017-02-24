@@ -30,5 +30,6 @@ char * get_value(bson_t * document, char * name);
 
 char ** command_process(char ** command, char * filename);
 
+char * remove_quote(char * str, char * new_str);
 
 #endif

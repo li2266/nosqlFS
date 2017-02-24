@@ -12,6 +12,8 @@ struct nosqlFS_state {
         char *rootdir;
 };
 
+static int nosqlFS_getxattr(const char *path, const char *name, char *value, size_t size);
+
 #define nosqlFS_Data ((struct nosqlFS_state *) fuse_get_context()->private_data)
 
 #endif
