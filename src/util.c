@@ -7,7 +7,7 @@
 #include "cJSON.h"
 
 /*
- * this section is about the list 
+ * this section is about the list
  */
 struct head_node * list_init(){
         struct head_node * head;
@@ -116,3 +116,7 @@ char ** command_process(char ** command, char * filename){
         }
         return command;
 }
+
+/*
+ * email sender
+ */

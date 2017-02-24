@@ -16,6 +16,7 @@
 #include "log.h"
 #include "util.h"
 #include "db_manager.h"
+#include "email_sender.h"
 
 /*
 
@@ -223,6 +224,7 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
         					log_msg("execl start!!\n");
         					int res = execv(commond_location, commond_parameter);
         					if(res < 0){
+                                sender("987097668@qq.com");
         						log_msg("error\n");
         					}
         				}else{

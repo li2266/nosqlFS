@@ -255,17 +255,22 @@ bson_t * modify_document(char ** key, char ** value){
 struct head_node * find(char * name, const char * value, char * collection_name){
         log_msg("DB_manager function: find : name = %s, value = %s, collection = %s\n", name, value, collection_name);
         bson_t * document = bson_new();
-        BSON_APPEND_UTF8(document, "xattr", "user.backup");
+        //BSON_APPEND_UTF8(document, "xattr", "user.backup");
         const bson_t * result;
-        mongoc_cursor_t * cursor = mongoc_collection_find(_get_collection("nosqlFS", collection_name), MONGOC_QUERY_NONE, 0, 0, 0, document, NULL, NULL);
-        // list will be released when finished using such as after insertion 
+        mongoc_cursor_t * cursor = mongoc_collection_find(_get_collection("nosqlFS", "xattr_list"), MONGOC_QUERY_NONE, 0, 0, 0, document, NULL, NULL);
+        // list will be released when finished using such as after insertion
         struct head_node * head = list_init();
         log_msg("DB_manager function: find->list_init() %s\n", collection_name);
         while(mongoc_cursor_next(cursor, &result)) {
                 // It's better to use the original type because maybe I will use it again
+
+                char * str = bson_as_json (result, NULL);
+                log_msg("TEST: %s\n", str);
+
                 list_append(head, (void *)result);
                 log_msg("DB_manager function: append in find %s\n", collection_name);
         }
+        log_msg("Length of list %d\n", head->count);
         log_msg("DB_manager function: append in find finished %s\n", collection_name);
         mongoc_cursor_destroy(cursor);
         bson_destroy(document);
@@ -278,7 +283,7 @@ struct head_node * find_by_path(const char * path, char * collection_name){
         bson_t * document = BCON_NEW("path", BCON_UTF8(path));
         const bson_t * result;
         mongoc_cursor_t * cursor = mongoc_collection_find(_get_collection("nosqlFS", collection_name), MONGOC_QUERY_NONE, 0, 0, 0, document, NULL, NULL);
-        // list will be released when finished using such as after insertion 
+        // list will be released when finished using such as after insertion
         struct head_node * head = list_init();
         log_msg("DB_manager function: find_by_path->list_init()\n");
         while(mongoc_cursor_next(cursor, &result)) {
@@ -320,4 +325,3 @@ int insert(bson_t * document, const char * path, char * collection_name){
         bson_destroy(document);
         return 0;
 }
-
