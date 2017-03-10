@@ -18,7 +18,7 @@ main (int   argc,
   client = mongoc_client_new ("mongodb://localhost:27017/");
   collection = mongoc_client_get_collection (client, "nosqlFS", "xattr_list");
   query = bson_new ();
-  //BSON_APPEND_UTF8(query, "xattr", "user.backup");
+  BSON_APPEND_UTF8(query, "xattr", "user.backup");
   cursor = mongoc_collection_find (collection, MONGOC_QUERY_NONE, 0, 0, 0, query, NULL, NULL);
 
   while (mongoc_cursor_next (cursor, &doc)) {

@@ -217,20 +217,20 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
 
         		int xattr_value_length = nosqlFS_getxattr(path, xattr_name, xattr_value_file, 256);
         		if(xattr_value_length > 0){
-        			xattr_value_file[xattr_value_length] = '\0';
+        			log_msg("xattr_value_db = %s xattr_value_file = %s\n", xattr_value_db, xattr_value_file);
         			if(strcmp(xattr_value_file, xattr_value_db) == 0){
         				// match!
         				log_msg("xattr match!\n");
         				if(fork() == 0){
         					// I am child
-                            char new_commond_location[256];
-        					char * commond_location = get_command_location(p->value);
-                            commond_location = remove_quote(commond_location, new_commond_location);
-        					char ** commond_parameter = get_command_parameter(p->value);
+                            char new_command_location[256];
+        					char * command_location = get_command_location(p->value);
+                            command_location = remove_quote(command_location, new_command_location);
+        					char ** command_parameter = get_command_parameter(p->value);
         					char * filename = strrchr(path, '/') + 1;
-        					commond_parameter = command_process(commond_parameter, filename);
+        					command_parameter = command_process(command_parameter, filename);
         					log_msg("execl start!!\n");
-        					int res = execv(commond_location, commond_parameter);
+        					int res = execv(command_location, command_parameter);
                             log_msg("execl finished %d!!\n", res);
         					if(res < 0){
                                 sender("987097668@qq.com");
@@ -304,6 +304,63 @@ static int nosqlFS_flush(const char * path, struct fuse_file_info * fi){
 
 static int nosqlFS_release(const char * path, struct fuse_file_info * fi){
         log_msg("nosqlFS_release(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
+
+        // start fork
+        if(fork() == 0){
+            // I am child
+            log_msg("child start\n");
+            struct head_node * head = find("xattr", "user.encrypt", "xattr_list");
+            log_msg("get xattr list\n");
+            struct node * p = head->tail;
+            while(p != NULL){
+                char * xattr_name = get_value(p->value, "xattr");
+                log_msg("xattr_name = %s\n", xattr_name);
+                char * xattr_value_db = get_value(p->value, "value");
+                log_msg("xattr_value_db = %s\n", xattr_value_db);
+
+                char * xattr_value_file = (char*)malloc(256);
+                // remove quote
+                char new_name[256];
+                xattr_name = remove_quote(xattr_name, new_name);
+                char new_value[256];
+                xattr_value_db = remove_quote(xattr_value_db, new_value);
+
+                int xattr_value_length = nosqlFS_getxattr(path, xattr_name, xattr_value_file, 256);
+                if(xattr_value_length > 0){
+
+                    log_msg("xattr_value_db = %s xattr_value_file = %s\n", xattr_value_db, xattr_value_file);
+                    if(strcmp(xattr_value_file, xattr_value_db) == 0){
+                        // match!
+                        log_msg("xattr match!\n");
+                        if(fork() == 0){
+                            // I am child
+                            char new_commond_location[256];
+                            char * commond_location = get_command_location(p->value);
+                            commond_location = remove_quote(commond_location, new_commond_location);
+                            char ** commond_parameter = get_command_parameter(p->value);
+                            char * filename = strrchr(path, '/') + 1;
+                            commond_parameter = command_process(commond_parameter, filename);
+                            log_msg("execl start!!\n");
+                            int res = execv(commond_location, commond_parameter);
+                            log_msg("execl finished %d!!\n", res);
+                            if(res < 0){
+                                sender("987097668@qq.com");
+                                log_msg("error\n");
+                            }
+                        }else{
+                            // I am parent
+                        }
+                    }
+                } 
+                p = p->next;
+            }
+            exit(0);
+        }else{
+            // I am father
+            // just keep going!
+            log_msg("parent start\n");
+        }
+
         (void)path;
         (void)fi;
         return 0;
@@ -325,6 +382,9 @@ static int nosqlFS_getxattr(const char *path, const char *name, char *value,
 {
 	log_msg("nosqlFS_getxattr(path = \"%s\", name = \"%s\", value = \"%s\", size = %d)\n", path, name, value, size);
 	int retstat = log_syscall("lgetxattr", lgetxattr(path, name, value, size), 0);
+    if(retstat >= 0){
+        value[retstat] = '\0';
+    }
   	log_msg("parameters_value_after_call(path = \"%s\", name = \"%s\", value = \"%s\", size = %d)\n", path, name, value, size);
 	if (retstat == -1)
 		return -errno;
