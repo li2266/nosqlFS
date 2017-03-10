@@ -1,10 +1,14 @@
+#include "nosqlFS.h"
+
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
 #include <bson.h>
+#include <stdlib.h>
 
 #include "util.h"
 #include "cJSON.h"
+#include "log.h"
 
 /*
  * this section is about the list
@@ -69,22 +73,21 @@ char * get_command_location(bson_t * document){
         return res;
 }
 
-char ** get_command_parameter(bson_t * document){
+int get_command_parameter(bson_t * document, char ** parameters){
         char * json_str;
         size_t len;
         json_str = bson_as_json(document, &len);
         // start parsing
         cJSON * root_json = cJSON_Parse(json_str);
         cJSON * command_parameter = cJSON_GetObjectItem(root_json, "command");
-        int command_length = cJSON_GetArraySize(command_parameter) - 1;
-        char ** res = (char**)malloc(sizeof(char *) * command_length);
+        int command_length = cJSON_GetArraySize(command_parameter);
         cJSON * item;
         for(int i = 0; i < command_length; ++i){
-                item = cJSON_GetArrayItem(command_parameter, i + 1);
-                res[i] = (char*)malloc(sizeof(char) * 256);
-                strcpy(res[i], item->valuestring);
+                item = cJSON_GetArrayItem(command_parameter, i);
+                strcpy(parameters[i], item->valuestring);
+                log_msg("GET %s\n", parameters[i]);
         }
-        return res;
+        return command_length;
 }
 
 char * get_value(bson_t * document, char * name){
@@ -101,22 +104,28 @@ char * get_value(bson_t * document, char * name){
  * this section process command
  */
 
-char ** command_process(char ** command, char * filename){
-        //int length = sizeof(command)/sizeof(char *);
-        int length = 4;
-        for(int i = 0; i < length; ++i){
+int command_process(char ** command, char * filename, int parameter_length){
+        for(int i = 0; i < parameter_length; ++i){
                 if(strcmp(command[i], "FILENAME") == 0){
-                        strcpy(command[i], filename);
+                        command[i][0] = '\0';
+                        strcat(command[i], filename);
+                        log_msg("PROCESS %s\n", command[i]);
                 }else if(strcmp(command[i],"FILENAME_BACKUP") == 0){
-                        char res[256];
+                        char res[256] = "";
                         strcat(res, filename);
                         strcat(res, "_backup");
-                        strcpy(command[i], res);
+                        command[i][0] = '\0';
+                        strcat(command[i], res);
+                        log_msg("PROCESS %s\n", command[i]);
                 }else if(strcmp(command[i], "NULL") == 0){
                         command[i] = NULL;
+                        log_msg("PROCESS %s\n", command[i]);
+                }else{
+                        //strcpy(new_command[i], command[i]);
+                        log_msg("PROCESS %s\n", command[i]);
                 }
         }
-        return command;
+        return 0;
 }
 
 // remove quote

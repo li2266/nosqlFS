@@ -24,11 +24,11 @@ void list_destory(struct head_node * head);
 
 char * get_command_location(bson_t * document);
 
-char ** get_command_parameter(bson_t * document);
+int get_command_parameter(bson_t * document, char ** parameters);
 
 char * get_value(bson_t * document, char * name);
 
-char ** command_process(char ** command, char * filename);
+int command_process(char ** command, char * filename, int parameter_length);
 
 char * remove_quote(char * str, char * new_str);
 
