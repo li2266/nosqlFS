@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdint.h>
 #include <bson.h>
+#incldue <stdlib.h>
 
 #include "util.h"
 #include "cJSON.h"
@@ -69,7 +70,7 @@ char * get_command_location(bson_t * document){
         return res;
 }
 
-char ** get_command_parameter(bson_t * document){
+int get_command_parameter(bson_t * document, char ** parameters){
         char * json_str;
         size_t len;
         json_str = bson_as_json(document, &len);
@@ -77,14 +78,14 @@ char ** get_command_parameter(bson_t * document){
         cJSON * root_json = cJSON_Parse(json_str);
         cJSON * command_parameter = cJSON_GetObjectItem(root_json, "command");
         int command_length = cJSON_GetArraySize(command_parameter) - 1;
-        char ** res = (char**)malloc(sizeof(char *) * command_length);
+        parameters = (char**)malloc(sizeof(char *) * command_length);
         cJSON * item;
         for(int i = 0; i < command_length; ++i){
                 item = cJSON_GetArrayItem(command_parameter, i + 1);
-                res[i] = (char*)malloc(sizeof(char) * 256);
-                strcpy(res[i], item->valuestring);
+                parameters[i] = (char*)malloc(sizeof(char) * 256);
+                strcpy(parameters[i], item->valuestring);
         }
-        return res;
+        return command_length;
 }
 
 char * get_value(bson_t * document, char * name){
@@ -101,10 +102,8 @@ char * get_value(bson_t * document, char * name){
  * this section process command
  */
 
-char ** command_process(char ** command, char * filename){
-        //int length = sizeof(command)/sizeof(char *);
-        int length = 4;
-        for(int i = 0; i < length; ++i){
+int command_process(char ** command, char * filename, int parameter_length){
+        for(int i = 0; i < parameter_length; ++i){
                 if(strcmp(command[i], "FILENAME") == 0){
                         strcpy(command[i], filename);
                 }else if(strcmp(command[i],"FILENAME_BACKUP") == 0){
@@ -116,7 +115,7 @@ char ** command_process(char ** command, char * filename){
                         command[i] = NULL;
                 }
         }
-        return command;
+        return 0;
 }
 
 // remove quote
