@@ -184,35 +184,7 @@ struct head_node * find_file_by_path(const char * path){
         return head;
 }
 
-struct head_node * find_file_by_document(bson_t * document){
-        log_msg("DB_manager function: find_file_by_document\n");
-        const bson_t * result;
-        mongoc_cursor_t * cursor = mongoc_collection_find(_get_collection("nosqlFS", "file"), MONGOC_QUERY_NONE, 0, 0, 0, document, NULL, NULL);
-        struct head_node * head = list_init();
-        while(mongoc_cursor_next(cursor, &result)) {
-                list_append(head, (void *)result);
-        }
-        mongoc_cursor_destroy(cursor);
-        bson_destroy(document);
-        return head;
-}
 
-struct head_node * find_file_by_key(int argc, char ** field, char ** value){
-        log_msg("DB_manager function: find_file_by_key\n");
-        bson_t * document = bson_new();
-        const bson_t * result;
-        for(int i = 0; i < argc; ++i) {
-                BSON_APPEND_UTF8(document, field[i], value[i]);
-        }
-        mongoc_cursor_t * cursor = mongoc_collection_find(_get_collection("nosqlFS", "file"), MONGOC_QUERY_NONE, 0, 0, 0, document, NULL, NULL);
-        struct head_node * head = list_init();
-        while(mongoc_cursor_next(cursor, &result)) {
-                list_append(head, (void *)result);
-        }
-        mongoc_cursor_destroy(cursor);
-        bson_destroy(document);
-        return head;
-}
 
 int insert_file(bson_t * document, const char * path){
         log_msg("DB_manager function: Insert file\n");

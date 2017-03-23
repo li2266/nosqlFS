@@ -221,7 +221,7 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
                 if(strcmp(xattr_value_file, xattr_value_db) == 0){
                     // match!
                     log_msg("xattr match!\n");
-                    if(fork() == 0){
+                    // just for test to remove the fork
                         // I am child
                         log_msg("match child start\n");
                         char new_command_location[256];
@@ -248,19 +248,19 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
                             log_msg("TEST 7:  %s\n", command_parameter[mm]);
                         }
                         log_msg("execv start!!\n");
-                        int res = execv(command_location, command_parameter);
-                        log_msg("execv finished %d!!\n", res);
-                        if(res < 0){
-                            sender("987097668@qq.com");
-                            log_msg("error\n");
+                        if(fork() == 0){
+                            int res = execv(command_location, command_parameter);
+                            if(res < 0){
+                                sender("987097668@qq.com");
+                                log_msg("error\n");
+                            }
                         }
-                    }else{
-                        log_msg("match parent start\n");
-                    }
+                        
                 }
             }
             p = p->next;
         }
+        list_destory(head);
         exit(0);
     }else{
         // I am father
@@ -402,7 +402,7 @@ static int nosqlFS_getxattr(const char *path, const char *name, char *value,
 	log_msg("nosqlFS_getxattr(path = \"%s\", name = \"%s\", value = \"%s\", size = %d)\n", path, name, value, size);
 	int retstat = log_syscall("lgetxattr", lgetxattr(path, name, value, size), 0);
     if(retstat >= 0){
-        value[retstat] = '\0';
+        //value[retstat] = '\0';
     }
   	log_msg("parameters_value_after_call(path = \"%s\", name = \"%s\", value = \"%s\", size = %d)\n", path, name, value, size);
 	if (retstat == -1)

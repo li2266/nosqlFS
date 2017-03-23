@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <bson.h>
 #include <stdlib.h>
+#include <fuse.h>
 
 #include "util.h"
 #include "cJSON.h"
@@ -25,7 +26,8 @@ struct head_node * list_init(){
 void list_append(struct head_node * head, void * data){
         struct node * p;
         p = (struct node *)malloc(sizeof(struct node));
-        p->value = data;
+        p->value = bson_copy(data);
+        //p->value = data;
         p->next = NULL;
         if(head->tail == NULL) {
                 head->tail = p;
@@ -51,6 +53,11 @@ void list_destory(struct head_node * head){
         while(p != NULL) {
                 tmp = p;
                 p = p->next;
+                if(sizeof(* tmp->value) == sizeof(bson_t)){
+                    bson_destroy(tmp->value);
+                }else{
+                    free(p->value);
+                }
                 free(tmp);
                 tmp = NULL;
         }
@@ -76,11 +83,16 @@ char * get_command_location(bson_t * document){
 int get_command_parameter(bson_t * document, char ** parameters){
         char * json_str;
         size_t len;
+        log_msg("GET TEST 1\n");
         json_str = bson_as_json(document, &len);
         // start parsing
+        log_msg("GET TEST 2\n");
         cJSON * root_json = cJSON_Parse(json_str);
+        log_msg("GET TEST 3\n");
         cJSON * command_parameter = cJSON_GetObjectItem(root_json, "command");
+        log_msg("GET TEST 4\n");
         int command_length = cJSON_GetArraySize(command_parameter);
+        log_msg("GET TEST 5\n");
         cJSON * item;
         for(int i = 0; i < command_length; ++i){
                 item = cJSON_GetArrayItem(command_parameter, i);
