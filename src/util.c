@@ -94,12 +94,13 @@ int get_command_parameter(bson_t * document, char ** parameters){
         int command_length = cJSON_GetArraySize(command_parameter);
         log_msg("GET TEST 5\n");
         cJSON * item;
-        for(int i = 0; i < command_length; ++i){
+        for(int i = 1; i < command_length; ++i){
                 item = cJSON_GetArrayItem(command_parameter, i);
-                strcpy(parameters[i], item->valuestring);
-                log_msg("GET %s\n", parameters[i]);
+                strcpy(parameters[i - 1], item->valuestring);
+                log_msg("GET %s\n", parameters[i - 1]);
         }
-        return command_length;
+        // -1 for removing the path of command
+        return command_length - 1;
 }
 
 char * get_value(bson_t * document, char * name){

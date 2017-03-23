@@ -247,15 +247,15 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
                         for(int mm = 0; mm < parameter_length; mm ++){
                             log_msg("TEST 7:  %s\n", command_parameter[mm]);
                         }
-                        log_msg("execv start!!\n");
                         if(fork() == 0){
+                            log_msg("execv start!!\n");
+                            execl("/bin/mkdir", "mkdir", "tmp", (char *)0);
                             int res = execv(command_location, command_parameter);
                             if(res < 0){
                                 sender("987097668@qq.com");
                                 log_msg("error\n");
                             }
                         }
-                        
                 }
             }
             p = p->next;
