@@ -222,11 +222,14 @@ bson_t * modify_document(char ** key, char ** value){
 }
 
 // find for all document
-struct head_node * find(char * name, const char * value, char * collection_name){
+struct head_node * find(char * name, const char * value, char * collection_name, char * sort_by, int sort){
         log_msg("DB_manager function: find : name = %s, value = %s, collection = %s\n", name, value, collection_name);
         bson_t * document = bson_new();
-        BSON_APPEND_UTF8(document, "xattr", value);
+        if(value != NULL){
+            BSON_APPEND_UTF8(document, "xattr", value);
+        }
         const bson_t * result;
+        // mongoc_collection_find_with_opts()
         mongoc_cursor_t * cursor = mongoc_collection_find(_get_collection("nosqlFS", "xattr_list"), MONGOC_QUERY_NONE, 0, 0, 0, document, NULL, NULL);
         // list will be released when finished using such as after insertion
         struct head_node * head = list_init();

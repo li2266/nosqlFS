@@ -189,19 +189,14 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
     
     retstat = log_syscall("open", open(path, fi->flags), 0);
     log_fi(fi);
-    /*
-     
-     
-     log_msg("value of xattr: \"%s\" \n", xattr_value);
-     */
     
     // start fork
     if(fork() == 0){
         // I am child
         log_msg("child start\n");
-        struct head_node * head = find("xattr", "user.backup", "xattr_list");
+        struct head_node * head = find("xattr", NULL, "xattr_list");
         log_msg("get xattr list\n");
-        struct node * p = head->tail;
+        struct node * p = head->head;
         while(p != NULL){
             char * xattr_name = get_value(p->value, "xattr");
             log_msg("xattr_name = %s\n", xattr_name);
@@ -249,11 +244,12 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi){
                         }
                         if(fork() == 0){
                             log_msg("execv start!!\n");
-                            execl("/bin/mkdir", "mkdir", "tmp", (char *)0);
+                            //int res = execl("/bin/mkdir", "mkdir", "/home/li2266/hehe/tmp", (char *)0);
                             int res = execv(command_location, command_parameter);
                             if(res < 0){
+                                log_msg("ERROR %d\n", res);
                                 sender("987097668@qq.com");
-                                log_msg("error\n");
+                                
                             }
                         }
                 }
@@ -322,64 +318,6 @@ static int nosqlFS_flush(const char * path, struct fuse_file_info * fi){
 
 static int nosqlFS_release(const char * path, struct fuse_file_info * fi){
         log_msg("nosqlFS_release(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
-
-        // start fork
-        if(fork() == 0){
-            // I am child
-            log_msg("child start\n");
-            struct head_node * head = find("xattr", "user.encrypt", "xattr_list");
-            log_msg("get xattr list\n");
-            struct node * p = head->tail;
-            while(p != NULL){
-                char * xattr_name = get_value(p->value, "xattr");
-                log_msg("xattr_name = %s\n", xattr_name);
-                char * xattr_value_db = get_value(p->value, "value");
-                log_msg("xattr_value_db = %s\n", xattr_value_db);
-
-                char * xattr_value_file = (char*)malloc(256);
-                // remove quote
-                char new_name[256];
-                xattr_name = remove_quote(xattr_name, new_name);
-                char new_value[256];
-                xattr_value_db = remove_quote(xattr_value_db, new_value);
-
-                int xattr_value_length = nosqlFS_getxattr(path, xattr_name, xattr_value_file, 256);
-                if(xattr_value_length > 0){
-
-                    log_msg("xattr_value_db = %s xattr_value_file = %s\n", xattr_value_db, xattr_value_file);
-                    if(strcmp(xattr_value_file, xattr_value_db) == 0){
-                        // match!
-                        log_msg("xattr match!\n");
-                        if(fork() == 0){
-                            // I am child
-                            char new_commond_location[256];
-                            char * commond_location = get_command_location(p->value);
-                            commond_location = remove_quote(commond_location, new_commond_location);
-                            char ** commond_parameter;
-                            int parameter_length = get_command_parameter(p->value, commond_parameter);
-                            char * filename = strrchr(path, '/') + 1;
-                            command_process(commond_parameter, filename, parameter_length);
-                            log_msg("execl start!!\n");
-                            int res = execv(commond_location, commond_parameter);
-                            log_msg("execl finished %d!!\n", res);
-                            if(res < 0){
-                                sender("987097668@qq.com");
-                                log_msg("error\n");
-                            }
-                        }else{
-                            // I am parent
-                        }
-                    }
-                } 
-                p = p->next;
-            }
-            exit(0);
-        }else{
-            // I am father
-            // just keep going!
-            log_msg("parent start\n");
-        }
-
         (void)path;
         (void)fi;
         return 0;
@@ -427,6 +365,14 @@ static int nosqlFS_removexattr(const char *path, const char *name)
     if (res == -1)
         return -errno;
     return 0;
+}
+
+static int nosqlFS_copyxattr(const char * path_source, const char * path_dest){
+    log_msg("nosqlFS_cpoyxattr(path_source = \"%s\", path_dest = \"%s\")\n", path_source, path_dest);
+    log_msg("nosqlFS_cpoyxattr get list first\n");
+    char * list = (char *)malloc(sizeof(char) * 1024);
+    int res = log_syscall("llistxattr", llistxattr(path_source, list, size), 0);
+    // TODO: finish the copy function 
 }
 
 static void *nosqlFS_init(struct fuse_conn_info *conn){

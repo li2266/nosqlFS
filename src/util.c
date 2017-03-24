@@ -22,14 +22,15 @@ struct head_node * list_init(){
         head->count = 0;
         return head;
 }
-
+// bug: head has no data
 void list_append(struct head_node * head, void * data){
         struct node * p;
         p = (struct node *)malloc(sizeof(struct node));
         p->value = bson_copy(data);
         //p->value = data;
         p->next = NULL;
-        if(head->tail == NULL) {
+        if(head->head == NULL) {
+                //head->head = p;
                 head->tail = p;
         }else{
                 head->tail->next = p;
@@ -41,7 +42,7 @@ void list_append(struct head_node * head, void * data){
 void list_insert(struct head_node * head, void * data){
         struct node * p;
         p = (struct node *)malloc(sizeof(struct node));
-        p->value = data;
+        p->value = bson_copy(data);
         p->next = head->head;
         head->head = p;
         ++head->count;
@@ -140,11 +141,27 @@ int command_process(char ** command, char * filename, int parameter_length){
         }
         return 0;
 }
-
-// remove quote
-
+/*
+ * Some string process function
+ * 1. remove quote
+ */
 char * remove_quote(char * str, char * new_str){
         strncpy(new_str, str + 1, strlen(str) - 2);
         new_str[strlen(str) - 2] = '\0';
         return new_str;
+}
+
+/*
+ * Some string process function
+ * 2. string split for special case '\0'
+ */
+
+void split(char * string, int length, char ** result){
+    char * p = string;
+    int index = -1;
+    while(*p){
+        strcpy(result[++index], p);
+        p = strchr(p, '\0');
+        p += strlen(p) + 1;
+    }
 }
