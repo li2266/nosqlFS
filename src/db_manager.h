@@ -24,7 +24,7 @@ int insert_file(bson_t * document, const char * path);
 
 bson_t * create_document_file_state(const char * path, char * state);
 bson_t * modify_document(char ** key, char ** value);
-struct head_node * find(char * name, const char * value, char * collection_name);
+struct head_node * find(char * name, const char * value, char * collection_name, char * sort_by, int sort);
 struct head_node * find_by_path(const char * path, char * collection_name);
 void update(bson_t * document, const char * path, char ** key, char ** value);
 int insert(bson_t * document, const char * path, char * collection_name);
