@@ -3,6 +3,7 @@
 
 #define FUSE_USE_VERSION 30
 
+#include <fuse.h>
 #include <stdio.h>
 
 #define log_struct(st, field, format, typecast) log_msg( #field " = " #format "\n", typecast st->field)

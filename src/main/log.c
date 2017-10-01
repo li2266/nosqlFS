@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <errno.h>
-#include <fuse.h>
+
 #include <time.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -23,7 +23,7 @@ FILE * log_open() {
     struct tm *p = gmtime(&now);
     // create log file name
     char log_name[30];
-    sprintf(log_name, "../log/nosqlFS_%d-%d-%d.log", p->tm_mon + 1, p->tm_mday, p->tm_year + 1900 );
+    sprintf(log_name, "../../log/nosqlFS_%d-%d-%d.log", p->tm_mon + 1, p->tm_mday, p->tm_year + 1900 );
     // open the file and check if successful
     logFile = fopen(log_name, "a");
     if (logFile == NULL) {
@@ -171,6 +171,7 @@ void log_stat(struct stat *si)
 
     //  time_t    st_mtime;   /* time of last modification */
     log_struct(si, st_mtime, 0x % 08lx, );
+    log_msg("Last file modification: %s", ctime(&si->st_mtime));
 
     //  time_t    st_ctime;   /* time of last status change */
     log_struct(si, st_ctime, 0x % 08lx, );

@@ -8,7 +8,6 @@
 #include <fuse.h>
 
 #include "util.h"
-#include "cJSON.h"
 #include "log.h"
 
 /*

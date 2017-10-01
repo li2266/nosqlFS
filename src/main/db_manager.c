@@ -8,7 +8,6 @@
 #include <string.h>
 #include <fuse.h>
 
-#include "util.h"
 #include "log.h"
 
 static mongoc_client_t * client;
@@ -43,16 +42,6 @@ mongoc_collection_t * _get_collection(char * database_name, char * collection_na
 }
 
 int db_init() {
-    // mongoc_client_t      *client;
-    // mongoc_database_t    *database;
-    // mongoc_collection_t  *collection;
-    bson_t               *command,
-                         reply,
-                         *insert;
-    bson_error_t error;
-    char                 *str;
-    bool retval;
-
     /*
      * Required to initialize libmongoc's internals
      */
@@ -83,7 +72,68 @@ int disconnect() {
     return 0;
 }
 
-bson_t * create_document_file(struct stat *si, const char * path) {
+int insert(bson_t * document){
+    bson_error_t error;
+    if(!mongoc_collection_insert(collection, MONGOC_INSERT_NONE, document, NULL, &error)){
+        log_msg("ERROR MONGODB: %s", error.message);
+    }
+    bson_destroy(document);
+
+    return 0;
+}
+
+char * find(bson_t * query){
+    const bson_t * doc;
+    char * str = NULL;
+    mongoc_cursor_t * cursor;
+
+    cursor = mongoc_collection_find_with_opts(collection, query, NULL, NULL);
+    while(mongoc_cursor_next(cursor, & doc)){
+        str = bson_as_json(doc, NULL);
+    }
+    //bson_destroy(query);
+    // destory later for update
+    mongoc_cursor_destroy(cursor);
+
+    return str;
+}
+
+int update(bson_t * query, bson_t * update_doc){
+    bson_error_t error;
+    if(!mongoc_collection_update(collection, MONGOC_UPDATE_NONE, query, update_doc, NULL, & error)){
+        return -1;
+    }
+    return 0;
+}
+
+// document create
+
+bson_t * document_create_file(int int_last_modification, const char * path){
+    
+    bson_t * document = BCON_NEW(
+        "path", BCON_UTF8(path),
+        "last_modification", BCON_INT32(int_last_modification),
+        "analyze", BCON_UTF8("NEED")
+        );
+    return document;
+}
+
+bson_t * document_create_query_file(const char * path){
+    bson_t * document = BCON_NEW(
+        "path", BCON_UTF8(path)
+        );
+    return document;
+}
+
+bson_t * document_create_update(int int_last_modification){
+    bson_t * update = BCON_NEW("$set", "{",
+            "last_modification", BCON_INT32(int_last_modification),
+            "analyze", BCON_UTF8("NEED"),
+        "}");
+    return update;
+}
+
+/*bson_t * create_document_file(struct stat *si, const char * path) {
     // the data stored in mongodb should be string
     char str_st_dev[256];
     char str_st_ino[256];
@@ -98,11 +148,6 @@ bson_t * create_document_file(struct stat *si, const char * path) {
     char str_st_atime[256];
     char str_st_mtime[256];
     char str_st_ctime[256];
-    /* store a long number to represent the time
-       struct tm * last_access;
-       struct tm * last_modif;
-       struct tm * last_stat_change;
-     */
 
     // get data in struct stat
     sprintf(str_st_dev, "%lu", si->st_dev);
@@ -136,8 +181,8 @@ bson_t * create_document_file(struct stat *si, const char * path) {
                             "st_ctime", BCON_UTF8(str_st_ctime)
                         );
     return document;
-}
-
+}*/
+/*
 void modify_file(bson_t * document, const char * path) {
     log_msg("DB_manager function: Modify file path = %s\n", path);
     bson_error_t error;
@@ -151,12 +196,13 @@ void modify_file(bson_t * document, const char * path) {
     bson_destroy(document);
     bson_destroy(query);
 }
+*/
 /*
    original name of this function is search,
    I change that because find is used by mongodb
  */
 // there are three find functions. this is because it's diffcult to implement a override in C
-
+/*
 struct head_node * find_file_by_path(const char * path) {
     log_msg("DB_manager function: find_file_by_path : %s\n", path);
     bson_t * document = BCON_NEW("path", BCON_UTF8(path));
@@ -172,7 +218,7 @@ struct head_node * find_file_by_path(const char * path) {
     bson_destroy(document);
     return head;
 }
-
+// used by nosqlFS_getattr, 
 int insert_file(bson_t * document, const char * path) {
     log_msg("DB_manager function: Insert file\n");
     bson_error_t error;
@@ -192,9 +238,11 @@ int insert_file(bson_t * document, const char * path) {
     list_destory(head);
     return 0;
 }
-
+*/
 // find for all document
 // that us used by finding xattr doc in mongodb
+// used by open
+/*
 struct head_node * find(char * name, const char * value, char * collection_name, char * sort_by, int sort) {
     log_msg("DB_manager function: find : name = %s, value = %s, collection = %s\n", name, value, collection_name);
 
@@ -232,8 +280,9 @@ struct head_node * find(char * name, const char * value, char * collection_name,
     bson_destroy(filter);
     return head;
 }
-
+*/
 //TODO:need modify
+/*
 void update(bson_t * document, const char * path, char ** key, char ** value) {
     log_msg("DB_manager function: update path = %s\n", path);
     bson_error_t error;
@@ -262,3 +311,4 @@ int insert(bson_t * document, const char * path, char * collection_name) {
     bson_destroy(document);
     return 0;
 }
+*/

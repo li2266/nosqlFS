@@ -12,11 +12,13 @@
 #include <dirent.h>
 #include <string.h>
 #include <sys/xattr.h>
+#include <sys/types.h>
 
 #include "log.h"
-#include "util.h"
+//#include "util.h"
 #include "db_manager.h"
-#include "email_sender.h"
+//#include "email_sender.h"
+#include "helper.h"
 
 #define XATTR_LIST_LENGTH 1024
 
@@ -29,10 +31,22 @@ static int nosqlFS_getattr(const char * path, struct stat * stbuf) {
     int retstat =  log_syscall("lstat", lstat(path, stbuf), 0);
     // there are too many logs, just make it clear
     //log_stat(stbuf);
-    // store file info into database only when we get the info successfully
-    if (retstat == 0) {
-        bson_t * document = create_document_file(stbuf, path);
-        insert_file(document, path);
+    // store file info into database only when we get the info successfully and this is file
+
+    switch (stbuf->st_mode & S_IFMT) {
+    case S_IFBLK:  log_msg("FILE TYPE: block device\n");            break;
+    case S_IFCHR:  log_msg("FILE TYPE: character device\n");        break;
+    case S_IFDIR:  log_msg("FILE TYPE: directory\n");               break;
+    case S_IFIFO:  log_msg("FILE TYPE: FIFO/pipe\n");               break;
+    case S_IFLNK:  log_msg("FILE TYPE: symlink\n");                 break;
+    case S_IFREG:  log_msg("FILE TYPE: regular file\n");            break;
+    case S_IFSOCK: log_msg("FILE TYPE: socket\n");                  break;
+    default:       log_msg("FILE TYPE: unknown?\n");                break;
+    }
+    if (retstat == 0 && S_ISREG(stbuf->st_mode)) {
+        //bson_t * document = create_document_file(stbuf, path);
+        //insert_file(document, path);
+        record_file_basic_info(path, stbuf);
     }
     return retstat;
 }
@@ -192,8 +206,11 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi) {
 
     retstat = log_syscall("open", open(path, fi->flags), 0);
     log_fi(fi);
+
+    /*
     // remove fork from there
     log_msg("child start\n");
+    // do not need node =======================================================================
     struct head_node * head = find("xattr", NULL, "xattr_list", "priority", 1);
     log_msg("get xattr list\n");
     struct node * p = head->head;
@@ -257,7 +274,7 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi) {
         p = p->next;
     }
     list_destory(head);
-
+    */
     if (retstat == -1) {
         return -errno;
     }
@@ -361,28 +378,6 @@ static int nosqlFS_removexattr(const char *path, const char *name)
     return 0;
 }
 
-/* Some function for helping */
-
-int check_xttr(const char * path) {
-
-}
-
-static int nosqlFS_copyxattr(const char * path_source, const char * path_dest) {
-    log_msg("nosqlFS_cpoyxattr(path_source = \"%s\", path_dest = \"%s\")\n", path_source, path_dest);
-    log_msg("nosqlFS_cpoyxattr get list first\n");
-    char * list = (char *)malloc(sizeof(char) * XATTR_LIST_LENGTH);
-    int res = log_syscall("llistxattr", llistxattr(path_source, list, XATTR_LIST_LENGTH), 0);
-    // TODO: finish the copy function
-    if(res < 0){
-        log_msg("nosqlFS_cpoyxattr fail to get list\n");
-        return -errno;
-    }
-    
-}
-
-/* helper function end */
-
-
 static void *nosqlFS_init(struct fuse_conn_info *conn) {
     log_msg("nosqlFS_init()\n");
     log_conn(conn);
@@ -408,7 +403,7 @@ static struct fuse_operations nosqlFS_oper = {
     .readlink = nosqlFS_readlink,
     //  .opendir = nosqlFS_opendir,
     .readdir = nosqlFS_readdir,
-    //  .releasedir = nosqlFS_releasedir,
+    .releasedir = nosqlFS_releasedir,
     .mknod = nosqlFS_mknod,
     .mkdir = nosqlFS_mkdir,
     .symlink = nosqlFS_symlink,
@@ -426,7 +421,7 @@ static struct fuse_operations nosqlFS_oper = {
     .read = nosqlFS_read,
     .write = nosqlFS_write,
     .statfs = nosqlFS_statfs,
-    //  .flush = nosqlFS_flush,
+    .flush = nosqlFS_flush,
     .release = nosqlFS_release,
     //  .fsync = nosqlFS_fsync,
     .init = nosqlFS_init,
