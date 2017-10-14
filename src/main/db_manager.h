@@ -1,7 +1,7 @@
 #ifndef DB_MANAGER_H
 #define DB_MANAGER_H
 
-#define FUSE_USE_VERSION 30
+#define FUSE_USE_VERSION 31
 
 #include <bson.h>
 #include <bcon.h>

@@ -1,7 +1,7 @@
 #ifndef NOSQLFS_H
 #define NOSQLFS_H
 
-#define FUSE_USE_VERSION 30
+#define FUSE_USE_VERSION 31
 #define _XOPEN_SOURCE 700
 
 #include <limits.h>

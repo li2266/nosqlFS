@@ -1,7 +1,7 @@
 #ifndef LOG_H
 #define LOG_H
 
-#define FUSE_USE_VERSION 30
+#define FUSE_USE_VERSION 31
 
 #include <fuse.h>
 #include <stdio.h>
