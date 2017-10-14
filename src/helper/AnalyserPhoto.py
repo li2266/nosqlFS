@@ -1,16 +1,20 @@
 from os.path import join, getsize
 from PIL import Image
+from clarifai.rest import ClarifaiApp
+from clarifai.rest import Image as ClImage
 import base64
 import requests
 import json
 
-# path = "/home/pengli/nosqlFS/src/helper/tmp/393984-view.jpg"
+
+path = "/home/pengli/nosqlFS/src/helper/tmp/568653.jpg"
+path2 = "/home/pengli/nosqlFS/src/helper/tmp/Chicago-City-073.jpg"
 
 
 # All of this size are in K
 target_size = 4 * 1024;
 
-def analyze(path, logger):
+def analyze_google(path, logger):
 	size = getsize(path) / 1024.0 
 	logger.info("size of the file is {}".format(size))
 	small_path = None
@@ -55,6 +59,7 @@ def analyze(path, logger):
 	json_response = json.loads(response.text)
 
 	res = set()
+	# TODO remove the copy
 
 	if "responses" not in json_response:
 		logger.error("wrong")
@@ -73,6 +78,27 @@ def analyze(path, logger):
 			res.add(item["description"])
 	return res
 
-if __name__ == "__main__":
-	analyze(path);
 
+clarifai_app = None
+
+def analyze_clarifai(path, logger, clarifai_app):
+	if clarifai_app == None:
+		clarifai_app = initialize_clarifai()
+	model = clarifai_app.models.get('general-v1.3')
+	image = ClImage(file_obj=open(path, 'rb'))
+	output = model.predict([image])
+	
+	res = set()
+
+	for label in output['outputs'][0]['data']['concepts']:
+		res.add(label['name'])
+	print(res)
+	return res
+
+def initialize_clarifai():
+	app = ClarifaiApp(api_key='a26803e2f370483784c7347330d61451')
+	print("init")
+	return app
+
+if __name__ == "__main__":
+	analyze_clarifai(path2, None, clarifai_app)
