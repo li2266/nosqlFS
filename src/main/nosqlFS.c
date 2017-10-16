@@ -25,7 +25,7 @@
 /*
 
  */
-static int nosqlFS_getattr(const char * path, struct stat * stbuf) {
+static int nosqlFS_getattr(const char * path, struct stat * stbuf, struct fuse_file_info * fi) {
     log_msg("nosqlFS_getattr(char * path = %s, struct stat * stbuf = %08x)\n", path, stbuf);
     log_msg("path: %s\n", path);
     int retstat =  log_syscall("lstat", lstat(path, stbuf), 0);
@@ -173,19 +173,19 @@ static int nosqlFS_link(const char * from, const char * to) {
     return log_syscall("link", link(from, to), 0);
 }
 
-static int nosqlFS_chmod(const char * path, mode_t mode) {
+static int nosqlFS_chmod(const char * path, mode_t mode, struct fuse_file_info * fi) {
     log_msg("nosqlFS_chmod(path = \"%s\", mode = 0%3o)\n", path, mode);
 
     return log_syscall("chmod", chmod(path, mode), 0);
 }
 
-static int nosqlFS_chown(const char * path, uid_t uid, gid_t gid) {
+static int nosqlFS_chown(const char * path, uid_t uid, gid_t gid, struct fuse_file_info * fi) {
     log_msg("nosqlFS_chown(path = \"%s\", uid = %d, gid = %d)\n", path, uid, gid);
 
     return log_syscall("lchown", lchown(path, uid, gid), 0);
 }
 
-static int nosqlFS_truncate(const char * path, off_t size) {
+static int nosqlFS_truncate(const char * path, off_t size, struct fuse_file_info * fi) {
     log_msg("nosqlFS_truncate(path = \"%s\", size = %lld)\n", path, size);
 
     return log_syscall("truncate", truncate(path, size), 0);
@@ -378,7 +378,7 @@ static int nosqlFS_removexattr(const char *path, const char *name)
     return 0;
 }
 
-static void *nosqlFS_init(struct fuse_conn_info *conn) {
+static void *nosqlFS_init(struct fuse_conn_info *conn, struct fuse_config * cfg) {
     log_msg("nosqlFS_init()\n");
     log_conn(conn);
     log_fuse_context(fuse_get_context());
@@ -386,6 +386,11 @@ static void *nosqlFS_init(struct fuse_conn_info *conn) {
     int res = db_init();
     log_msg("mongodb init and returned %d\n", res);
     printf("mongodb init and returned %d\n", res);
+
+    cfg->use_ino = 1;
+    cfg->entry_timeout = 0;
+    cfg->attr_timeout = 0;
+    cfg->negative_timeout = 0;
 
     // nosqlFS_Data is a marco for (nosqlFS_state *)private_data
     return nosqlFS_Data;

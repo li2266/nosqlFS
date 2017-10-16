@@ -71,7 +71,6 @@ void log_conn(struct fuse_conn_info * conn) {
     log_msg("fuse_conn_info:\n");
     log_struct(conn, proto_major, % d, );
     log_struct(conn, proto_minor, % d, );
-    log_struct(conn, max_read, % d, );
     log_struct(conn, max_write, % d, );
     log_struct(conn, max_readahead, % d, );
     log_struct(conn, capable, % 08x, );
