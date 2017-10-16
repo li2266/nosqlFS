@@ -71,13 +71,14 @@ void log_conn(struct fuse_conn_info * conn) {
     log_msg("fuse_conn_info:\n");
     log_struct(conn, proto_major, % d, );
     log_struct(conn, proto_minor, % d, );
-    log_struct(conn, async_read, % d, );
+    log_struct(conn, max_read, % d, );
     log_struct(conn, max_write, % d, );
     log_struct(conn, max_readahead, % d, );
     log_struct(conn, capable, % 08x, );
     log_struct(conn, want, % 08x, );
     log_struct(conn, max_background, % d, );
     log_struct(conn, congestion_threshold, % d, );
+    log_struct(conn, time_gran, % d, );
 }
 
 void log_fuse_context(struct fuse_context * context) {
