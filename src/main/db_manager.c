@@ -75,7 +75,7 @@ int disconnect() {
 int insert(bson_t * document){
     bson_error_t error;
     if(!mongoc_collection_insert(collection, MONGOC_INSERT_NONE, document, NULL, &error)){
-        log_msg("ERROR MONGODB: %s", error.message);
+        //log_msg("ERROR MONGODB: %s", error.message);
     }
     bson_destroy(document);
 

@@ -16,21 +16,21 @@ target_size = 4 * 1024;
 
 def analyze_google(path, logger):
 	size = getsize(path) / 1024.0 
-	logger.info("size of the file is {}".format(size))
+	#logger.info("size of the file is {}".format(size))
 	small_path = None
 	if size > target_size:
 		small_path = path + ".cpy"
-		logger.debug("make it small")
+		#logger.debug("make it small")
 		im = Image.open(path)
 		q = 90
 		while size > target_size and q > 0:
-			logger.info("quality right now {}".format(q))
+			#logger.info("quality right now {}".format(q))
 			out  = im.resize(im.size, Image.ANTIALIAS)
 			out.save(small_path, "JPEG", quality = q)
 			size = getsize(small_path) / 1024.0
 			q -= 10
 
-	logger.debug("start sending request")
+	#logger.debug("start sending request")
 	request_file = None
 	if small_path == None:
 		request_file = path
@@ -62,7 +62,7 @@ def analyze_google(path, logger):
 	# TODO remove the copy
 
 	if "responses" not in json_response:
-		logger.error("wrong")
+		#logger.error("wrong")
 		return
 	else:
 		resp = json_response["responses"][0];

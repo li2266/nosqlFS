@@ -35,13 +35,13 @@ def fun(task_member):
 
 	if task_member.threadID == 1:
 		# task_detector
-		task_detector_logger = logging.getLogger('TaskDetector')
+		#task_detector_logger = logging.getLogger('TaskDetector')
 		while True:
-			task_detector_logger.debug('task_detector is working')
+			#task_detector_logger.debug('task_detector is working')
 			tmp = task_member.last_time_retrieval
 			task_member.last_time_retrieval = int(time.time())
 			for post in collection_file.find({"last_modification" : {"$gt" : tmp}, "analyze" : "NEED"}):
-				task_detector_logger.debug("push {} into queue".format(post["path"]))
+				#task_detector_logger.debug("push {} into queue".format(post["path"]))
 				queue_lock.acquire()
 				task_member.queue.put(post)
 				queue_lock.release()
@@ -52,8 +52,8 @@ def fun(task_member):
 		# task_worker
 		analyze_doc_log = logging.getLogger('AnalyserDoc')
 		analyze_pic_log = logging.getLogger('AnalyserPic')
-		task_worker_logger = logging.getLogger('TaskDetector')
-		task_worker_logger.debug("task_worker start do the task")
+		#task_worker_logger = logging.getLogger('TaskDetector')
+		#task_worker_logger.debug("task_worker start do the task")
 		while True:
 			queue_lock.acquire()
 			if not task_member.queue.empty():
@@ -64,13 +64,13 @@ def fun(task_member):
 				file_name = post['path'].split('/')[-1]
 				try:
 					if file_name.split('.')[-1] in extension_doc:
-						task_worker_logger.debug("process {} as txt file".format(post['path']))
+						#task_worker_logger.debug("process {} as txt file".format(post['path']))
 						tmp_set = AnalyserDocument.analyze(post['path'], analyze_doc_log)
 						tmp_list = list(tmp_set)
 						print(tmp_list)
 						label_list.extend(tmp_list) 
 					elif file_name.split('.')[-1] in extension_pic:
-						task_worker_logger.debug("process {} as picture file".format(post['path']))
+						#task_worker_logger.debug("process {} as picture file".format(post['path']))
 						tmp_set = AnalyserPhoto.analyze_clarifai(post['path'], analyze_pic_log)
 						tmp_list = list(tmp_set)
 						print(tmp_list)
@@ -82,21 +82,21 @@ def fun(task_member):
 							continue
 						post_label = {'path' : post['path'], 'label' : label}
 						post_id = collection_invert_list.insert_one(post_label).inserted_id
-						task_worker_logger.debug("insert path {} and label {}".format(post_label['path'], label))
+						#task_worker_logger.debug("insert path {} and label {}".format(post_label['path'], label))
 					
 					print(post['_id'])
 					collection_file.update_one({'_id' : ObjectId(post['_id'])}, {'$set' : {'analyze' : 'DONE'}})
 					#collection_file.update_one({'_id' : post['_id']}, {'$set' : {'analyze' : 'DONE'}})
-					task_worker_logger.debug("finish analyze task: {} ".format(post['path']))
+					#task_worker_logger.debug("finish analyze task: {} ".format(post['path']))
 				except Exception as e:
 					print(e)
-					task_worker_logger.error("fail analyze task: {} ".format(post['path']))
-					task_worker_logger.error("error message: {} ".format(e))
-				task_worker_logger.debug("{} left".format(task_member.queue.qsize()))
+					#task_worker_logger.error("fail analyze task: {} ".format(post['path']))
+					#task_worker_logger.error("error message: {} ".format(e))
+				#task_worker_logger.debug("{} left".format(task_member.queue.qsize()))
 				time.sleep(0.01)
 			else:
 				queue_lock.release()
-				task_worker_logger.debug("no task right now")
+				#task_worker_logger.debug("no task right now")
 				time.sleep(1)
 			
 			
