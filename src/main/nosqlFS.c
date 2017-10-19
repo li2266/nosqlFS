@@ -134,7 +134,7 @@ static int nosqlFS_mknod(const char * path, mode_t mode, dev_t rdev) {
     } else {
         //retstat = log_syscall("mknod", mknod(path, mode, rdev), 0);
     }
-    // open will return file descriptor, so if restat != -1, return 0;
+    // open will return file descriptor, so if retstat != -1, return 0;
     if (retstat == -1) {
         return -errno;
     }
@@ -233,7 +233,7 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi) {
     //log_msg("nosqlFS_open(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
 
     //retstat = log_syscall("open", open(path, fi->flags), 0);
-    restat = open(path, fi->flags);
+    retstat = open(path, fi->flags);
     //log_fi(fi);
 
     /*
@@ -325,7 +325,7 @@ static int nosqlFS_read(const char * path, char * buf, size_t size, off_t offset
     //log_msg("nosqlFS_read(path = \"%s\", buf = 0x%08x, size = %d, offset = %lld, fuse_file_info = 0x%08x)\n", path, buf, size, offset, fi);
 
     //retstat = log_syscall("pread", pread(fd, buf, size, offset), 0);
-    restat = pread(fd, buf, size, offset);
+    retstat = pread(fd, buf, size, offset);
     close(fd);
     return retstat;
 }
