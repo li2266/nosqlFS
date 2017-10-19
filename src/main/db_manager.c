@@ -9,11 +9,12 @@
 #include <fuse.h>
 
 #include "log.h"
-
+/*
 static mongoc_client_t * client;
 static mongoc_database_t * database;
 static mongoc_collection_t * collection;
-
+mongoc_bulk_operation_t *bulk;
+*/
 
 //TODO: all this operation should be thread-safe
 mongoc_client_t * _get_client() {
@@ -56,7 +57,7 @@ int db_init() {
      */
     database = _get_database("nosqlFS");
     collection = _get_collection("nosqlFS", "file");
-
+    bulk = mongoc_collection_create_bulk_operation (collection, true, NULL);
     return 0;
 }
 
@@ -132,6 +133,9 @@ bson_t * document_create_update(int int_last_modification){
         "}");
     return update;
 }
+
+
+
 
 /*bson_t * create_document_file(struct stat *si, const char * path) {
     // the data stored in mongodb should be string

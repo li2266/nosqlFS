@@ -7,6 +7,12 @@
 #include <bcon.h>
 #include <mongoc.h>
 
+
+static mongoc_client_t * client;
+static mongoc_database_t * database;
+static mongoc_collection_t * collection;
+mongoc_bulk_operation_t *bulk;
+
 // Init
 mongoc_client_t * _get_client();
 mongoc_database_t * _get_database(char * database_name);
