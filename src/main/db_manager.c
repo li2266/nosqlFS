@@ -144,6 +144,7 @@ void add2bulk(bson_t * doc){
 }
 
 void do_bulk(){
+    log_msg("bulk size : %d", counter);
     if(counter == 0){
         return;
     }

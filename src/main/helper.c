@@ -52,5 +52,6 @@ void record_file_basic_info(const char * path, struct stat * stbuf){
 	
 	bson_t * doc = document_create_file(int_last_modification, path);
 	add2bulk(doc);
+	log_msg("add path: %s\n", path);
 }
 
