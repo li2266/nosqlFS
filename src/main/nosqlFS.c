@@ -109,7 +109,8 @@ static int nosqlFS_readlink(const char * path, char * link, size_t size) {
     int retstat;
 
     //log_msg("nosqlFS_readlink(path = \"%s\", link = \"S\", size = %d)\n", path, link, path);
-    retstat = log_syscall("readlink", readlink(path, link, size - 1), 0);
+    //retstat = log_syscall("readlink", readlink(path, link, size - 1), 0);
+    retstat = readlink(path, link, size - 1);
     if (retstat > 0) {
         link[retstat] = '\0';
         return 0;
