@@ -13,6 +13,9 @@ static mongoc_database_t * database;
 static mongoc_collection_t * collection;
 mongoc_bulk_operation_t *bulk;
 
+// How many doc we have
+int counter;
+
 // Init
 mongoc_client_t * _get_client();
 mongoc_database_t * _get_database(char * database_name);

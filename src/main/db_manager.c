@@ -58,6 +58,7 @@ int db_init() {
     database = _get_database("nosqlFS");
     collection = _get_collection("nosqlFS", "file");
     bulk = mongoc_collection_create_bulk_operation (collection, true, NULL);
+    counter = 0;
     return 0;
 }
 
@@ -139,9 +140,13 @@ bson_t * document_create_update(int int_last_modification){
 void add2bulk(bson_t * doc){
     mongoc_bulk_operation_insert(bulk, doc);
     bson_destroy(doc);
+    ++count;
 }
 
 void do_bulk(){
+    if(counter == 0){
+        return;
+    }
     mongoc_bulk_operation_t *bulk;
     bson_error_t error;
     bson_t *doc;
@@ -152,7 +157,7 @@ void do_bulk(){
 
     ret = mongoc_bulk_operation_execute (bulk, &reply, &error);
     str = bson_as_canonical_extended_json (&reply, NULL);
-    log_msg("Bulk insert result: %s", str);
+    log_msg("Bulk insert result: %s\n", str);
     bson_free(str);
 
     if (!ret) {
@@ -162,7 +167,8 @@ void do_bulk(){
     bson_destroy (&reply);
     mongoc_bulk_operation_destroy (bulk);
     bulk = mongoc_collection_create_bulk_operation (collection, true, NULL);
-    log_msg("Finish bulk insert and rebuild");
+    log_msg("Finish bulk insert and rebuild\n");
+    count = 0;
 }
 
 
