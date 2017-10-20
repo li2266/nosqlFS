@@ -148,7 +148,6 @@ void do_bulk(){
     if(counter == 0){
         return;
     }
-    mongoc_bulk_operation_t *bulk;
     bson_error_t error;
     bson_t *doc;
     bson_t reply;
