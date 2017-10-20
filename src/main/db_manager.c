@@ -140,7 +140,7 @@ bson_t * document_create_update(int int_last_modification){
 void add2bulk(bson_t * doc){
     mongoc_bulk_operation_insert(bulk, doc);
     bson_destroy(doc);
-    ++count;
+    ++counter;
 }
 
 void do_bulk(){
@@ -168,7 +168,7 @@ void do_bulk(){
     mongoc_bulk_operation_destroy (bulk);
     bulk = mongoc_collection_create_bulk_operation (collection, true, NULL);
     log_msg("Finish bulk insert and rebuild\n");
-    count = 0;
+    counter = 0;
 }
 
 
