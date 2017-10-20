@@ -134,6 +134,36 @@ bson_t * document_create_update(int int_last_modification){
     return update;
 }
 
+//********************** about bulk
+
+void add2bulk(bson_t * doc){
+    mongoc_bulk_operation_insert(bulk, doc);
+    bson_destroy(doc);
+}
+
+void do_bulk(){
+    mongoc_bulk_operation_t *bulk;
+    bson_error_t error;
+    bson_t *doc;
+    bson_t reply;
+    char *str;
+    bool ret;
+    int i;
+
+    ret = mongoc_bulk_operation_execute (bulk, &reply, &error);
+    str = bson_as_canonical_extended_json (&reply, NULL);
+    log_msg("Bulk insert result: %s", str);
+    bson_free(str);
+
+    if (!ret) {
+        log_msg("Error: %s\n", error.message);
+    }
+
+    bson_destroy (&reply);
+    mongoc_bulk_operation_destroy (bulk);
+    bulk = mongoc_collection_create_bulk_operation (collection, true, NULL);
+    log_msg("Finish bulk insert and rebuild");
+}
 
 
 

@@ -7,7 +7,7 @@
 
 #include "log.h"
 #include "db_manager.h"
-
+/*
 void record_file_basic_info(const char * path, struct stat * stbuf){
 	// get time string
 	//log_msg("Try to get time\n");
@@ -41,3 +41,16 @@ void record_file_basic_info(const char * path, struct stat * stbuf){
 	bson_destroy(query);
 	bson_free(result);
 }
+*/
+
+void record_file_basic_info(const char * path, struct stat * stbuf){
+	// get time string
+	char str_last_modification[32];
+	int int_last_modification;
+    sprintf(str_last_modification, "%ld", stbuf->st_mtime);
+    int_last_modification = stbuf->st_mtime;
+	
+	bson_t * doc = document_create_file(int_last_modification, path);
+	add2bulk(doc);
+}
+

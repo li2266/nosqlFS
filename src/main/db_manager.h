@@ -30,4 +30,8 @@ bson_t * document_create_file(int str_last_modification, const char * path);
 bson_t * document_create_query_file(const char * path);
 bson_t * document_create_update(int str_last_modification);
 
+// bulk
+void add2bulk(bson_t * doc);
+void do_bulk();
+
 #endif
