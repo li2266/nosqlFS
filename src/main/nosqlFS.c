@@ -134,6 +134,7 @@ static int nosqlFS_mknod(const char * path, mode_t mode, dev_t rdev) {
         //retstat = log_syscall("mkfifio", mkfifo(path, mode), 0);
         retstat = mkfifo(path, mode);
     } else {
+        retstat = mknod(path, mode, rdev);
         //retstat = log_syscall("mknod", mknod(path, mode, rdev), 0);
     }
     // open will return file descriptor, so if retstat != -1, return 0;
