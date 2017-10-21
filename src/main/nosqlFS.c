@@ -454,6 +454,35 @@ static int nosqlFS_removexattr(const char *path, const char *name)
     return 0;
 }
 
+#ifdef HAVE_POSIX_FALLOCATE
+static int nosqlFS_fallocate(const char *path, int mode,
+            off_t offset, off_t length, struct fuse_file_info *fi)
+{
+    int fd;
+    int res;
+
+    (void) fi;
+
+    if (mode)
+        return -EOPNOTSUPP;
+
+    if(fi == NULL)
+        fd = open(path, O_WRONLY);
+    else
+        fd = fi->fh;
+    
+    if (fd == -1)
+        return -errno;
+
+    res = -posix_fallocate(fd, offset, length);
+
+    if(fi == NULL)
+        close(fd);
+    return res;
+}
+#endif
+
+
 static void *nosqlFS_init(struct fuse_conn_info *conn, struct fuse_config * cfg) {
     log_msg("nosqlFS_init()\n");
     log_conn(conn);
@@ -472,6 +501,18 @@ static void *nosqlFS_init(struct fuse_conn_info *conn, struct fuse_config * cfg)
     return nosqlFS_Data;
 }
 
+static int nosqlFS_fsync(const char *path, int isdatasync,
+             struct fuse_file_info *fi)
+{
+    /* Just a stub.  This method is optional and can safely be left
+       unimplemented */
+
+    (void) path;
+    (void) isdatasync;
+    (void) fi;
+    return 0;
+}
+
 static void nosqlFS_usage() {
     fprintf(stderr, "usage: nosqlFS [options] rootDir mountPoint\n");
     abort();
@@ -479,6 +520,7 @@ static void nosqlFS_usage() {
 
 
 static struct fuse_operations nosqlFS_oper = {
+    .init = nosqlFS_init,
     .getattr = nosqlFS_getattr,
     .access = nosqlFS_access,
     .readlink = nosqlFS_readlink,
@@ -503,14 +545,19 @@ static struct fuse_operations nosqlFS_oper = {
     .read = nosqlFS_read,
     .write = nosqlFS_write,
     .statfs = nosqlFS_statfs,
-    .flush = nosqlFS_flush,
+    //.flush = nosqlFS_flush,
     .release = nosqlFS_release,
-    //  .fsync = nosqlFS_fsync,
-    .init = nosqlFS_init,
+    .fsync = nosqlFS_fsync,
+#ifdef HAVE_POSIX_FALLOCATE
+    .fallocate  = nosqlFS_fallocate,
+#endif
+
+#ifdef HAVE_SETXATTR
     .setxattr   = nosqlFS_setxattr,
     .getxattr   = nosqlFS_getxattr,
     .listxattr  = nosqlFS_listxattr,
     .removexattr    = nosqlFS_removexattr
+#endif
 };
 
 int main(int argc, char * argv[]) {
