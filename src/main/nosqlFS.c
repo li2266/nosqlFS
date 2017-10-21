@@ -94,7 +94,7 @@ static int nosqlFS_releasedir(const char * path, struct fuse_file_info * fi) {
 static int nosqlFS_readlink(const char * path, char * link, size_t size) {
     int res;
 
-    res = readlink(path, lik, size - 1);
+    res = readlink(path, link, size - 1);
     if (res == -1)
         return -errno;
 
