@@ -26,61 +26,55 @@
 
  */
 static int nosqlFS_getattr(const char * path, struct stat * stbuf, struct fuse_file_info * fi) {
-    /*
     int retstat = lstat(path, stbuf);
     if (retstat == 0 && S_ISREG(stbuf->st_mode)) {
         record_file_basic_info(path, stbuf);
     }
     return retstat;
-    */
-    (void) fi;
-    int res;
-
-    res = lstat(path, stbuf);
-    if (res == -1)
-        return -errno;
-
-    if (retstat == 0 && S_ISREG(stbuf->st_mode)) {
-        record_file_basic_info(path, stbuf);
-    }
-    return 0;
 }
 
 static int nosqlFS_access(const char * path, int mask) {
-    int res;
-
-    res = access(path, mask);
-    if (res == -1)
+    if (access(path, mask) < 0) {
         return -errno;
-
+    }
     return 0;
 }
 
 static int nosqlFS_readdir(const char * path, void * buf, fuse_fill_dir_t filler,
                            off_t offset, struct fuse_file_info * fi, enum fuse_readdir_flags flags) {
 
-    DIR *dp;
+    DIR * dp;
     struct dirent *de;
+    int retstat = 0;
 
-    (void) offset;
-    (void) fi;
-    (void) flags;
+    (void)offset;
+    (void)fi;
+    (void)flags;
 
+    //log_msg("nosqlFS_opendir(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
     dp = opendir(path);
-    if (dp == NULL)
-        return -errno;
+    if (dp == NULL) {
+        retstat = log_error("nosqlFS_opendir");
+        return retstat;
+    }
 
+    //log_msg("nosqlFS_readdir(path = \"%s\", buf = 0x%08x, fuse_fill_dir_t = 0x%08x, offset = %lld, fi = 0x%08x)\n", path, buf, filler, offset, fi);
+
+    //dp = (DIR *)(uintptr_t)fi->fh;
     while ((de = readdir(dp)) != NULL) {
         struct stat st;
         memset(&st, 0, sizeof(st));
         st.st_ino = de->d_ino;
         st.st_mode = de->d_type << 12;
-        if (filler(buf, de->d_name, &st, 0, 0))
-            break;
-    }
 
+        //log_msg("calling filler with name %s\n", de->d_name);
+
+        if (filler(buf, de->d_name, &st, 0, 0)) {
+            break;
+        }
+    }
     closedir(dp);
-    return 0;
+    return retstat;
 }
 
 static int nosqlFS_releasedir(const char * path, struct fuse_file_info * fi) {
@@ -92,121 +86,118 @@ static int nosqlFS_releasedir(const char * path, struct fuse_file_info * fi) {
 }
 
 static int nosqlFS_readlink(const char * path, char * link, size_t size) {
-    int res;
+    int retstat;
 
-    res = readlink(path, buf, size - 1);
-    if (res == -1)
-        return -errno;
-
-    buf[res] = '\0';
-    return 0;
+    //log_msg("nosqlFS_readlink(path = \"%s\", link = \"S\", size = %d)\n", path, link, path);
+    //retstat = log_syscall("readlink", readlink(path, link, size - 1), 0);
+    retstat = readlink(path, link, size - 1);
+    if (retstat > 0) {
+        link[retstat] = '\0';
+        return 0;
+    }
+    return retstat;
 }
 
 static int nosqlFS_mknod(const char * path, mode_t mode, dev_t rdev) {
-    int res;
+    int retstat;
 
-    /* On Linux this could just be 'mknod(path, mode, rdev)' but this
-       is more portable */
+    //log_msg("nosqlFS_mknod(path = \"%s\", mode = 0%3o, dev = %lld)\n", path, mode, rdev);
+
     if (S_ISREG(mode)) {
-        res = open(path, O_CREAT | O_EXCL | O_WRONLY, mode);
-        if (res >= 0)
-            res = close(res);
-    } else if (S_ISFIFO(mode))
-        res = mkfifo(path, mode);
-    else
-        res = mknod(path, mode, rdev);
-    if (res == -1)
+        //retstat = log_syscall("open", open(path, O_CREAT | O_EXCL | O_WRONLY, mode), 0);
+        retstat = open(path, O_CREAT | O_EXCL | O_WRONLY, mode);
+        if (retstat >= 0) {
+            //retstat = log_syscall("close", close(retstat), 0);
+            retstat = close(retstat);
+        }
+    } else if (S_ISFIFO(mode)) {
+        //retstat = log_syscall("mkfifio", mkfifo(path, mode), 0);
+        retstat = mkfifo(path, mode);
+    } else {
+        retstat = mknod(path, mode, rdev);
+        //retstat = log_syscall("mknod", mknod(path, mode, rdev), 0);
+    }
+    // open will return file descriptor, so if retstat != -1, return 0;
+    if (retstat == -1) {
         return -errno;
-
+    }
     return 0;
 }
 
 static int nosqlFS_mkdir(const char * path, mode_t mode) {
-    int res;
-
-    res = mkdir(path, mode);
-    if (res == -1)
-        return -errno;
-
-    return 0;
+    //log_msg("nosqlFS_mkdir(path = \"%s\", mode = 0%3o)\n", path, mode);
+    int res = mkdir(path, mode);
+    //return log_syscall("mkdir", mkdir(path, mode), 0);
+    return res;
 }
 
 static int nosqlFS_unlink(const char * path) {
-    int res;
+    //log_msg("nosqlFS_unlink(path = \"%s\")\n", path);
 
-    res = unlink(path);
-    if (res == -1)
-        return -errno;
-
-    return 0;
+    //return log_syscall("unlink", unlink(path), 0);
+    int res = unlink(path);
+    return res;
 }
 
 static int nosqlFS_rmdir(const char * path) {
-    int res;
+    //log_msg("nosqlFS_rmdir(path = \"%s\")\n", path);
 
-    res = rmdir(path);
-    if (res == -1)
-        return -errno;
-
-    return 0;
+    //return log_syscall("rmdir", rmdir(path), 0);
+    int res = rmdir(path);
+    return res;
 }
 
 static int nosqlFS_symlink(const char * from, const char * to) {
-    int res;
+    //log_msg("nosqlFS_symlink(from = \"%s\", to = \"%s\")\n", from, to);
 
-    res = symlink(from, to);
-    if (res == -1)
-        return -errno;
-
-    return 0;
+    //return log_syscall("symlink", symlink(from, to), 0);
+    int res = symlink(from, to);
+    return res;
 }
 
 static int nosqlFS_rename(const char * from, const char * to, unsigned int flags) {
-    int res;
+    //log_msg("nosqlFS_rename(from = \"%s\", to = \"%s\", flags = %u)\n", from, to, flags);
 
-    if (flags)
-        return -EINVAL;
-
-    res = rename(from, to);
-    if (res == -1)
-        return -errno;
-
-    return 0;
+    //return log_syscall("rename", rename(from, to), 0);
+    int res = rename(from, to);
+    return res;
 }
 
 static int nosqlFS_link(const char * from, const char * to) {
-    int res;
+    //log_msg("nosqlFS_link(from = \"%s\", to = \"%s\")\n", from, to);
 
-    res = link(from, to);
-    if (res == -1)
-        return -errno;
+    //return log_syscall("link", link(from, to), 0);
 
-    return 0;
+    int res = link(from, to);
+    return res;
 }
 
 static int nosqlFS_chmod(const char * path, mode_t mode, struct fuse_file_info * fi) {
-    (void) fi;
-    int res;
+    //log_msg("nosqlFS_chmod(path = \"%s\", mode = 0%3o)\n", path, mode);
 
-    res = chmod(path, mode);
-    if (res == -1)
-        return -errno;
+    //return log_syscall("chmod", chmod(path, mode), 0);
 
-    return 0;
+    int res = chmod(path, mode);
+    return res;
 }
 
 static int nosqlFS_chown(const char * path, uid_t uid, gid_t gid, struct fuse_file_info * fi) {
-    (void) fi;
-    int res;
+    //log_msg("nosqlFS_chown(path = \"%s\", uid = %d, gid = %d)\n", path, uid, gid);
 
-    res = lchown(path, uid, gid);
-    if (res == -1)
-        return -errno;
+    //return log_syscall("lchown", lchown(path, uid, gid), 0);
 
-    return 0;
+    int res = lchown(path, uid, gid);
+    return res;
 }
 
 static int nosqlFS_truncate(const char * path, off_t size, struct fuse_file_info * fi) {
+    //log_msg("nosqlFS_truncate(path = \"%s\", size = %lld)\n", path, size);
+
+    //return log_syscall("truncate", truncate(path, size), 0);
+    /*
+    int res = truncate(path, size);
+    return res;
+    */
 
     int res;
 
@@ -223,14 +214,12 @@ static int nosqlFS_truncate(const char * path, off_t size, struct fuse_file_info
 
 #ifdef HAVE_UTIMENSAT
 static int nosqlFS_utimens(const char * path, const struct timespec ts[2]) {
-    (void) fi;
-    int res;
+    //log_msg("nosqlFS_utimens(path = \"%s\", timespec)\n", path);
 
-    res = utimensat(0, path, ts, AT_SYMLINK_NOFOLLOW);
-    if (res == -1)
-        return -errno;
+    //return log_utimens("utimens", utimensat(0, path, ts, AT_SYMLINK_NOFOLLOW), 0);
 
-    return 0;
+    int res = utimensat(0, path, ts, AT_SYMLINK_NOFOLLOW);
+    return res;
 }
 #endif
 
@@ -248,13 +237,86 @@ static int nosqlFS_create(const char *path, mode_t mode,
 }
 
 static int nosqlFS_open(const char * path, struct fuse_file_info * fi) {
-    int res;
+    int retstat;
 
-    res = open(path, fi->flags);
-    if (res == -1)
+    //log_msg("nosqlFS_open(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
+
+    //retstat = log_syscall("open", open(path, fi->flags), 0);
+    retstat = open(path, fi->flags);
+    //log_fi(fi);
+
+    /*
+    // remove fork from there
+    log_msg("child start\n");
+    // do not need node =======================================================================
+    struct head_node * head = find("xattr", NULL, "xattr_list", "priority", 1);
+    log_msg("get xattr list\n");
+    struct node * p = head->head;
+    while (p != NULL) {
+        char * xattr_name = get_value(p->value, "xattr");
+        log_msg("xattr_name = %s\n", xattr_name);
+        char * xattr_value_db = get_value(p->value, "value");
+        log_msg("xattr_value_db = %s\n", xattr_value_db);
+
+        char * xattr_value_file = (char*)malloc(256);
+        // remove quote
+        char new_name[256];
+        xattr_name = remove_quote(xattr_name, new_name);
+        char new_value[256];
+        xattr_value_db = remove_quote(xattr_value_db, new_value);
+
+        int xattr_value_length = nosqlFS_getxattr(path, xattr_name, xattr_value_file, 256);
+        if (xattr_value_length > 0) {
+            xattr_value_file[xattr_value_length] = '\0';
+            if (strcmp(xattr_value_file, xattr_value_db) == 0) {
+                // match!
+                log_msg("xattr match!\n");
+                // just for test to remove the fork
+                // I am child
+                log_msg("match child start\n");
+                char new_command_location[256];
+                log_msg("TEST 1\n");
+                char * command_location = get_command_location(p->value);
+                log_msg("TEST 2\n");
+                command_location = remove_quote(command_location, new_command_location);
+                log_msg("TEST 3\n");
+                char ** command_parameter;
+                command_parameter = (char **)malloc(sizeof(char*) * 10);
+                for (int i = 0; i < 10; ++i) {
+                    command_parameter[i] = (char *)malloc(sizeof(char) * 512);
+                    command_parameter[i][0] = '\0';
+                }
+                log_msg("TEST 4\n");
+                int parameter_length = get_command_parameter(p->value, command_parameter);
+                log_msg("TEST 5\n");
+                log_msg("TEST 5 %d\n", parameter_length);
+                char * filename = strrchr(path, '/') + 1;
+                log_msg("TEST 6\n");
+                log_msg("TEST 6:  %s\n", command_location);
+                command_process(command_parameter, filename, parameter_length);
+                for (int mm = 0; mm < parameter_length; mm ++) {
+                    log_msg("TEST 7:  %s\n", command_parameter[mm]);
+                }
+                if (fork() == 0) {
+                    log_msg("execv start!!\n");
+                    //int res = execl("/bin/mkdir", "mkdir", "/home/li2266/hehe/tmp", (char *)0);
+                    int res = execv(command_location, command_parameter);
+                    if (res < 0) {
+                        log_msg("ERROR %d\n", res);
+                        sender("987097668@qq.com");
+
+                    }
+                }
+            }
+        }
+        p = p->next;
+    }
+    list_destory(head);
+    */
+    if (retstat == -1) {
         return -errno;
-
-    fi->fh = res;
+    }
+    close(retstat);
     return 0;
 }
 
@@ -304,13 +366,12 @@ static int nosqlFS_write(const char * path, const char * buf, size_t size, off_t
 }
 
 static int nosqlFS_statfs(const char * path, struct statvfs * stbuf) {
-    int res;
+    //log_msg("nosqlFS_statfs(path = \"%s\", statvfs = 0x%08x)\n", path, stbuf);
 
-    res = statvfs(path, stbuf);
-    if (res == -1)
-        return -errno;
+    //return log_syscall("statvfs", statvfs(path, stbuf), 0);
 
-    return 0;
+    int res = statvfs(path, stbuf);
+    return res;
 }
 
 static int nosqlFS_flush(const char * path, struct fuse_file_info * fi) {
@@ -405,7 +466,6 @@ static int nosqlFS_fallocate(const char *path, int mode,
 static void *nosqlFS_init(struct fuse_conn_info *conn, struct fuse_config * cfg) {
     log_msg("nosqlFS_init()\n");
     log_conn(conn);
-    (void) conn;
     log_fuse_context(fuse_get_context());
 
     int res = db_init();
