@@ -213,9 +213,22 @@ static int nosqlFS_truncate(const char * path, off_t size, struct fuse_file_info
     //log_msg("nosqlFS_truncate(path = \"%s\", size = %lld)\n", path, size);
 
     //return log_syscall("truncate", truncate(path, size), 0);
-
+    /*
     int res = truncate(path, size);
     return res;
+    */
+
+    int res;
+
+    if (fi != NULL)
+        res = ftruncate(fi->fh, size);
+    else
+        res = truncate(path, size);
+    if (res == -1)
+        return -errno;
+
+    return 0;
+
 }
 
 #ifdef HAVE_UTIMENSAT
@@ -228,6 +241,19 @@ static int nosqlFS_utimens(const char * path, const struct timespec ts[2]) {
     return res;
 }
 #endif
+
+static int nosqlFS_create(const char *path, mode_t mode,
+              struct fuse_file_info *fi)
+{
+    int res;
+
+    res = open(path, fi->flags, mode);
+    if (res == -1)
+        return -errno;
+
+    fi->fh = res;
+    return 0;
+}
 
 static int nosqlFS_open(const char * path, struct fuse_file_info * fi) {
     int retstat;
@@ -316,39 +342,46 @@ static int nosqlFS_open(const char * path, struct fuse_file_info * fi) {
 static int nosqlFS_read(const char * path, char * buf, size_t size, off_t offset,
                         struct fuse_file_info * fi) {
     int fd;
-    int retstat;
+    int res;
 
-    (void)fi;
-    //fd = log_syscall("open", open(path, O_RDONLY), 0);
-    fd = open(path, O_RDONLY);
-    if (fd == -1) {
+    if(fi == NULL)
+        fd = open(path, O_RDONLY);
+    else
+        fd = fi->fh;
+    
+    if (fd == -1)
         return -errno;
-    }
-    //log_msg("nosqlFS_read(path = \"%s\", buf = 0x%08x, size = %d, offset = %lld, fuse_file_info = 0x%08x)\n", path, buf, size, offset, fi);
 
-    //retstat = log_syscall("pread", pread(fd, buf, size, offset), 0);
-    retstat = pread(fd, buf, size, offset);
-    close(fd);
-    return retstat;
+    res = pread(fd, buf, size, offset);
+    if (res == -1)
+        res = -errno;
+
+    if(fi == NULL)
+        close(fd);
+    return res;
 }
 
 static int nosqlFS_write(const char * path, const char * buf, size_t size, off_t offset,
                          struct fuse_file_info * fi) {
     int fd;
-    int retstat;
+    int res;
 
-    (void)fi;
-    //log_msg("nosqlFS_write(path = \"%s\", buf = 0x%08x, size = %d, offset = %lld, fuse_file_info = 0x%08x)\n", path, buf, size, offset, fi);
-    //fd = log_syscall("open", open(path, O_WRONLY), 0);
-    fd = open(path, O_WRONLY);
-    if (fd == -1) {
+    (void) fi;
+    if(fi == NULL)
+        fd = open(path, O_WRONLY);
+    else
+        fd = fi->fh;
+    
+    if (fd == -1)
         return -errno;
-    }
 
-    //retstat = log_syscall("pwrite", pwrite(fd, buf, size, offset), 0);
-    retstat = pwrite(fd, buf, size, offset);
-    close(fd);
-    return retstat;
+    res = pwrite(fd, buf, size, offset);
+    if (res == -1)
+        res = -errno;
+
+    if(fi == NULL)
+        close(fd);
+    return res;
 }
 
 static int nosqlFS_statfs(const char * path, struct statvfs * stbuf) {
@@ -368,7 +401,7 @@ static int nosqlFS_flush(const char * path, struct fuse_file_info * fi) {
 static int nosqlFS_release(const char * path, struct fuse_file_info * fi) {
     //log_msg("nosqlFS_release(path = \"%s\", fuse_file_info = 0x%08x)\n", path, fi);
     (void)path;
-    (void)fi;
+    close(fi->fh);
     return 0;
 }
 
@@ -465,6 +498,7 @@ static struct fuse_operations nosqlFS_oper = {
     .utimens = nosqlFS_utimens,
 #endif
     .open = nosqlFS_open,
+    .create = nosqlFS_create,
     .read = nosqlFS_read,
     .write = nosqlFS_write,
     .statfs = nosqlFS_statfs,
