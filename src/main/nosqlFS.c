@@ -479,6 +479,7 @@ static struct fuse_operations nosqlFS_oper = {
 };
 
 int main(int argc, char * argv[]) {
+    umask(0);
     int fuse_stat;
     // init the nosqlFS_Data which store the log file pointer
     struct nosqlFS_state * nosqlFS_init_data;
