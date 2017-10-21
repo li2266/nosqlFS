@@ -40,7 +40,7 @@ static int nosqlFS_getattr(const char * path, struct stat * stbuf, struct fuse_f
     if (res == -1)
         return -errno;
 
-    if (retstat == 0 && S_ISREG(stbuf->st_mode)) {
+    if (res == 0 && S_ISREG(stbuf->st_mode)) {
         record_file_basic_info(path, stbuf);
     }
     return 0;
@@ -94,11 +94,11 @@ static int nosqlFS_releasedir(const char * path, struct fuse_file_info * fi) {
 static int nosqlFS_readlink(const char * path, char * link, size_t size) {
     int res;
 
-    res = readlink(path, buf, size - 1);
+    res = readlink(path, lik, size - 1);
     if (res == -1)
         return -errno;
 
-    buf[res] = '\0';
+    link[res] = '\0';
     return 0;
 }
 
