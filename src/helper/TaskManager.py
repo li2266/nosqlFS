@@ -90,7 +90,7 @@ def fun(task_member):
 						task_worker_logger.debug("insert path {} and label {}".format(post_label['path'], label))
 					
 					print(post['_id'])
-					collection_file.update_one({'_id' : ObjectId(post['_id'])}, {'$set' : {'analyze' : 'DONE'}})
+					#collection_file.update_one({'_id' : ObjectId(post['_id'])}, {'$set' : {'analyze' : 'DONE'}})
 					#collection_file.update_one({'_id' : post['_id']}, {'$set' : {'analyze' : 'DONE'}})
 					task_worker_logger.debug("finish analyze task: {} ".format(post['path']))
 				except Exception as e:
@@ -98,7 +98,7 @@ def fun(task_member):
 					task_worker_logger.error("fail analyze task: {} ".format(post['path']))
 					task_worker_logger.error("error message: {} ".format(e))
 				task_worker_logger.debug("{} left".format(task_member.queue.qsize()))
-				time.sleep(0.01)
+				#time.sleep(0.01)
 			else:
 				queue_lock.release()
 				task_worker_logger.debug("no task right now")
