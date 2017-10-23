@@ -82,10 +82,34 @@ def analyze_google(path, logger):
 clarifai_app = None
 
 def analyze_clarifai(path, logger, clarifai_app):
+	size = getsize(path) / 1024.0 
+	logger.info("size of the file is {}".format(size))
+	small_path = None
+	if size > target_size:
+		small_path = path + ".cpy"
+		logger.debug("make it small")
+		im = Image.open(path)
+		q = 90
+		while size > target_size and q > 0:
+			logger.info("quality right now {}".format(q))
+			out  = im.resize(im.size, Image.ANTIALIAS)
+			out.save(small_path, "JPEG", quality = q)
+			size = getsize(small_path) / 1024.0
+			q -= 10
+
+	logger.debug("start sending request")
+	request_file = None
+	if small_path == None:
+		request_file = path
+	else:
+		request_file = small_path
+
+		
+
 	if clarifai_app == None:
 		clarifai_app = initialize_clarifai()
 	model = clarifai_app.models.get('general-v1.3')
-	image = ClImage(file_obj=open(path, 'rb'))
+	image = ClImage(file_obj=open(request_file, 'rb'))
 	output = model.predict([image])
 	
 	res = set()
