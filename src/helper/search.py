@@ -10,7 +10,8 @@ def search(key):
 	res = set()
 	for post in collection_invert_list.find({'label' : re.compile(key)}):
 		#rint(post['path'])
-		res.add(post['path'])
+		if post['path'].find("htmldata2500") != -1:
+			res.add(post['path'])
 	for path in res:
 		print(path)
 
