@@ -7,9 +7,12 @@ def search(key):
 	client = pymongo.MongoClient('localhost', 27017)
 	db = client['nosqlFS']
 	collection_invert_list = db['invert_list']
-
+	res = set()
 	for post in collection_invert_list.find({'label' : re.compile(key)}):
-		print(post['path'])
+		#rint(post['path'])
+		res.add(post['path'])
+	for path in res:
+		print(path)
 
 def usage():
 	print("python3 search KEY_WORDS")
