@@ -72,12 +72,12 @@ def fun(task_member):
 						task_worker_logger.debug("process {} as txt file".format(post['path']))
 						tmp_dict = AnalyserDocument.analyze(post['path'], analyze_doc_log)
 						print(tmp_dict)
-						label_dict.update(tmp_list) 
+						label_dict.update(tmp_dict) 
 					elif file_name.split('.')[-1] in extension_pic:
 						task_worker_logger.debug("process {} as picture file".format(post['path']))
 						tmp_dict = AnalyserPhoto.analyze_clarifai(post['path'], analyze_pic_log, clarifai_app)
 						print(tmp_dict)
-						label_dict.update(tmp_list)
+						label_dict.update(tmp_dict)
 					# process path of file
 
 					for label in post['path'].split('/'):

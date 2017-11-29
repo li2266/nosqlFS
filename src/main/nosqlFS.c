@@ -86,7 +86,7 @@ static int nosqlFS_readdir(const char * path, void * buf, fuse_fill_dir_t filler
 
 static int nosqlFS_releasedir(const char * path, struct fuse_file_info * fi) {
     //log_msg("nosqlFS_releasedir(path = \"%s\", fi = 0x%08x)\n", path, fi);
-    //do_bulk();
+    do_bulk();
 
     //closedir((DIR *)(uintptr_t)fi->fh);
     return 0;
