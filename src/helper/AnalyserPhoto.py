@@ -5,6 +5,8 @@ from clarifai.rest import Image as ClImage
 import base64
 import requests
 import json
+import exifread
+
 
 
 path = "/home/pengli/nosqlFS/src/helper/tmp/568653.jpg"
@@ -82,6 +84,9 @@ def analyze_google(path, logger):
 clarifai_app = None
 
 def analyze_clarifai(path, logger, clarifai_app):
+	f = open(path, 'rb')
+	tags = exifread.process_file(f)
+
 	size = getsize(path) / 1024.0 
 	logger.info("size of the file is {}".format(size))
 	small_path = None
@@ -117,6 +122,7 @@ def analyze_clarifai(path, logger, clarifai_app):
 	for label in output['outputs'][0]['data']['concepts']:
 		res[label['name']] = label['value']
 	#print(res)
+	res.update(tags)
 	return res
 
 def initialize_clarifai():
