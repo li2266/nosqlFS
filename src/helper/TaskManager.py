@@ -64,28 +64,29 @@ def fun(task_member):
 			if not task_member.queue.empty():
 				post = task_member.queue.get()
 				queue_lock.release()
-				label_list = list()
+				label_dict = dict()
 				# TODO: do the task and write back
 				file_name = post['path'].split('/')[-1]
 				try:
 					if file_name.split('.')[-1] in extension_doc:
 						task_worker_logger.debug("process {} as txt file".format(post['path']))
-						tmp_set = AnalyserDocument.analyze(post['path'], analyze_doc_log)
-						tmp_list = list(tmp_set)
-						print(tmp_list)
-						label_list.extend(tmp_list) 
+						tmp_dict = AnalyserDocument.analyze(post['path'], analyze_doc_log)
+						print(tmp_dict)
+						label_dict.update(tmp_list) 
 					elif file_name.split('.')[-1] in extension_pic:
 						task_worker_logger.debug("process {} as picture file".format(post['path']))
-						tmp_set = AnalyserPhoto.analyze_clarifai(post['path'], analyze_pic_log, clarifai_app)
-						tmp_list = list(tmp_set)
-						print(tmp_list)
-						label_list.extend(tmp_list)
+						tmp_dict = AnalyserPhoto.analyze_clarifai(post['path'], analyze_pic_log, clarifai_app)
+						print(tmp_dict)
+						label_dict.update(tmp_list)
 					# process path of file
-					label_list.extend(post['path'].split('/'))
-					for label in label_list:
+
+					for label in post['path'].split('/'):
+						label_dict[label] = -1
+
+					for label in label_dict:
 						if label == '':
 							continue
-						post_label = {'path' : post['path'], 'label' : label}
+						post_label = {'path' : post['path'], 'label' : label, 'value' : label_dict[label]}
 						post_id = collection_invert_list.insert_one(post_label).inserted_id
 						task_worker_logger.debug("insert path {} and label {}".format(post_label['path'], label))
 					

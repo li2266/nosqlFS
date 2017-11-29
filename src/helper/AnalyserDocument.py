@@ -32,10 +32,10 @@ def analyze(path, logger):
 
 	ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics = 10, id2word = dictionary, passes = 50)
 
-	res = set()
+	res = dict()
 
 	for topic in ldamodel.show_topics(formatted = False):
 		for word in topic[1]:
-			res.add(word[0])
+			res[word[0]] = word[1]
 
 	return res

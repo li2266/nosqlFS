@@ -112,10 +112,10 @@ def analyze_clarifai(path, logger, clarifai_app):
 	image = ClImage(file_obj=open(request_file, 'rb'))
 	output = model.predict([image])
 	
-	res = set()
+	res = dict()
 
 	for label in output['outputs'][0]['data']['concepts']:
-		res.add(label['name'])
+		res[label['name']] = label['value']
 	#print(res)
 	return res
 
