@@ -8,6 +8,7 @@
 #include "log.h"
 #include "db_manager.h"
 
+
 void record_file_basic_info(const char * path, struct stat * stbuf){
 	// get time string
 	//log_msg("Try to get time\n");

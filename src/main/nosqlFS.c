@@ -43,6 +43,7 @@ static int nosqlFS_getattr(const char * path, struct stat * stbuf, struct fuse_f
     if (res == 0 && S_ISREG(stbuf->st_mode)) {
         record_file_basic_info(path, stbuf);
     }
+    log_msg("getattr: %s", path);
     return 0;
 }
 
