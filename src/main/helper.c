@@ -7,7 +7,7 @@
 
 #include "log.h"
 #include "db_manager.h"
-
+/*
 void record_file_basic_info(const char * path, struct stat * stbuf){
 	// get time string
 	//log_msg("Try to get time\n");
@@ -41,8 +41,8 @@ void record_file_basic_info(const char * path, struct stat * stbuf){
 	bson_destroy(query);
 	bson_free(result);
 }
+*/
 
-/*
 void record_file_basic_info(const char * path, struct stat * stbuf){
 	// get time string
 	char str_last_modification[32];
@@ -54,4 +54,4 @@ void record_file_basic_info(const char * path, struct stat * stbuf){
 	add2bulk(doc);
 	//log_msg("add path: %s\n", path);
 }
-*/
+
